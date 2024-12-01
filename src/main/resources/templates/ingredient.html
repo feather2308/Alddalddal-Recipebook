@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredients</title>
+    <!-- 스타일링을 위한 CSS 추가 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .ingredient-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 기본적으로 4개의 열 */
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .ingredient-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .ingredient-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .ingredient-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .ingredient-item h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .ingredient-item p {
+            color: #777;
+            font-size: 14px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* 반응형 스타일: 화면 크기에 따른 열 개수 변경 */
+        @media (max-width: 1200px) {
+            .ingredient-list {
+                grid-template-columns: repeat(3, 1fr); /* 화면이 1200px 이하일 때 3열 */
+            }
+        }
+
+        @media (max-width: 900px) {
+            .ingredient-list {
+                grid-template-columns: repeat(2, 1fr); /* 화면이 900px 이하일 때 2열 */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .ingredient-list {
+                grid-template-columns: 1fr; /* 화면이 600px 이하일 때 1열 */
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Available Ingredients</h1>
+    <div class="ingredient-list">
+        <!-- ingredients 목록 출력 -->
+        <div th:each="ingredient : ${ingredient}" class="ingredient-item">
+            <img th:src="@{'/images/ingredient/' + ${ingredient.image} + '.webp'}" th:alt="${ingredient.name}">
+            <h3 th:text="${ingredient.name}">Ingredient Name</h3>
+            <p th:text="${ingredient.lore}">Ingredient Description</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Cocktail Recipe. All Rights Reserved.</p>
+</div>
+</body>
+</html>

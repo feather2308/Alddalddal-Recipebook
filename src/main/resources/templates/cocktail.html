@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>칵테일</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* 기본 레이아웃 설정 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* 창 높이에 맞춤 */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* HTML 자체의 스크롤 제거 */
+        }
+
+        /* 컨테이너 영역 */
+        .container {
+            flex: 1; /* 상단과 하단을 제외한 영역 차지 */
+            overflow-y: auto; /* 스크롤 가능 */
+            padding: 20px;
+        }
+
+        /* 칵테일 목록 */
+        .cocktail-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .cocktail-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .cocktail-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cocktail-item img {
+            width: 100%;
+            aspect-ratio: 2 / 3; /* 가로 세로 비율 유지 */
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .cocktail-item h3 {
+            color: #333;
+            margin-top: 3px;
+            margin-bottom: 5px;
+        }
+
+        .cocktail-item p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* 반응형: 화면 크기에 맞춰 칵테일 개수 조정 */
+        @media (max-width: 1200px) {
+            .cocktail-list {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .cocktail-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cocktail-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 400px) {
+            .cocktail-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 고정된 footer 스타일 */
+        .footer {
+            height: 60px; /* 페이지네이션 높이 */
+            background-color: white;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 페이지네이션 텍스트 */
+        .pagination-text {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        /* 페이지 번호 스타일 */
+        .pagination-numbers a {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 0 5px;
+            font-weight: bold;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .pagination-numbers a:hover {
+            background-color: #eee;
+            color: #000;
+        }
+
+        /* 현재 페이지 강조 */
+        .pagination-numbers a.active {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+            pointer-events: none; /* 클릭 불가 */
+        }
+    </style>
+</head>
+<body>
+<h2>칵테일 목록</h2>
+<!-- 스크롤 가능한 컨텐츠 영역 -->
+<div class="container">
+    <div class="cocktail-list">
+        <!-- 칵테일 목록 출력 -->
+        <div th:each="cocktail : ${cocktails.content}" class="cocktail-item">
+            <a th:href="@{'/recipe?cocktail=' + ${cocktail.name}}" style="text-decoration: none; color: inherit;">
+                <img th:src="@{'/images/' + ${cocktail.image} + '.webp'}" th:alt="@{${cocktail.name} + ' Image'}" />
+                <h3 th:text="${cocktail.name}">Cocktail Name</h3>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- 고정된 페이지네이션 footer -->
+<div class="footer">
+    <span class="pagination-text">Page <span th:text="${currentPage}">1</span> of <span th:text="${totalPages}">5</span></span>
+    <div class="pagination-numbers">
+        <a th:each="i : ${#numbers.sequence(1, totalPages)}"
+           th:classappend="${i == currentPage} ? 'active' : ''"
+           th:href="@{'/cocktail?page=' + ${i}}"
+           th:text="${i}"></a>
+    </div>
+</div>
+</body>
+</html>

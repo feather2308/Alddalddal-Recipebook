@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .button-1 {
+            background-color: #28a745;
+        }
+
+        .button-2 {
+            background-color: #dc3545;
+        }
+
+        .button-3 {
+            background-color: #ffc107;
+        }
+
+        .button-4 {
+            background-color: #17a2b8;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <button class="button button-1">
+        <a th:href="${isLoggedIn ? '/mypage' : '/login'}"
+           th:text="${isLoggedIn ? '마이페이지' : '로그인'}"></a>
+    </button>
+    <button class="button button-2">
+        <a href="/cocktail" th:text="'칵테일 목록'"></a>
+    </button>
+    <button class="button button-3">
+        <a href="/ingredient" th:text="'재료 목록'"></a>
+    </button>
+    <button class="button button-4">
+        <a href="/search" th:text="'검색'"></a>
+    </button>
+</div>
+</body>
+</html>

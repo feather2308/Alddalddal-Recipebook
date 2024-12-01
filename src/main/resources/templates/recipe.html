@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe - [[${cocktail.name}]]</title>
+</head>
+<body>
+<h2>칵테일: [[${cocktail.name}]]</h2>
+<img th:src="@{'/images/' + ${cocktail.image} + '.webp'}" alt="[[${cocktail.name}]] 이미지"/>
+<p>레시피: [[${recipe.method}]]</p>
+<p>링크: <a th:href="${recipe.url}">레시피 자세히 보기</a></p>
+</body>
+</html>
