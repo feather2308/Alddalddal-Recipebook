@@ -7,13 +7,13 @@ VALUES ('Angel Face', 'angel-face', 'Angel Face는 진, 애프리코트 브랜�
 INSERT INTO cocktail (cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Aviation', 'aviation', 'Aviation은 진, 마라스키노 리큐어, 레몬 주스, 그리고 크렘 드 보이올렛을 섞어 만든 클래식한 칵테일로, 독특한 꽃 향과 상큼한 맛이 특징입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
-VALUES ('Bees Knees', 'bees-knees', 'Bees-Knees는 진, 꿀, 레몬 주스를 혼합한 달콤하고 상큼한 칵테일입니다.');
+VALUES ('Bee''s Knees', 'bees-knees', 'Bee''s Knees는 진, 꿀, 레몬 주스를 혼합한 달콤하고 상큼한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Bellini', 'bellini', 'Bellini는 복숭아 퓨레와 스파클링 와인을 혼합한 부드럽고 상쾌한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
-VALUES ('Between the Sheets', 'between-the-sheets', 'Between-the-Sheets는 진, 럼, 브랜디, 레몬 주스를 혼합한 강렬하면서도 균형 잡힌 칵테일입니다.');
+VALUES ('Between the Sheets', 'between-the-sheets', 'Between the Sheets는 진, 럼, 브랜디, 레몬 주스를 혼합한 강렬하면서도 균형 잡힌 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
-VALUES ('Black Russian', 'black-russian', 'Black-Russian은 보드카와 커피 리큐어를 혼합한 간단하고 강한 칵테일입니다.');
+VALUES ('Black Russian', 'black-russian', 'Black Russian은 보드카와 커피 리큐어를 혼합한 간단하고 강한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Bloody Mary', 'bloody-mary', 'Bloody Mary는 보드카, 토마토 주스, 향신료를 혼합한 고전적인 브런치 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
@@ -37,7 +37,7 @@ VALUES ('Chartreuse Swizzle', 'chartreuse-swizzle', 'Chartreuse Swizzle은 차�
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Clover Club', 'clover-club', 'Clover Club은 진, 라즈베리, 레몬 주스, 계란 흰자를 혼합한 부드럽고 상큼한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
-VALUES ('Corpse Reviver 2', 'corpse-reviver-2', 'Corpse Reviver 2는 진, 코냑, 리큐르, 레몬 주스를 혼합한 클래식한 칵테일입니다.');
+VALUES ('Corpse Reviver #2', 'corpse-reviver-2', 'Corpse Reviver #2는 진, 코냑, 리큐르, 레몬 주스를 혼합한 클래식한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Cosmopolitan', 'cosmopolitan', 'Cosmopolitan은 보드카, 크랜베리 주스, 라임 주스를 혼합한 상쾌하고 스타일리시한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
@@ -45,9 +45,9 @@ VALUES ('Cuba Libre', 'cuba-libre', 'Cuba Libre는 럼, 콜라, 라임 주스를
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Daiquiri', 'daiquiri', 'Daiquiri는 럼, 라임 주스, 설탕을 혼합한 클래식한 칵테일로 상큼하고 깔끔한 맛이 특징입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
-VALUES ('Dark N Stormy', 'dark-n-stormy', 'Dark N Stormy는 럼, 생강 맥주, 라임 주스를 혼합한 강렬하고 상쾌한 칵테일입니다.');
+VALUES ('Dark ''N'' Stormy', 'dark-n-stormy', 'Dark ''N'' Stormy는 럼, 생강 맥주, 라임 주스를 혼합한 강렬하고 상쾌한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
-VALUES ('Dons Special Daiquiri', 'dons-special-daiquiri', 'Dons Special Daiquiri는 럼, 라임 주스, 설탕을 혼합한 전통적인 Daiquiri를 변형한 특별한 칵테일입니다.');
+VALUES ('Don''s Special Daiquiri', 'dons-special-daiquiri', 'Don''s Special Daiquiri는 럼, 라임 주스, 설탕을 혼합한 전통적인 Daiquiri를 변형한 특별한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Dry Martini', 'dry-martini', 'Dry Martini는 진과 드라이 베르무트를 혼합한 강렬하고 세련된 클래식 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
@@ -75,7 +75,7 @@ VALUES ('Hanky Panky', 'hanky-panky', 'Hanky Panky는 진과 베르무트, 페�
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Hemingway Special', 'hemingway-special', 'Hemingway Special은 라이트 럼, 자몽 주스, 마룰라 리큐어를 혼합한 상큼한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
-VALUES ('Horses Neck', 'horses-neck', 'Horses Neck은 진과 진저 에일을 혼합한 시원하고 상쾌한 칵테일입니다.');
+VALUES ('Horse''s Neck', 'horses-neck', 'Horse''s Neck은 진과 진저 에일을 혼합한 시원하고 상쾌한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('IBA Tiki', 'iba-tiki', 'IBA Tiki는 열대 과일 주스와 럼을 혼합한 화려하고 달콤한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
@@ -109,7 +109,7 @@ VALUES ('Mimosa', 'mimosa', 'Mimosa는 샴페인과 오렌지 주스를 혼합�
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Mint Julep', 'mint-julep', 'Mint Julep는 민트, 설탕, 버번 위스키를 혼합한 시원하고 향긋한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
-VALUES ('Missionarys Downfall', 'missionarys-downfall', 'Missionarys Downfall은 럼, 파인애플 주스, 라임 주스를 혼합한 열대의 맛이 나는 칵테일입니다.');
+VALUES ('Missionary''s Downfall', 'missionarys-downfall', 'Missionary''s Downfall은 럼, 파인애플 주스, 라임 주스를 혼합한 열대의 맛이 나는 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Mojito', 'mojito', 'Mojito는 민트, 라임, 설탕, 럼을 혼합한 상쾌하고 시원한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
@@ -185,7 +185,7 @@ VALUES ('Three Dots and a Dash', 'three-dots-and-a-dash', 'Three Dots and a Dash
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Tipperary', 'tipperary', 'Tipperary는 진, 버번, 베르무트, 오렌지 비터스를 혼합한 풍미 깊고 강렬한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
-VALUES ('Tommys Margarita', 'tommys-margarita', 'Tommys Margarita는 테킬라, 라임 주스, 아가베 시럽을 혼합한 상큼하고 부드러운 칵테일입니다.');
+VALUES ('Tommy''s Margarita', 'tommys-margarita', 'Tommy''s Margarita는 테킬라, 라임 주스, 아가베 시럽을 혼합한 상큼하고 부드러운 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Trinidad Sour', 'trinidad-sour', 'Trinidad Sour는 앰버 리큐어, 아몬드 시럽, 사워 체리, 비터스를 혼합한 독특한 맛의 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
@@ -195,7 +195,7 @@ VALUES ('Ve.N.To', 've-n-to', 'Ve.N.To는 진, 그레나딘, 라임 주스를 �
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Vesper', 'vesper', 'Vesper는 진, 보드카, 리큐어를 혼합한 강렬하고 독특한 맛의 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
-VALUES ('Vieux Carr', 'vieux-carr', 'Vieux Carr는 브랜디, 라이 위스키, 베르무트, 비터스를 혼합한 클래식한 칵테일입니다.');
+VALUES ('Vieux Carre', 'vieux-carre', 'Vieux Carré는 브랜디, 라이 위스키, 베르무트, 비터스를 혼합한 클래식한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Whiskey Sour', 'whiskey-sour', 'Whiskey Sour는 위스키, 레몬 주스, 설탕을 혼합한 상큼하고 부드러운 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)

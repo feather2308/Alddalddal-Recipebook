@@ -16,6 +16,8 @@ public class Recipe {
 
     @Column(name = "recipe_method")
     private String method;
+    @Column(name = "recipe_garnish")
+    private String garnish;
     @Column(name = "recipe_url")
     private String url;
 }
