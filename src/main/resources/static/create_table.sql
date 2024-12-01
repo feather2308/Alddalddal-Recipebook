@@ -56,6 +56,7 @@ CREATE TABLE comments (
 CREATE TABLE recipe (
     cocktail_name VARCHAR2(25) PRIMARY KEY,
     recipe_method VARCHAR2(500) NOT NULL,
+    recipe_garnish VARCHAR2(300),
     recipe_url VARCHAR2(100),
     CONSTRAINT fk_cocktail_name_recipe FOREIGN KEY (cocktail_name) REFERENCES cocktail(cocktail_name)
 );
