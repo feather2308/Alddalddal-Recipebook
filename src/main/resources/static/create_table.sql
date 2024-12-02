@@ -70,6 +70,7 @@ CREATE TABLE ingredient (
 CREATE TABLE recipe_ingredient (
     cocktail_name VARCHAR2(25),
     ingredient_name VARCHAR2(50),
+    recipe_ingredient_amount VARCHAR2(30),
     PRIMARY KEY(cocktail_name, ingredient_name),
     CONSTRAINT fk_cocktail_name_recipe_ingredient FOREIGN KEY (cocktail_name) REFERENCES cocktail(cocktail_name),
     CONSTRAINT fk_ingredient_name_recipe_ingredient FOREIGN KEY (ingredient_name) REFERENCES ingredient(ingredient_name)
