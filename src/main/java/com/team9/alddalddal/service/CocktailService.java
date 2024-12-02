@@ -18,6 +18,8 @@ public class CocktailService {
     private RecipeRepository recipeRepository;
     @Autowired
     private IngredientRepository ingredientRepository;
+    @Autowired
+    private Recipe_IngredientRepository recipe_IngredientRepository;
 
     public Page<Cocktail> listCocktails(int page){
         Pageable pageable = PageRequest.of(page - 1, 10);
@@ -34,5 +36,13 @@ public class CocktailService {
 
     public Recipe getRecipeByName(String name){
         return recipeRepository.findByName(name);
+    }
+
+    public List<Recipe_Ingredient> getRecipeIngredientByCocktailName(String name){
+        return recipe_IngredientRepository.findById_Cname(name);
+    }
+
+    public List<Recipe_Ingredient> getRecipeIngredientByIngredientName(String name){
+        return recipe_IngredientRepository.findById_Iname(name);
     }
 }

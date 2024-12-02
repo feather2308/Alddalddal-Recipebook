@@ -149,7 +149,9 @@
     <div class="right">
         <div class="section">
             <h3>재료</h3>
-            <p>asd</p>
+            <p th:each="ingredient : ${ingredients}">
+                [[${ingredient.id.iname}]] [[${ingredient.amount}]]
+            </p>
         </div>
         <div class="section">
             <h3>가니시</h3>

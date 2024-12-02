@@ -2,10 +2,10 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 values ('코냑', 'cognac', '프랑스 코냑 지방에서 생산하는 포도주 베이스 브랜디이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('초콜릿 리큐어(브라운)', 'creme-de-cacao-brown', '카카오를 기본으로 한 리큐어로, 달콤하고 풍부한 맛이 특징입니다.');
+VALUES ('크렘 드 카카오 브라운', 'creme-de-cacao-brown', '카카오를 기본으로 한 리큐어로, 달콤하고 풍부한 맛이 특징입니다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('살구 브랜디', 'apricot-brandy', '살구 맛이 나는 브랜디로, 주로 달콤한 칵테일에 사용된다.');
+VALUES ('애프리콧 브랜디', 'apricot-brandy', '살구 맛이 나는 브랜디로, 주로 달콤한 칵테일에 사용된다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('비터 캄파리', 'bitter-campari', '이탈리안 비터 리큐어로, 고유의 쓴맛과 허브 향이 특징이다. 칵테일에 강렬한 맛을 더해준다.');
@@ -41,13 +41,13 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('프로세코', 'prosecco', '이탈리아에서 생산되는 스파클링 와인으로, 칵테일에 상큼하고 가벼운 거품을 더해준다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('소다수', 'soda-water', '탄산이 포함된 물로, 칵테일에 청량감을 더해주는 기본적인 재료이다.');
+VALUES ('탄산수', 'soda-water', '탄산이 포함된 물로, 칵테일에 청량감을 더해주는 기본적인 재료이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('스위트 레드 베르무트', 'sweet-red-vermouth', '달콤하고 허브향이 나는 이탈리안 리큐어로, 칵테일에 깊은 맛을 더한다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('화이트 피치 퓨레', 'white-peach-puree', '신선한 흰 복숭아를 갈아서 만든 퓨레로, 칵테일에 달콤하고 상큼한 복숭아 맛을 더해준다.');
+VALUES ('화이트 복숭아 퓨레', 'white-peach-puree', '신선한 흰 복숭아를 갈아서 만든 퓨레로, 칵테일에 달콤하고 상큼한 복숭아 맛을 더해준다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('아로마틱 비터스', 'aromatic-bitters', '다양한 허브와 스파이스로 만들어진 강한 향의 리큐어로, 칵테일에 쓴맛과 복잡한 풍미를 더한다.');
@@ -158,10 +158,13 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('라즈베리 시럽', 'raspberry-syrup', '신선한 라즈베리로 만든 달콤한 시럽으로, 칵테일에 풍부한 과일 향을 더한다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('설탕 큐브', 'sugar-cube', '칵테일에 단맛을 더하기 위해 사용하는 정제된 설탕 블록이다.');
+VALUES ('각설탕', 'sugar-cube', '칵테일에 단맛을 더하기 위해 사용하는 정제된 설탕 블록이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('에이지드 럼', 'aged-rum', '오랜 시간 숙성시켜 깊고 풍부한 맛을 가진 럼이다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('블렌디드 에이지드 럼', 'blended-aged-rum', '오랜 숙성을 거친 다양한 럼의 혼합으로, 깊고 복합적인 풍미가 특징입니다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('올스파이스 세인트 엘리자베스', 'allspice-saint-elizabeth', '올스파이스 베리를 기반으로 만든 리큐어로, 따뜻한 향신료 풍미를 제공한다.');
@@ -251,6 +254,9 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('데메라라 설탕 시럽', 'demerara-sugar-syrup', '데메라라 설탕으로 만든 시럽으로, 깊고 풍부한 단맛이 특징이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('데메라라 럼', 'demerara-rum', '고급 사탕수수에서 추출한 원료로 만든 럼주로, 풍부한 카라멜 향과 달콤한 맛이 특징입니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('돔 베네딕틴', 'dom-benedictine', '프랑스에서 제조된 허브와 향신료 기반의 고급 리큐어이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
@@ -278,6 +284,9 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('페르넷', 'fernet', '이탈리아 허브 리큐어로, 강한 쓴맛과 약용 풍미가 특징이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('페르넷 브랑카', 'fernet-branca', '이탈리아산 아마로의 한 분류인 페르넷의 일종으로 개중 대표격인 리큐르로, 다소 쓴 맛과 독특한 향이 특징입니다. 주로 칵테일에서 풍미를 더하는 역할을 합니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('생강 슬라이스', 'gengibre-slice', '생강을 얇게 썰어 칵테일 장식이나 향미로 사용한다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
@@ -293,7 +302,7 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('골드 자메이칸 럼', 'gold-jamaican-rum', '자메이카에서 생산된 중간 정도의 숙성 럼으로, 풍부한 맛과 색상이 특징이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('골드 푸에르토리코 럼', 'gold-puerto-rican-rum', '푸에르토리코에서 생산된 부드럽고 균형 잡힌 맛의 중간 숙성 럼이다.');
+VALUES ('골드 푸에르토 리코 럼', 'gold-puerto-rican-rum', '푸에르토리코에서 생산된 부드럽고 균형 잡힌 맛의 중간 숙성 럼이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('고슬링스 럼', 'goslings-rum', '버뮤다에서 생산된 다크 럼으로, 깊고 강렬한 풍미가 특징이다.');
@@ -377,10 +386,10 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('팔로 코르타도', 'palo-cortado', '스페인산 셰리 와인으로, 복합적인 맛과 향이 특징이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('패션 프루트 리큐어', 'passion-fruit-liqueur', '패션프루트로 만든 리큐어로, 상큼하고 열대적인 풍미를 지닌다.');
+VALUES ('패션프루트 리큐어', 'passion-fruit-liqueur', '패션프루트로 만든 리큐어로, 상큼하고 열대적인 풍미를 지닌다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('패션 프루트 퓌레', 'passion-fruit-puree', '신선한 패션프루트를 퓌레로 만들어, 칵테일에 과일의 진한 맛과 향을 더한다.');
+VALUES ('패션프루트 퓨레', 'passion-fruit-puree', '신선한 패션프루트를 퓌레로 만들어, 칵테일에 과일의 진한 맛과 향을 더한다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('패션프루트 시럽', 'passionfruit-syrup', '패션프루트를 기반으로 한 달콤하고 상큼한 시럽으로, 칵테일에 열대적인 풍미를 더한다.');
@@ -467,7 +476,10 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('테킬라 100% 아가베', 'tequila-100-agave', '100% 아가베로 만든 진정한 테킬라로, 부드럽고 자연스러운 맛을 지닌다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('바닐라 익스트랙', 'vanilla-extract', '바닐라 향을 추출하여 만든 농축액으로, 다양한 칵테일과 디저트에 풍미를 더한다.');
+VALUES ('아가베 넥타', 'agave-nectar', '아가베 식물에서 추출한 천연 감미료로, 부드러운 단맛과 낮은 혈당 지수가 특징입니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('바닐라 추출물', 'vanilla-extract', '바닐라 향을 추출하여 만든 농축액으로, 다양한 칵테일과 디저트에 풍미를 더한다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('보드카 시트론', 'vodka-citron', '레몬 향이 첨가된 보드카로, 상큼한 맛과 청량감을 지닌다.');
@@ -476,7 +488,7 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('보드카 바닐라', 'vodka-vanilla', '바닐라 향이 첨가된 보드카로, 부드럽고 달콤한 맛이 특징이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('화이트 크림 드 멘뜨', 'white-creme-de-menthe', '상쾌한 민트 향이 강한 크림 리큐어로, 달콤하고 시원한 맛이 특징이다.');
+VALUES ('화이트 크렘 드 멘뜨', 'white-creme-de-menthe', '상쾌한 민트 향이 강한 크림 리큐어로, 달콤하고 시원한 맛이 특징이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('화이트 쿠반 롬', 'white-cuban-ron', '상큼하고 달콤한 맛을 지닌 백색의 럼으로, 카리브해의 특산물이다.');
@@ -486,3 +498,21 @@ VALUES ('화이트 스무스 그라파', 'white-smooth-grappa', '이탈리아에
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('옐로우 샤르트뢰즈', 'yellow-chartreuse', '프랑스의 전통적인 허브 리큐어로, 달콤하고 강렬한 허브 맛이 특징이다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('라임 웨지', 'lime-wedge', '라임을 작은 조각으로 자른 것으로, 칵테일의 장식이나 맛을 더하기 위해 사용됩니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('마라스키노 리큐어', 'maraschino-liqueur', '체리 기반의 리큐어로, 달콤하고 가벼운 체리 맛이 특징입니다. 칵테일에 풍미를 더하는 역할을 합니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('사탕수수당', 'cane-sugar', '사탕수수에서 추출한 당으로, 달콤한 맛을 칵테일에 더하는데 사용됩니다. 보통 칵테일에서 당도를 조절하는 역할을 합니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('테킬라', 'tequila', '멕시코의 전통적인 증류주로, 블루 아가베 식물에서 추출된 주스를 발효시켜 만듭니다. 은은한 아가베 향과 깔끔한 맛이 특징입니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('사탕수수 주스', 'sugar-cane-juice', '사탕수수에서 추출한 천연 단맛의 주스로, 칵테일에 풍미와 단맛을 더하는 데 사용됩니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('바닐라 슈가', 'vanilla-sugar', '바닐라 향이 첨가된 설탕으로, 디저트나 칵테일에 독특한 풍미를 더하는 데 사용됩니다.');
