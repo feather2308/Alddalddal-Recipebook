@@ -164,6 +164,9 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('에이지드 럼', 'aged-rum', '오랜 시간 숙성시켜 깊고 풍부한 맛을 가진 럼이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('블렌디드 에이지드 럼', 'blended-aged-rum', '오랜 숙성을 거친 다양한 럼의 혼합으로, 깊고 복합적인 풍미가 특징입니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('올스파이스 세인트 엘리자베스', 'allspice-saint-elizabeth', '올스파이스 베리를 기반으로 만든 리큐어로, 따뜻한 향신료 풍미를 제공한다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
@@ -251,6 +254,9 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('데메라라 설탕 시럽', 'demerara-sugar-syrup', '데메라라 설탕으로 만든 시럽으로, 깊고 풍부한 단맛이 특징이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('데메라라 럼', 'demerara-rum', '고급 사탕수수에서 추출한 원료로 만든 럼주로, 풍부한 카라멜 향과 달콤한 맛이 특징입니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('돔 베네딕틴', 'dom-benedictine', '프랑스에서 제조된 허브와 향신료 기반의 고급 리큐어이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
@@ -296,7 +302,7 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('골드 자메이칸 럼', 'gold-jamaican-rum', '자메이카에서 생산된 중간 정도의 숙성 럼으로, 풍부한 맛과 색상이 특징이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('골드 푸에르토리코 럼', 'gold-puerto-rican-rum', '푸에르토리코에서 생산된 부드럽고 균형 잡힌 맛의 중간 숙성 럼이다.');
+VALUES ('골드 푸에르토 리코 럼', 'gold-puerto-rican-rum', '푸에르토리코에서 생산된 부드럽고 균형 잡힌 맛의 중간 숙성 럼이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('고슬링스 럼', 'goslings-rum', '버뮤다에서 생산된 다크 럼으로, 깊고 강렬한 풍미가 특징이다.');
@@ -380,10 +386,10 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('팔로 코르타도', 'palo-cortado', '스페인산 셰리 와인으로, 복합적인 맛과 향이 특징이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('패션 프루트 리큐어', 'passion-fruit-liqueur', '패션프루트로 만든 리큐어로, 상큼하고 열대적인 풍미를 지닌다.');
+VALUES ('패션프루트 리큐어', 'passion-fruit-liqueur', '패션프루트로 만든 리큐어로, 상큼하고 열대적인 풍미를 지닌다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('패션 프루트 퓌레', 'passion-fruit-puree', '신선한 패션프루트를 퓌레로 만들어, 칵테일에 과일의 진한 맛과 향을 더한다.');
+VALUES ('패션프루트 퓨레', 'passion-fruit-puree', '신선한 패션프루트를 퓌레로 만들어, 칵테일에 과일의 진한 맛과 향을 더한다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('패션프루트 시럽', 'passionfruit-syrup', '패션프루트를 기반으로 한 달콤하고 상큼한 시럽으로, 칵테일에 열대적인 풍미를 더한다.');
@@ -470,7 +476,10 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('테킬라 100% 아가베', 'tequila-100-agave', '100% 아가베로 만든 진정한 테킬라로, 부드럽고 자연스러운 맛을 지닌다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('바닐라 익스트랙', 'vanilla-extract', '바닐라 향을 추출하여 만든 농축액으로, 다양한 칵테일과 디저트에 풍미를 더한다.');
+VALUES ('아가베 넥타', 'agave-nectar', '아가베 식물에서 추출한 천연 감미료로, 부드러운 단맛과 낮은 혈당 지수가 특징입니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('바닐라 추출물', 'vanilla-extract', '바닐라 향을 추출하여 만든 농축액으로, 다양한 칵테일과 디저트에 풍미를 더한다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('보드카 시트론', 'vodka-citron', '레몬 향이 첨가된 보드카로, 상큼한 맛과 청량감을 지닌다.');
@@ -479,7 +488,7 @@ INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('보드카 바닐라', 'vodka-vanilla', '바닐라 향이 첨가된 보드카로, 부드럽고 달콤한 맛이 특징이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
-VALUES ('화이트 크림 드 멘뜨', 'white-creme-de-menthe', '상쾌한 민트 향이 강한 크림 리큐어로, 달콤하고 시원한 맛이 특징이다.');
+VALUES ('화이트 크렘 드 멘뜨', 'white-creme-de-menthe', '상쾌한 민트 향이 강한 크림 리큐어로, 달콤하고 시원한 맛이 특징이다.');
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('화이트 쿠반 롬', 'white-cuban-ron', '상큼하고 달콤한 맛을 지닌 백색의 럼으로, 카리브해의 특산물이다.');
@@ -498,3 +507,12 @@ VALUES ('마라스키노 리큐어', 'maraschino-liqueur', '체리 기반의 리
 
 INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
 VALUES ('사탕수수당', 'cane-sugar', '사탕수수에서 추출한 당으로, 달콤한 맛을 칵테일에 더하는데 사용됩니다. 보통 칵테일에서 당도를 조절하는 역할을 합니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('테킬라', 'tequila', '멕시코의 전통적인 증류주로, 블루 아가베 식물에서 추출된 주스를 발효시켜 만듭니다. 은은한 아가베 향과 깔끔한 맛이 특징입니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('사탕수수 주스', 'sugar-cane-juice', '사탕수수에서 추출한 천연 단맛의 주스로, 칵테일에 풍미와 단맛을 더하는 데 사용됩니다.');
+
+INSERT INTO INGREDIENT (INGREDIENT_NAME, INGREDIENT_IMAGE, INGREDIENT_LORE)
+VALUES ('바닐라 슈가', 'vanilla-sugar', '바닐라 향이 첨가된 설탕으로, 디저트나 칵테일에 독특한 풍미를 더하는 데 사용됩니다.');

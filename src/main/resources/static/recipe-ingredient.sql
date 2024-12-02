@@ -12,7 +12,7 @@ VALUES ('Americano', '비터 캄파리', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Americano', '스위트 레드 베르무트', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Americano', '소다수', '스플래시');
+VALUES ('Americano', '탄산수', '스플래시');
 
 -- Angel Face
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -350,21 +350,21 @@ VALUES ('Horse''s Neck', '코냑', '40ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Horse''s Neck', '진저 에일', '120ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Horse''s Neck', '앙고스투라 비터즈', '');
+VALUES ('Horse''s Neck', '앙고스투라 비터스', '');
 
 -- IBA Tiki
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('IBA Tiki', '론 프로펀도 하바나 클럽', '30ml');
+VALUES ('IBA Tiki', '론 프로푼도 하바나 클럽', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('IBA Tiki', '론 스모키 하바나 클럽', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('IBA Tiki', '리커 아마레또', '15ml');
+VALUES ('IBA Tiki', '아마레토 리큐어', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('IBA Tiki', '리커 프랜젤리코', '5ml');
+VALUES ('IBA Tiki', '프란젤리코 리큐어', '5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('IBA Tiki', '마라스키노 리큐어', '5방울');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('IBA Tiki', '패션프루트 퓌레', '30ml');
+VALUES ('IBA Tiki', '패션프루트 퓨레', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('IBA Tiki', '파인애플 주스', '90ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -374,17 +374,17 @@ VALUES ('IBA Tiki', '생강 슬라이스', '1개');
 
 -- Illegal
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Illegal', '에스파딘 메스칼', '30ml');
+VALUES ('Illegal', '에스파딘 메즈칼', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Illegal', '자메이카 오버프루프 화이트 럼', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Illegal', '팔레르넘', '15ml');
+VALUES ('Illegal', '팔레넘', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Illegal', '마라스키노 리큐어', '1바 스푼');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Illegal', '신선한 라임 주스', '22.5ml');
+VALUES ('Illegal', '라임 주스', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Illegal', '심플 시럽', '15ml');
+VALUES ('Illegal', '시럽', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Illegal', '달걀 흰자', '약간');
 
@@ -434,7 +434,7 @@ VALUES ('Last Word', '그린 샤르트뢰즈', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Last Word', '마라스키노 리큐어', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Last Word', '신선한 라임 주스', '22.5ml');
+VALUES ('Last Word', '라임 주스', '22.5ml');
 
 -- Lemon Drop Martini
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -442,7 +442,7 @@ VALUES ('Lemon Drop Martini', '보드카', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Lemon Drop Martini', '트리플 섹', '20ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Lemon Drop Martini', '신선한 레몬 주스', '15ml');
+VALUES ('Lemon Drop Martini', '레몬 주스', '15ml');
 
 -- Long Island Iced Tea
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -454,11 +454,11 @@ VALUES ('Long Island Iced Tea', '화이트 럼', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Long Island Iced Tea', '진', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Long Island Iced Tea', '코인트로', '15ml');
+VALUES ('Long Island Iced Tea', '코앵트로', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Long Island Iced Tea', '레몬 주스', '25ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Long Island Iced Tea', '심플 시럽', '30ml');
+VALUES ('Long Island Iced Tea', '시럽', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Long Island Iced Tea', '콜라', '');
 
@@ -472,9 +472,9 @@ VALUES ('Mai Tai', '오렌지 큐라소', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Mai Tai', '오르제 시럽 (아몬드)', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Mai Tai', '신선한 라임 주스', '30ml');
+VALUES ('Mai Tai', '라임 주스', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Mai Tai', '심플 시럽', '7.5ml');
+VALUES ('Mai Tai', '시럽', '7.5ml');
 
 -- Manhattan
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -482,15 +482,15 @@ VALUES ('Manhattan', '라이 위스키', '50ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Manhattan', '스위트 레드 베르무트', '20ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Manhattan', '앙고스투라 비터즈', '1대시');
+VALUES ('Manhattan', '앙고스투라 비터스', '1대시');
 
 -- Margarita
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Margarita', '테킬라 (100% 아가베)', '50ml');
+VALUES ('Margarita', '테킬라 100% 아가베', '50ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Margarita', '트리플 섹', '20ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Margarita', '신선한 라임 주스', '15ml');
+VALUES ('Margarita', '라임 주스', '15ml');
 
 -- Martinez
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -500,13 +500,13 @@ VALUES ('Martinez', '스위트 레드 베르무트', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Martinez', '마라스키노 리큐어', '1바 스푼');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Martinez', '오렌지 비터즈', '2대시');
+VALUES ('Martinez', '오렌지 비터스', '2대시');
 
 -- Mary Pickford
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Mary Pickford', '화이트 럼', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Mary Pickford', '신선한 파인애플 주스', '45ml');
+VALUES ('Mary Pickford', '파인애플 주스', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Mary Pickford', '마라스키노 리큐어', '7.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -514,7 +514,7 @@ VALUES ('Mary Pickford', '그레나딘 시럽', '5ml');
 
 -- Mimosa
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Mimosa', '신선한 오렌지 주스', '75ml');
+VALUES ('Mimosa', '오렌지 주스', '75ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Mimosa', '프로세코', '75ml');
 
@@ -522,7 +522,7 @@ VALUES ('Mimosa', '프로세코', '75ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Mint Julep', '버번 위스키', '60ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Mint Julep', '신선한 민트 잎', '4개');
+VALUES ('Mint Julep', '민트 잎', '4개');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Mint Julep', '파우더 슈가', '1티스푼');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -534,7 +534,7 @@ VALUES ('Missionary''s Downfall', '화이트 럼', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Missionary''s Downfall', '피치 브랜디', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Missionary''s Downfall', '신선한 라임 주스', '15ml');
+VALUES ('Missionary''s Downfall', '라임 주스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Missionary''s Downfall', '허니 믹스', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -544,21 +544,21 @@ VALUES ('Missionary''s Downfall', '파인애플 조각', '3~4개');
 
 -- Mojito
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Mojito', '화이트 쿠바 럼', '45ml');
+VALUES ('Mojito', '화이트 쿠반 롬', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Mojito', '신선한 라임 주스', '20ml');
+VALUES ('Mojito', '라임 주스', '20ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Mojito', '민트 잎', '6개');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Mojito', '화이트 케인 슈가', '2티스푼');
+VALUES ('Mojito', '사탕수수당', '2티스푼');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Mojito', '소다수', '');
+VALUES ('Mojito', '탄산수', '');
 
 -- Monkey Gland
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Monkey Gland', '드라이 진', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Monkey Gland', '신선한 오렌지 주스', '45ml');
+VALUES ('Monkey Gland', '오렌지 주스', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Monkey Gland', '압생트', '1테이블스푼');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -570,17 +570,17 @@ VALUES ('Moscow Mule', '스미르노프 보드카', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Moscow Mule', '진저 비어', '120ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Moscow Mule', '신선한 라임 주스', '10ml');
+VALUES ('Moscow Mule', '라임 주스', '10ml');
 
 -- Naked and Famous
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Naked and Famous', '메즈칼', '22.5ml');
+VALUES ('Naked and Famous', '메스칼', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Naked and Famous', '옐로우 샤르트뢰즈', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Naked and Famous', '아페롤', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Naked and Famous', '신선한 라임 주스', '22.5ml');
+VALUES ('Naked and Famous', '라임 주스', '22.5ml');
 
 -- Negroni
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -592,15 +592,19 @@ VALUES ('Negroni', '스위트 레드 베르무트', '30ml');
 
 -- New York Sour
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('New York Sour', '라이 위스키 또는 버번', '60ml');
+VALUES ('New York Sour', '라이 위스키', '60ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('New York Sour', '심플 시럽', '22.5ml');
+VALUES ('New York Sour', '버번', '(라이 위스키 대신)60ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('New York Sour', '신선한 레몬 주스', '30ml');
+VALUES ('New York Sour', '시럽', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('New York Sour', '계란 흰자', '');
+VALUES ('New York Sour', '레몬 주스', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('New York Sour', '레드 와인 (쉬라즈 또는 말벡)', '15ml');
+VALUES ('New York Sour', '달걀 흰자', '');
+INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
+VALUES ('New York Sour', '시라즈 레드 와인', '15ml');
+INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
+VALUES ('New York Sour', '말벡 레드 와인', '(시라즈 대신)15ml');
 
 -- Old Cuban
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -608,29 +612,33 @@ VALUES ('Old Cuban', '민트 잎', '6~8개');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Old Cuban', '에이지드 럼', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Old Cuban', '신선한 라임 주스', '22.5ml');
+VALUES ('Old Cuban', '라임 주스', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Old Cuban', '심플 시럽', '30ml');
+VALUES ('Old Cuban', '시럽', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Old Cuban', '앙고스투라 비터즈', '2대시');
+VALUES ('Old Cuban', '앙고스투라 비터스', '2대시');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Old Cuban', '브뤼 샴페인 또는 프로세코', '60ml');
+VALUES ('Old Cuban', '브뤼 샴페인', '60ml');
+INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
+VALUES ('Old Cuban', '프로세코', '(브뤼 샴페인 대신)60ml');
 
 -- Old Fashioned
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Old Fashioned', '버번 또는 라이 위스키', '45ml');
+VALUES ('Old Fashioned', '버번', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Old Fashioned', '슈가 큐브', '1개');
+VALUES ('Old Fashioned', '라이 위스키', '(버번 대신)45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Old Fashioned', '앙고스투라 비터즈', '');
+VALUES ('Old Fashioned', '각설탕', '1개');
+INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
+VALUES ('Old Fashioned', '앙고스투라 비터스', '');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Old Fashioned', '물', '');
 
 -- Paloma
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Paloma', '100% 아가베 테킬라', '50ml');
+VALUES ('Paloma', '테킬라 100% 아가베', '50ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Paloma', '신선한 라임', '5ml');
+VALUES ('Paloma', '라임', '5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Paloma', '소금', '한 꼬집');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -644,15 +652,15 @@ VALUES ('Paper Plane', '아마로 노니노', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Paper Plane', '아페롤', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Paper Plane', '신선한 레몬 주스', '30ml');
+VALUES ('Paper Plane', '레몬 주스', '30ml');
 
 -- Paradise
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Paradise', '진', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Paradise', '아프리콧 브랜디', '20ml');
+VALUES ('Paradise', '애프리콧 브랜디', '20ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Paradise', '신선한 오렌지 주스', '15ml');
+VALUES ('Paradise', '오렌지 주스', '15ml');
 
 -- Penicillin
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -660,11 +668,11 @@ VALUES ('Penicillin', '블렌디드 스카치 위스키', '60ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Penicillin', '라가불린 16년', '7.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Penicillin', '신선한 레몬 주스', '22.5ml');
+VALUES ('Penicillin', '레몬 주스', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Penicillin', '허니 시럽', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Penicillin', '신선한 생강 (4분의 1 크기 조각)', '2~3개');
+VALUES ('Penicillin', '생강', '(1/4크기 조각) 2~3개');
 
 -- Pina Colada
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -672,17 +680,17 @@ VALUES ('Pina Colada', '화이트 럼', '50ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Pina Colada', '코코넛 크림', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Pina Colada', '신선한 파인애플 주스', '50ml');
+VALUES ('Pina Colada', '파인애플 주스', '50ml');
 
 -- Pisco Punch
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Pisco Punch', '피스코', '60ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Pisco Punch', '신선한 파인애플 주스', '22.5ml');
+VALUES ('Pisco Punch', '파인애플 주스', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Pisco Punch', '심플 시럽', '15ml');
+VALUES ('Pisco Punch', '시럽', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Pisco Punch', '신선한 레몬 주스', '15ml');
+VALUES ('Pisco Punch', '레몬 주스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Pisco Punch', '드라이 화이트 와인', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -692,15 +700,15 @@ VALUES ('Pisco Punch', '정향', '3개');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Pisco Sour', '피스코', '60ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Pisco Sour', '신선한 레몬 주스', '30ml');
+VALUES ('Pisco Sour', '레몬 주스', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Pisco Sour', '심플 시럽', '20ml');
+VALUES ('Pisco Sour', '시럽', '20ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Pisco Sour', '계란 흰자', '1개');
+VALUES ('Pisco Sour', '달걀 흰자', '1개');
 
 -- Planter's Punch
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Planters Punch', '자메이카 럼', '45ml');
+VALUES ('Planters Punch', '자메이칸 럼', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Planters Punch', '라임 주스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -708,31 +716,31 @@ VALUES ('Planters Punch', '사탕수수 주스', '30ml');
 
 -- Porn Star Martini
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Porn Star Martini', '바닐라 보드카', '50ml');
+VALUES ('Porn Star Martini', '보드카 바닐라', '50ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Porn Star Martini', '패션프루트 리큐르', '20ml');
+VALUES ('Porn Star Martini', '패션프루트 리큐어', '20ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Porn Star Martini', '패션프루트 퓨레', '50ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Porn Star Martini', '바닐라 슈가', '2 바 스푼');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Porn Star Martini', '샴페인 (서빙용)', '50ml');
+VALUES ('Porn Star Martini', '샴페인', '(서빙용) 50ml');
 
 -- Porto Flip
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Porto Flip', '브랜디', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Porto Flip', '레드 토니 포트 와인', '45ml');
+VALUES ('Porto Flip', '레드 타우니 포트 와인', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Porto Flip', '계란 노른자', '10ml');
+VALUES ('Porto Flip', '달걀 노른자', '10ml');
 
 -- Rabo de Galo
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Rabo de Galo', '카샤사', '60ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Rabo de Galo', '스위트 베르무트 Cinzano Rosso', '20ml');
+VALUES ('Rabo de Galo', '스위트 베르무트 친자노 로쏘', '20ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Rabo de Galo', '시나르', '15ml');
+VALUES ('Rabo de Galo', '치나르', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Rabo de Galo', '앙고스투라 비터스', '2 방울 (선택 사항)');
 
@@ -740,21 +748,21 @@ VALUES ('Rabo de Galo', '앙고스투라 비터스', '2 방울 (선택 사항)')
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Ramos Fizz', '진', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Ramos Fizz', '신선한 라임 주스', '15ml');
+VALUES ('Ramos Fizz', '라임 주스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Ramos Fizz', '신선한 레몬 주스', '15ml');
+VALUES ('Ramos Fizz', '레몬 주스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Ramos Fizz', '슈가 시럽', '30ml');
+VALUES ('Ramos Fizz', '시럽', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Ramos Fizz', '크림', '60ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Ramos Fizz', '계란 흰자', '30ml');
+VALUES ('Ramos Fizz', '달걀 흰자', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Ramos Fizz', '오렌지 꽃수', '3 대시');
+VALUES ('Ramos Fizz', '오렌지 플라워 워터', '3 대시');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Ramos Fizz', '바닐라 추출물', '2 방울');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Ramos Fizz', '소다수', '적당량');
+VALUES ('Ramos Fizz', '탄산수', '적당량');
 
 -- Remember the Maine
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -762,19 +770,19 @@ VALUES ('Remember the Maine', '라이 위스키', '60ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Remember the Maine', '스위트 베르무트', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Remember the Maine', '체리 브랜디 Luxardo', '15ml');
+VALUES ('Remember the Maine', '체리 브랜디 럭사르도', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Remember the Maine', '앱센스', '7.5ml');
+VALUES ('Remember the Maine', '압생트', '7.5ml');
 
 -- Russian Spring Punch
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Russian Spring Punch', '보드카', '25ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Russian Spring Punch', '신선한 레몬 주스', '25ml');
+VALUES ('Russian Spring Punch', '레몬 주스', '25ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Russian Spring Punch', '크렘 드 카시스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Russian Spring Punch', '슈가 시럽', '10ml');
+VALUES ('Russian Spring Punch', '시럽', '10ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Russian Spring Punch', '스파클링 와인', '적당량');
 
@@ -782,17 +790,17 @@ VALUES ('Russian Spring Punch', '스파클링 와인', '적당량');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Rusty Nail', '스카치 위스키', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Rusty Nail', '드람뷰이', '25ml');
+VALUES ('Rusty Nail', '드람뷔', '25ml');
 
 -- Sazerac
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Sazerac', '코냑', '50ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Sazerac', '앱센스', '10ml');
+VALUES ('Sazerac', '압생트', '10ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Sazerac', '설탕 큐브', '1개');
+VALUES ('Sazerac', '각설탕', '1개');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Sazerac', '페이초드 비터스', '2 대시');
+VALUES ('Sazerac', '페이쇼 비터스', '2 대시');
 
 -- Sea Breeze
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -808,7 +816,7 @@ VALUES ('Sex on the Beach', '보드카', '40ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Sex on the Beach', '피치 슈냅스', '20ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Sex on the Beach', '신선한 오렌지 주스', '40ml');
+VALUES ('Sex on the Beach', '오렌지 주스', '40ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Sex on the Beach', '크랜베리 주스', '40ml');
 
@@ -818,7 +826,7 @@ VALUES ('Sherry Cobbler', '아몬틸라도 셰리', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Sherry Cobbler', '팔로 코르타도', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Sherry Cobbler', '슈퍼파인 슈가 (혹은 결정된 설탕)', '1 티스푼');
+VALUES ('Sherry Cobbler', '슈퍼파인 설탕', '(혹은 설탕)1 티스푼');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Sherry Cobbler', '오렌지 휠', '1/2개');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -830,21 +838,21 @@ VALUES ('Sidecar', '코냑', '50ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Sidecar', '트리플 섹', '20ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Sidecar', '신선한 레몬 주스', '20ml');
+VALUES ('Sidecar', '레몬 주스', '20ml');
 
 -- Singapore Sling
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Singapore Sling', '진', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Singapore Sling', '체리 상구 모를라코', '15ml');
+VALUES ('Singapore Sling', '체리 상구에 몰라코', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Singapore Sling', '코인트로', '7.5ml');
+VALUES ('Singapore Sling', '코앵트로', '7.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Singapore Sling', 'DOM 베네딕틴', '7.5ml');
+VALUES ('Singapore Sling', '돔 베네딕틴', '7.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Singapore Sling', '신선한 파인애플 주스', '120ml');
+VALUES ('Singapore Sling', '파인애플 주스', '120ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Singapore Sling', '신선한 라임 주스', '15ml');
+VALUES ('Singapore Sling', '라임 주스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Singapore Sling', '그레나딘 시럽', '10ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -854,13 +862,13 @@ VALUES ('Singapore Sling', '앙고스투라 비터스', '1 대시');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('South Side', '런던 드라이 진', '60ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('South Side', '신선한 레몬 주스', '30ml');
+VALUES ('South Side', '레몬 주스', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('South Side', '슈가 시럽', '15ml');
+VALUES ('South Side', '시럽', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('South Side', '민트 잎', '5~6개');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('South Side', '계란 흰자', '몇 방울 (선택 사항)');
+VALUES ('South Side', '달걀 흰자', '몇 방울 (선택 사항)');
 
 -- Spicy Fifty
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -868,11 +876,11 @@ VALUES ('Spicy Fifty', '보드카 바닐라', '50ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Spicy Fifty', '엘더플라워 코디얼', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Spicy Fifty', '신선한 라임 주스', '15ml');
+VALUES ('Spicy Fifty', '라임 주스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Spicy Fifty', '모닌 꿀 시럽', '10ml');
+VALUES ('Spicy Fifty', '모닌 허니 시럽', '10ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Spicy Fifty', '붉은 칠리 페퍼 슬라이스', '2개');
+VALUES ('Spicy Fifty', '레드 칠리 페퍼', '(슬라이스)2개');
 
 -- Spritz
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -880,21 +888,23 @@ VALUES ('Spritz', '프로세코', '90ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Spritz', '아페롤', '60ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Spritz', '소다수', '적당량');
+VALUES ('Spritz', '탄산수', '적당량');
 
 -- Stinger
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Stinger', '코냑', '50ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Stinger', '화이트 크렘 드 민트', '20ml');
+VALUES ('Stinger', '화이트 크렘 드 멘뜨', '20ml');
 
 -- Suffering Bastard
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Suffering Bastard', '코냑 또는 브랜디', '30ml');
+VALUES ('Suffering Bastard', '코냑', '30ml');
+INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
+VALUES ('Suffering Bastard', '브랜디', '(코냑 대신)30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Suffering Bastard', '진', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Suffering Bastard', '신선한 라임 주스', '15ml');
+VALUES ('Suffering Bastard', '라임 주스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Suffering Bastard', '앙고스투라 비터스', '2 대시');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -904,25 +914,25 @@ VALUES ('Suffering Bastard', '진저 비어', '적당량');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Tequila Sunrise', '테킬라', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Tequila Sunrise', '신선한 오렌지 주스', '90ml');
+VALUES ('Tequila Sunrise', '오렌지 주스', '90ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Tequila Sunrise', '그레나딘 시럽', '15ml');
 
 -- Three Dots and a Dash
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Three Dots and a Dash', '흐므 마르티니크 아그리콜 럼', '45ml');
+VALUES ('Three Dots and a Dash', '마르티니크 아그리콜 럼', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Three Dots and a Dash', '블렌디드 에이지드 럼', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Three Dots and a Dash', '팔레르넘', '7.5ml');
+VALUES ('Three Dots and a Dash', '팔레넘', '7.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Three Dots and a Dash', '올스파이스 세인트 엘리자베스', '7.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Three Dots and a Dash', '신선한 라임 주스', '15ml');
+VALUES ('Three Dots and a Dash', '라임 주스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Three Dots and a Dash', '신선한 오렌지 주스', '15ml');
+VALUES ('Three Dots and a Dash', '오렌지 주스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Three Dots and a Dash', '꿀 시럽', '15ml');
+VALUES ('Three Dots and a Dash', '허니 시럽', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Three Dots and a Dash', '앙고스투라 비터스', '2 대시');
 
@@ -938,31 +948,31 @@ VALUES ('Tipperary', '앙고스투라 비터스', '2 대시');
 
 -- Tommy's Margarita
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Tommy''s Margarita', '100% 아가베 테킬라', '60ml');
+VALUES ('Tommy''s Margarita', '테킬라 100% 아가베', '60ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Tommy''s Margarita', '신선한 라임 주스', '30ml');
+VALUES ('Tommy''s Margarita', '라임 주스', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Tommy''s Margarita', '아가베 넥타', '30ml');
 
 -- Trinidad Sour
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Trinidad Sour', '앵고스투라 비터스', '45ml');
+VALUES ('Trinidad Sour', '앙고스투라 비터스', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Trinidad Sour', '오르제 시럽', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Trinidad Sour', '신선한 레몬 주스', '22.5ml');
+VALUES ('Trinidad Sour', '레몬 주스', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Trinidad Sour', '라이 위스키', '15ml');
 
 -- Tuxedo
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Tuxedo', '올드 탐 진', '30ml');
+VALUES ('Tuxedo', '올드 톰 진', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Tuxedo', '드라이 베르무트', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Tuxedo', '마라슈키노 룩사르도', '0.5 바 스푼');
+VALUES ('Tuxedo', '마라스키노 럭사르도', '0.5 바 스푼');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Tuxedo', '앱생트', '0.25 바 스푼');
+VALUES ('Tuxedo', '압생트', '0.25 바 스푼');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Tuxedo', '오렌지 비터스', '3 대시');
 
@@ -970,13 +980,13 @@ VALUES ('Tuxedo', '오렌지 비터스', '3 대시');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Ve.N.To', '화이트 스무스 그라파', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Ve.N.To', '신선한 레몬 주스', '22.5ml');
+VALUES ('Ve.N.To', '레몬 주스', '22.5ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Ve.N.To', '허니 믹스 (카모마일로 물 대신 사용)', '15ml');
+VALUES ('Ve.N.To', '허니 믹스', '(카모마일 물 대신) 15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Ve.N.To', '카모마일 코르디알', '15ml');
+VALUES ('Ve.N.To', '카모마일 코디얼', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Ve.N.To', '계란 흰자', '몇 방울 (선택 사항)');
+VALUES ('Ve.N.To', '달걀 흰자', '몇 방울 (선택 사항)');
 
 -- Vesper
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -984,7 +994,7 @@ VALUES ('Vesper', '진', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Vesper', '보드카', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Vesper', '릴렛 블랑', '7.5ml');
+VALUES ('Vesper', '릴레 블랑', '7.5ml');
 
 -- Vieux Carré
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -996,17 +1006,17 @@ VALUES ('Vieux Carre', '스위트 베르무트', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Vieux Carre', '베네딕틴', '1 바 스푼');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Vieux Carre', '페이초우 비터스', '2 대시');
+VALUES ('Vieux Carre', '페이쇼 비터스', '2 대시');
 
 -- Whiskey Sour
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Whiskey Sour', '버번 위스키', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Whiskey Sour', '신선한 레몬 주스', '25ml');
+VALUES ('Whiskey Sour', '레몬 주스', '25ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Whiskey Sour', '슈가 시럽', '20ml');
+VALUES ('Whiskey Sour', '시럽', '20ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Whiskey Sour', '계란 흰자', '몇 방울 (선택 사항)');
+VALUES ('Whiskey Sour', '달걀 흰자', '몇 방울 (선택 사항)');
 
 -- White Lady
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
@@ -1014,19 +1024,19 @@ VALUES ('White Lady', '진', '40ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('White Lady', '트리플 섹', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('White Lady', '신선한 레몬 주스', '20ml');
+VALUES ('White Lady', '레몬 주스', '20ml');
 
 -- Zombie
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Zombie', '자메이카 다크 럼', '45ml');
+VALUES ('Zombie', '자메이칸 다크 럼', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Zombie', '골드 푸에르토 리코 럼', '45ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Zombie', '데메라라 럼', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Zombie', '신선한 라임 주스', '20ml');
+VALUES ('Zombie', '라임 주스', '20ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Zombie', '팔레르넘', '15ml');
+VALUES ('Zombie', '팔레넘', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Zombie', '돈스 믹스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
