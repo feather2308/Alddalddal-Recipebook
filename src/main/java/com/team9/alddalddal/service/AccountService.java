@@ -61,9 +61,21 @@ public class AccountService {
         return favorite.isPresent();
     }
 
+    public Optional<Favorite> getFavorite(String id, String name) {
+        return favoriteRepository.findById_IdAndId_Name(id, name);
+    }
+
+    public void addFavorite(Favorite favorite) {
+        favoriteRepository.save(favorite);
+    }
+
     public void addFavorite(String id, String name) {
         Favorite favorite = new Favorite(id, name);
         favoriteRepository.save(favorite);
+    }
+
+    public void deleteFavorite(Favorite favorite) {
+        favoriteRepository.delete(favorite);
     }
 
     public void deleteFavorite(String id, String name) {

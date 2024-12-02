@@ -1,7 +1,10 @@
 package com.team9.alddalddal.controller;
 
 import com.team9.alddalddal.entity.Account;
+import com.team9.alddalddal.entity.Cocktail;
+import com.team9.alddalddal.entity.Favorite;
 import com.team9.alddalddal.service.AccountService;
+import com.team9.alddalddal.service.CocktailService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,10 +14,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class AccountController {
     @Autowired
     private AccountService accountService;
+    @Autowired
+    private CocktailService cocktailService;
 
     @GetMapping("/signin")
     public String signinGet() {
@@ -62,7 +70,20 @@ public class AccountController {
         String id = (String) session.getAttribute("user");
         Account account = accountService.getAccount(id);
 
+        List<Favorite> favorites = accountService.getFavoriteById(id);
+
+        List<Cocktail> cocktails = new ArrayList<>();
+        for (Favorite favorite : favorites) {
+            String name = favorite.getId().getName();
+            Cocktail cocktail = cocktailService.getCocktailByName(name);
+            if(cocktail != null) {
+                cocktails.add(cocktail);
+            }
+        }
+
+        model.addAttribute("cocktails", cocktails);
         model.addAttribute("account", account);
+
         return "mypage";
     }
 }
