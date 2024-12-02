@@ -1,5 +1,6 @@
 package com.team9.alddalddal.controller;
 
+import com.team9.alddalddal.entity.Account;
 import com.team9.alddalddal.service.AccountService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,7 @@ public class AccountController {
         // 로그인 처리 로직을 추가합니다. 예시로 아이디와 비밀번호 검증.
         if (accountService.authenticate(id, password)) {
             // 로그인 성공 시 메인 페이지로 리디렉션
-            session.setAttribute("id", id);
+            session.setAttribute("user", id);
             return "redirect:/";
         } else {
             // 로그인 실패 시 오류 메시지와 함께 로그인 페이지로 다시 이동
@@ -58,8 +59,10 @@ public class AccountController {
 
     @GetMapping("/mypage")
     public String mypageGet(HttpSession session, Model model) {
-        String id = (String) session.getAttribute("id");
-        model.addAttribute("id", id);
+        String id = (String) session.getAttribute("user");
+        Account account = accountService.getAccount(id);
+
+        model.addAttribute("account", account);
         return "mypage";
     }
 }

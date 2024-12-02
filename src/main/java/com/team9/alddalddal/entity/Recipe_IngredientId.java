@@ -17,7 +17,6 @@ public class Recipe_IngredientId implements Serializable {
     private String iname;
 
     public Recipe_IngredientId() {}
-
     public Recipe_IngredientId(String cocktail_name, String ingredient_name) {
         this.cname = cocktail_name;
         this.iname = ingredient_name;

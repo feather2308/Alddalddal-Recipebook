@@ -16,6 +16,7 @@ CREATE TABLE tag (
 CREATE TABLE cocktail (
     cocktail_name VARCHAR2(25) PRIMARY KEY,
     cocktail_image VARCHAR2(50),
+    cocktail_easylore VARCHAR2(50),
     cocktail_lore VARCHAR2(500)
 );
 
@@ -30,9 +31,9 @@ CREATE TABLE cocktail_tag (
 CREATE TABLE account (
     account_id VARCHAR2(16) PRIMARY KEY,
     account_pw VARCHAR2(16) NOT NULL,
-    account_name VARCHAR2(20) NOT NULL,
-    account_nickname VARCHAR2(20) NOT NULL,
-    account_email VARCHAR2(20) NOT NULL
+    account_name VARCHAR2(10) NOT NULL,
+    account_nickname VARCHAR2(6) NOT NULL,
+    account_email VARCHAR2(40) NOT NULL
 );
 
 CREATE TABLE favorite (

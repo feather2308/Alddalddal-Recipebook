@@ -1,16 +1,23 @@
 package com.team9.alddalddal.service;
 
 import com.team9.alddalddal.entity.Account;
+import com.team9.alddalddal.entity.Favorite;
+import com.team9.alddalddal.entity.FavoriteId;
 import com.team9.alddalddal.repository.AccountRepository;
+import com.team9.alddalddal.repository.FavoriteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class AccountService {
     @Autowired
     private AccountRepository accountRepository;
+    @Autowired
+    private FavoriteRepository favoriteRepository;
 
     public void add(String id, String password,
                     String name, String nickname, String email) {
@@ -34,5 +41,32 @@ public class AccountService {
         } else {
             return false;
         }
+    }
+
+    public Account getAccount(String id) {
+        Optional<Account> account = accountRepository.findById(id);
+        return account.orElse(null);
+    }
+
+    public List<Favorite> getFavoriteById(String id) {
+        return favoriteRepository.findById_Id(id);
+    }
+
+    public List<Favorite> getFavoriteByName(String name) {
+        return favoriteRepository.findById_Name(name);
+    }
+
+    public boolean isFavorite(String id, String name) {
+        Optional<Favorite> favorite = favoriteRepository.findById_IdAndId_Name(id, name);
+        return favorite.isPresent();
+    }
+
+    public void addFavorite(String id, String name) {
+        Favorite favorite = new Favorite(id, name);
+        favoriteRepository.save(favorite);
+    }
+
+    public void deleteFavorite(String id, String name) {
+        favoriteRepository.deleteById(new FavoriteId(id, name));
     }
 }
