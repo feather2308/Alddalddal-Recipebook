@@ -3,6 +3,7 @@ package com.team9.alddalddal.controller;
 import com.team9.alddalddal.entity.Cocktail;
 import com.team9.alddalddal.entity.Ingredient;
 import com.team9.alddalddal.entity.Recipe;
+import com.team9.alddalddal.entity.Recipe_Ingredient;
 import com.team9.alddalddal.service.CocktailService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class CocktailController {
@@ -34,9 +36,11 @@ public class CocktailController {
     public String recipe(@RequestParam String cocktail, HttpSession session, Model model) {
         Cocktail cocktail1 = cocktailService.getCocktailByName(cocktail);
         Recipe recipe = cocktailService.getRecipeByName(cocktail);
+        List<Recipe_Ingredient> ingredient = cocktailService.getRecipeIngredientByCocktailName(cocktail);
 
         model.addAttribute("cocktail", cocktail1);
         model.addAttribute("recipe", recipe);
+        model.addAttribute("ingredients", ingredient);
 
         return "recipe";
     }
