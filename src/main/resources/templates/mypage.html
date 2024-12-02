@@ -43,6 +43,8 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #fff;
+            height: 400px;  /* 고정 높이 */
+            overflow-y: auto; /* 세로 스크롤 추가 */
         }
 
         .cocktail-list ul {
@@ -53,7 +55,53 @@
         .cocktail-list li {
             margin: 8px 0;
             font-size: 16px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
+
+        .cocktail-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .cocktail-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .cocktail-item h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .star {
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        /* 체크된 별 */
+        .star.checked {
+            color: gold;
+        }
+
+        /* 체크되지 않은 별 */
+        .star.unchecked {
+            color: gray;
+        }
+
+        /* 마우스 오버 시 별 색상 변경 */
+        .star:hover {
+            color: #ffcc00; /* 마우스 오버 시 금색으로 변경 */
+        }
+
     </style>
 </head>
 <body>
@@ -75,13 +123,56 @@
         <div class="cocktail-list">
             <!-- 칵테일 좋아요 목록을 동적으로 삽입 -->
             <ul>
-                <!--
-                <li th:each="cocktail : ${likedCocktails}">
-                    <span th:text="${cocktail.name}"></span> --><!-- 칵테일 이름 표시 -->
-                <!-- </li> -->
+                <li th:each="cocktail : ${cocktails}">
+                    <div class="cocktail-item">
+                        <a th:href="@{'/recipe?cocktail=' + ${cocktail.name}}" style="text-decoration: none; color: inherit;">
+                            <img th:src="@{'/images/' + ${cocktail.image} + '.webp'}" th:alt="@{${cocktail.name} + ' Image'}" />
+                            <h3 th:text="${cocktail.name}">Cocktail Name</h3>
+                        </a>
+                        <!-- 별 추가 -->
+                        <span class="star"
+                              th:classappend="'favorite-star checked'"
+                              th:text="'★'"
+                              th:data-id="${account.id}"
+                              th:data-cocktail="${cocktail.name}">
+                        </span>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
 </div>
+
+<script>
+    document.querySelectorAll('.favorite-star').forEach(function(star) {
+        star.addEventListener('click', function() {
+            const id = this.getAttribute('data-id');
+            const cocktailName = this.getAttribute('data-cocktail');
+
+            fetch('/favorite/toggle',{
+                method: 'POST',
+                body: JSON.stringify({ id: id, cocktailName: cocktailName }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json(); // 응답이 성공적일 경우 JSON 파싱
+                    } else {
+                        throw new Error('네트워크 오류 발생');
+                    }
+                })
+                .then(data => {
+                    // 응답에 따라 UI 업데이트 (별의 상태 변경)
+                    console.log('응답 데이터:', data);
+                    window.location.href = window.location.href; // 페이지 새로 고침
+                })
+                .catch(error => {
+                    console.error('에러 발생:', error);
+                });
+        });
+    });
+</script>
 </body>
 </html>
