@@ -140,6 +140,7 @@
 <div class="content">
     <div class="left">
         <img th:src="@{'/images/' + ${cocktail.image} + '.webp'}" alt="[[${cocktail.name}]] 이미지"/>
+        <div><p>[[${cocktail.lore}]]</p></div>
         <div class="video-container">
             <p th:if="${recipe.url == '-' }">영상없음</p>
             <p th:if="${recipe.url != '-' }">유튜브 영상: <a th:href="${recipe.url}" target="_blank">여기서 보기</a></p>

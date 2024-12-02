@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
     @GetMapping("/")
     public String main(HttpSession session, Model model) {
-        String id = (String) session.getAttribute("id");
+        String user = (String) session.getAttribute("user");
         model.addAttribute("isLoggedIn", false);
-        if (id != null) {
+        if (user != null) {
             model.addAttribute("isLoggedIn", true);
         }
         return "main";

@@ -1,6 +1,5 @@
-package com.team9.alddalddal.controller;
+package com.team9.alddalddal;
 
-import com.team9.alddalddal.CocktailDbApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 

@@ -4,6 +4,7 @@ import com.team9.alddalddal.entity.Cocktail;
 import com.team9.alddalddal.entity.Ingredient;
 import com.team9.alddalddal.entity.Recipe;
 import com.team9.alddalddal.entity.Recipe_Ingredient;
+import com.team9.alddalddal.service.AccountService;
 import com.team9.alddalddal.service.CocktailService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,17 +14,32 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Controller
 public class CocktailController {
     @Autowired
+    private AccountService accountService;
+    @Autowired
     private CocktailService cocktailService;
 
     @GetMapping("/cocktail")
     public String cocktail(@RequestParam(defaultValue = "1") int page, HttpSession session, Model model) {
+        String user = (String) session.getAttribute("user");
+        model.addAttribute("user", user);
+
         Page<Cocktail> cocktails = cocktailService.listCocktails(page);
+
+        if (user != null) {
+            List<Boolean> favoriteFlags = new ArrayList<>();
+            for (Cocktail cocktail : cocktails.getContent()) {
+                boolean isFavorite = accountService.isFavorite(user, cocktail.getName());
+                favoriteFlags.add(isFavorite);
+            }
+            model.addAttribute("favoriteFlags", favoriteFlags);
+        }
 
         model.addAttribute("cocktails", cocktails);
         model.addAttribute("currentPage", page);

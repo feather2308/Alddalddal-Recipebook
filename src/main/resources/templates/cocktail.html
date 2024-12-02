@@ -39,6 +39,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            position: relative;
         }
 
         .cocktail-item:hover {
@@ -62,6 +63,28 @@
         .cocktail-item p {
             color: #777;
             font-size: 14px;
+        }
+
+        /* 즐겨찾기 별 위치 */
+        .favorite-star {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .favorite-star:hover {
+            transform: scale(1.2);
+        }
+
+        .favorite-star.active {
+            color: gold; /* 노란별 */
+        }
+
+        .favorite-star.inactive {
+            color: gray; /* 빈별 */
         }
 
         /* 반응형: 화면 크기에 맞춰 칵테일 개수 조정 */
@@ -133,11 +156,21 @@
 <div class="container">
     <div class="cocktail-list">
         <!-- 칵테일 목록 출력 -->
-        <div th:each="cocktail : ${cocktails.content}" class="cocktail-item">
+        <div th:each="cocktail, iterStat : ${cocktails.content}" class="cocktail-item">
             <a th:href="@{'/recipe?cocktail=' + ${cocktail.name}}" style="text-decoration: none; color: inherit;">
                 <img th:src="@{'/images/' + ${cocktail.image} + '.webp'}" th:alt="@{${cocktail.name} + ' Image'}" />
                 <h3 th:text="${cocktail.name}">Cocktail Name</h3>
             </a>
+
+            <!-- 즐겨찾기 별 표시 및 토글 기능 추가 -->
+            <span th:if="${favoriteFlags != null}">
+                <span th:classappend="${favoriteFlags[iterStat.index] ? 'favorite-star active' : 'favorite-star inactive'}"
+                      th:id="'star_' + ${cocktail.name}"
+                      th:data-cocktail="${cocktail.name}"
+                      th:data-id="${user}">
+                      ★
+                </span>
+            </span>
         </div>
     </div>
 </div>
@@ -152,5 +185,49 @@
            th:text="${i}"></a>
     </div>
 </div>
+
+<script>
+    document.querySelectorAll('.favorite-star').forEach(function(star) {
+        star.addEventListener('click', function() {
+            const cocktailName = this.getAttribute('data-cocktail');
+            const userId = this.getAttribute('data-id');
+            const isActive = this.classList.contains('active');
+
+            // Toggle favorite
+            if (isActive) {
+                // 노란별(삭제): AJAX DELETE 요청
+                fetch(`/favorite/delete`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id: userId, cocktailName: cocktailName })
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            this.classList.remove('active');
+                            this.classList.add('inactive');
+                        }
+                    });
+            } else {
+                // 빈별(추가): AJAX POST 요청
+                fetch(`/favorite/add`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id: userId, cocktailName: cocktailName })
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            this.classList.remove('inactive');
+                            this.classList.add('active');
+                        }
+                    });
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
