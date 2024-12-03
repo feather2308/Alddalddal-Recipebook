@@ -52,6 +52,7 @@ public class CocktailController {
         Cocktail cocktail1 = cocktailService.getCocktailByName(cocktail);
         Recipe recipe = cocktailService.getRecipeByName(cocktail);
         List<Recipe_Ingredient> ingredient = cocktailService.getRecipeIngredientByCocktailName(cocktail);
+        List<Tag> tags = cocktailService.getTags(cocktail);
 
         if(id != null){
             model.addAttribute("id", id);
@@ -66,6 +67,7 @@ public class CocktailController {
         model.addAttribute("cocktail", cocktail1);
         model.addAttribute("recipe", recipe);
         model.addAttribute("ingredients", ingredient);
+        model.addAttribute("tags", tags);
 
         return "recipe";
     }
