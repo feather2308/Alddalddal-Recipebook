@@ -18,6 +18,28 @@
             overflow: hidden; /* HTML 자체의 스크롤 제거 */
         }
 
+        header {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header button {
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #007BFF;
+        }
+        header button:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+
         /* 컨테이너 영역 */
         .container {
             flex: 1; /* 상단과 하단을 제외한 영역 차지 */
@@ -151,7 +173,10 @@
     </style>
 </head>
 <body>
-<h2>칵테일 목록</h2>
+<header>
+    <button onclick="window.location.href='/'">메인으로</button>
+    <span>칵테일 목록</span>
+</header>
 <!-- 스크롤 가능한 컨텐츠 영역 -->
 <div class="container">
     <div class="cocktail-list">
