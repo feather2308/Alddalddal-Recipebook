@@ -1,10 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 결과</title>
+    <style>
+        /* 기본 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #45a049;
+        }
+
+        .search-results {
+            margin-top: 20px;
+        }
+
+        .cocktail-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .cocktail-item h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .cocktail-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .cocktail-item a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
+<div class="search-container">
+    <form action="/search" method="get">
+        <div>
+            <label for="cocktail_name">칵테일 이름:</label>
+            <input type="text" id="cocktail_name" name="cocktail_name" class="search-input" placeholder="칵테일 이름 입력">
+        </div>
+        <div>
+            <label for="ingredient_name">재료:</label>
+            <input type="text" id="ingredient_name" name="ingredient_name" autocomplete="off" oninput="searchIngredients()">
+            <div id="ingredient-list" style="display: none;">
+                <ul id="ingredient-results"></ul>
+            </div>
+        </div>
+        <div>
+            <label for="trait">특성:</label>
+            <input type="text" id="trait" name="trait" class="search-input" placeholder="특성 입력">
+        </div>
+        <div>
+            <label for="how2search">검색 방법:</label>
+            <select name="how2search" id="how2search" class="search-input">
+                <option value="1">칵테일 이름으로 검색</option>
+                <option value="2">재료로 검색</option>
+                <option value="3">특성으로 검색</option>
+                <option value="4">칵테일 이름 + 재료로 검색</option>
+                <option value="5">칵테일 이름 + 특성으로 검색</option>
+                <option value="6">재료 + 특성으로 검색</option>
+                <option value="7">칵테일 이름 + 재료 + 특성으로 검색</option>
+            </select>
+        </div>
+        <button type="submit" class="search-button">검색</button>
+    </form>
+</div>
+
+<div class="search-results">
+    <h2>검색 결과</h2>
+    <div>
+        <!-- 결과 리스트 -->
+        <ul>
+            <li th:each="cocktail : ${results}" class="cocktail-item">
+                <a th:href="@{'/recipe?cocktail=' + ${cocktail.name}}">
+                    <img th:src="@{'/images/' + ${cocktail.image} + '.webp'}" alt="칵테일 이미지">
+                    <h3 th:text="${cocktail.name}">칵테일 이름</h3>
+                </a>
+            </li>
+        </ul>
+
+        <!-- 검색 결과가 없을 경우 메시지 -->
+        <div th:if="${#lists.isEmpty(results)}">
+            <p>검색 결과가 없습니다.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function searchIngredients() {
+        const query = document.getElementById("ingredient_name").value;
+
+        if (query.length >= 2) { // 최소 2글자 이상 입력 시에만 요청
+            fetch(`/getIngredients/find?query=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultList = document.getElementById("ingredient-results");
+                    resultList.innerHTML = ''; // 이전 결과 지우기
+
+                    if (data.length > 0) {
+                        data.forEach(item => {
+                            const li = document.createElement("li");
+                            li.textContent = item;
+                            li.style.cursor = "pointer";  // 마우스 포인터 추가
+                            li.onclick = function() {
+                                document.getElementById("ingredient_name").value = item;
+                                document.getElementById("ingredient-list").style.display = "none"; // 드롭다운 숨기기
+                            };
+                            resultList.appendChild(li);
+                        });
+
+                        // 결과가 있으면 드롭다운 보이기
+                        document.getElementById("ingredient-list").style.display = "block";
+                    } else {
+                        document.getElementById("ingredient-list").style.display = "none"; // 결과 없으면 숨기기
+                    }
+                })
+                .catch(error => {
+                    console.error("검색 오류:", error);
+                });
+        } else {
+            document.getElementById("ingredient-list").style.display = "none"; // 2글자 미만 입력 시 드롭다운 숨기기
+        }
+    }
+</script>
 
 </body>
 </html>
