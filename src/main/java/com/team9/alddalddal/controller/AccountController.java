@@ -86,4 +86,52 @@ public class AccountController {
 
         return "mypage";
     }
+
+    @GetMapping("/edit-profile")
+    public String editProfileGet(HttpSession session, Model model) {
+        String id = (String) session.getAttribute("user");
+        Account account = accountService.getAccount(id);
+
+        model.addAttribute("account", account);
+
+        return "editprofile";
+    }
+
+    @PostMapping("/edit-profile")
+    public String editProfilePost(
+            HttpSession session,
+            @RequestParam("name") String name,
+            @RequestParam("nickname") String nickname,
+            @RequestParam("email") String email,
+            @RequestParam("currentPassword") String currentPassword,
+            @RequestParam(value = "newPassword", required = false) String newPassword,
+            Model model) {
+
+        // 세션에서 사용자 ID 가져오기
+        String id = (String) session.getAttribute("user");
+        Account account = accountService.getAccount(id);
+
+        // 현재 비밀번호 검증
+        if (!account.getPw().equals(currentPassword)) {
+            model.addAttribute("error", "현재 비밀번호가 올바르지 않습니다.");
+            model.addAttribute("account", account); // 기존 데이터 다시 전달
+            return "editprofile";
+        }
+
+        // 사용자 정보 업데이트
+        account.setName(name);
+        account.setNickname(nickname);
+        account.setEmail(email);
+
+        if (newPassword != null && !newPassword.isEmpty()) {
+            account.setPw(newPassword); // 새 비밀번호가 있을 경우 업데이트
+        }
+
+        // 데이터베이스 업데이트
+        accountService.updateAccount(account);
+
+        // 성공 메시지 설정
+        model.addAttribute("success", "프로필이 성공적으로 수정되었습니다.");
+        return "redirect:/mypage"; // 수정 후 마이페이지로 리다이렉트
+    }
 }

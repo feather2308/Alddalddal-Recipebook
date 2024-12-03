@@ -48,6 +48,10 @@ public class AccountService {
         return account.orElse(null);
     }
 
+    public void updateAccount(Account account) {
+        accountRepository.save(account);
+    }
+
     public List<Favorite> getFavoriteById(String id) {
         return favoriteRepository.findById_Id(id);
     }
