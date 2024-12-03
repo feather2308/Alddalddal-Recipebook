@@ -1,9 +1,6 @@
 package com.team9.alddalddal.controller;
 
-import com.team9.alddalddal.entity.Cocktail;
-import com.team9.alddalddal.entity.Ingredient;
-import com.team9.alddalddal.entity.Recipe;
-import com.team9.alddalddal.entity.Recipe_Ingredient;
+import com.team9.alddalddal.entity.*;
 import com.team9.alddalddal.service.AccountService;
 import com.team9.alddalddal.service.CocktailService;
 import jakarta.servlet.http.HttpSession;
@@ -50,9 +47,21 @@ public class CocktailController {
 
     @GetMapping("/recipe")
     public String recipe(@RequestParam String cocktail, HttpSession session, Model model) {
+        String id = (String) session.getAttribute("user");
+
         Cocktail cocktail1 = cocktailService.getCocktailByName(cocktail);
         Recipe recipe = cocktailService.getRecipeByName(cocktail);
         List<Recipe_Ingredient> ingredient = cocktailService.getRecipeIngredientByCocktailName(cocktail);
+
+        if(id != null){
+            model.addAttribute("id", id);
+            Optional<Favorite> favoriteFlag = accountService.getFavorite(id, cocktail);
+            if (favoriteFlag.isPresent()) {
+                model.addAttribute("favoriteFlag", true);
+            } else {
+                model.addAttribute("favoriteFlag", false);
+            }
+        }
 
         model.addAttribute("cocktail", cocktail1);
         model.addAttribute("recipe", recipe);

@@ -127,11 +127,33 @@
         .comment-button:hover {
             background-color: #0056b3;
         }
+
+        /* 즐겨찾기 별 위치 */
+        .favorite-star {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .favorite-star:hover {
+            transform: scale(1.2);
+        }
+
+        .favorite-star.active {
+            color: gold; /* 노란별 */
+        }
+
+        .favorite-star.inactive {
+            color: gray; /* 빈별 */
+        }
     </style>
 </head>
 <body>
 <header>
-    <button onclick="history.back()">뒤로가기</button>
+    <button onclick="goToPreviousPage()">뒤로가기</button>
     <span>칵테일 레시피</span>
 </header>
 
@@ -145,6 +167,13 @@
             <p th:if="${recipe.url == '-' }">영상없음</p>
             <p th:if="${recipe.url != '-' }">유튜브 영상: <a th:href="${recipe.url}" target="_blank">여기서 보기</a></p>
         </div>
+        <span th:if="${favoriteFlag != null}">
+            <span th:classappend="${favoriteFlag ? 'favorite-star active' : 'favorite-star inactive'}"
+                  th:data-cocktail="${cocktail.name}"
+                  th:data-id="${id}">
+                ★
+            </span>
+        </span>
     </div>
 
     <div class="right">
@@ -170,6 +199,58 @@
     <textarea class="comment-box" placeholder="댓글을 남겨주세요..."></textarea>
     <button class="comment-button">댓글 달기</button>
 </div>
+
+<script>
+    function goToPreviousPage() {
+        const previousPage = document.referrer; // 이전 페이지 URL 가져오기
+        if (previousPage) {
+            window.location.href = previousPage; // 이전 페이지로 이동
+        } else {
+            alert('이전 페이지를 찾을 수 없습니다.');
+        }
+    }
+
+    document.querySelectorAll('.favorite-star').forEach(function(star) {
+        star.addEventListener('click', function() {
+            const cocktailName = this.getAttribute('data-cocktail');
+            const userId = this.getAttribute('data-id');
+            const isActive = this.classList.contains('active');
+
+            // Toggle favorite
+            if (isActive) {
+                // 노란별(삭제): AJAX DELETE 요청
+                fetch(`/favorite/delete`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id: userId, cocktailName: cocktailName })
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            this.classList.remove('active');
+                            this.classList.add('inactive');
+                        }
+                    });
+            } else {
+                // 빈별(추가): AJAX POST 요청
+                fetch(`/favorite/add`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id: userId, cocktailName: cocktailName })
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            this.classList.remove('inactive');
+                            this.classList.add('active');
+                        }
+                    });
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
