@@ -79,6 +79,7 @@ public class AccountService {
     }
 
     public void deleteFavorite(String id, String name) {
-        favoriteRepository.deleteById(new FavoriteId(id, name));
+        Favorite favorite = new Favorite(id, name);
+        favoriteRepository.delete(favorite);
     }
 }
