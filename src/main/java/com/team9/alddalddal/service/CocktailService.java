@@ -157,4 +157,13 @@ public class CocktailService {
         }
         return tags;
     }
+
+    public List<String> findByIngredientsNameContaining(String name) {
+        List<Ingredient> ingredients = ingredientRepository.findByNameContaining(name);
+        List<String> ingredientsNames = new ArrayList<>();
+        for (Ingredient ingredient : ingredients) {
+            ingredientsNames.add(ingredient.getName());
+        }
+        return ingredientsNames;
+    }
 }
