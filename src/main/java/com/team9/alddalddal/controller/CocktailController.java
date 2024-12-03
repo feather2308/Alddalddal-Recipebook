@@ -27,7 +27,7 @@ public class CocktailController {
         String user = (String) session.getAttribute("user");
         model.addAttribute("user", user);
 
-        Page<Cocktail> cocktails = cocktailService.listCocktails(page);
+        Page<Cocktail> cocktails = cocktailService.getPageCocktails(page);
 
         if (user != null) {
             List<Boolean> favoriteFlags = new ArrayList<>();
@@ -52,7 +52,7 @@ public class CocktailController {
         Cocktail cocktail1 = cocktailService.getCocktailByName(cocktail);
         Recipe recipe = cocktailService.getRecipeByName(cocktail);
         List<Recipe_Ingredient> ingredient = cocktailService.getRecipeIngredientByCocktailName(cocktail);
-        List<Tag> tags = cocktailService.getTags(cocktail);
+        List<Tag> tags = cocktailService.findTagsByName(cocktail);
 
         if(id != null){
             model.addAttribute("id", id);
@@ -74,7 +74,7 @@ public class CocktailController {
 
     @GetMapping("/ingredient")
     public String ingredient(Model model) {
-        List<Ingredient> ingredients = cocktailService.listIngredients();
+        List<Ingredient> ingredients = cocktailService.getListIngredients();
         model.addAttribute("ingredient", ingredients);
         return "ingredient";
     }
