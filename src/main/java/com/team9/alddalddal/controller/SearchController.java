@@ -1,6 +1,7 @@
 package com.team9.alddalddal.controller;
 
 import com.team9.alddalddal.entity.Cocktail;
+import com.team9.alddalddal.repository.Recipe_IngredientRepository;
 import com.team9.alddalddal.service.CocktailService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
