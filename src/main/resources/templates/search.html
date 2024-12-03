@@ -76,7 +76,10 @@
         </div>
         <div>
             <label for="ingredient_name">재료:</label>
-            <input type="text" id="ingredient_name" name="ingredient_name" class="search-input" placeholder="재료 입력">
+            <input type="text" id="ingredient_name" name="ingredient_name" autocomplete="off" oninput="searchIngredients()">
+            <div id="ingredient-list" style="display: none;">
+                <ul id="ingredient-results"></ul>
+            </div>
         </div>
         <div>
             <label for="trait">특성:</label>
@@ -117,5 +120,44 @@
         </div>
     </div>
 </div>
+
+<script>
+    function searchIngredients() {
+        const query = document.getElementById("ingredient_name").value;
+
+        if (query.length >= 2) { // 최소 2글자 이상 입력 시에만 요청
+            fetch(`/getIngredients/find?query=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultList = document.getElementById("ingredient-results");
+                    resultList.innerHTML = ''; // 이전 결과 지우기
+
+                    if (data.length > 0) {
+                        data.forEach(item => {
+                            const li = document.createElement("li");
+                            li.textContent = item;
+                            li.style.cursor = "pointer";  // 마우스 포인터 추가
+                            li.onclick = function() {
+                                document.getElementById("ingredient_name").value = item;
+                                document.getElementById("ingredient-list").style.display = "none"; // 드롭다운 숨기기
+                            };
+                            resultList.appendChild(li);
+                        });
+
+                        // 결과가 있으면 드롭다운 보이기
+                        document.getElementById("ingredient-list").style.display = "block";
+                    } else {
+                        document.getElementById("ingredient-list").style.display = "none"; // 결과 없으면 숨기기
+                    }
+                })
+                .catch(error => {
+                    console.error("검색 오류:", error);
+                });
+        } else {
+            document.getElementById("ingredient-list").style.display = "none"; // 2글자 미만 입력 시 드롭다운 숨기기
+        }
+    }
+</script>
+
 </body>
 </html>
