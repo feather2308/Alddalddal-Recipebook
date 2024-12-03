@@ -42,50 +42,40 @@ public class SearchController {
         System.out.println(flag);
 
         // `switch` 문 작성
-        switch (flag) {
-            case 0:
+        results = switch (flag) {
+            case 0 ->
                 // 모든 값이 null인 경우
-                results = new ArrayList<>();
-                break;
-            case 1:
+                    new ArrayList<>();
+            case 1 ->
                 // trait만 값이 있는 경우
                 // 특성으로 검색
-                results = cocktailService.findCocktailsByTrait(trait);
-                break;
-            case 2:
+                    cocktailService.findCocktailsByTrait(trait);
+            case 2 ->
                 // ingredient_name만 값이 있는 경우
                 // 재료로 검색
-                results = cocktailService.findCocktailsByIngredient(ingredient_name);
-                break;
-            case 3:
+                    cocktailService.findCocktailsByIngredient(ingredient_name);
+            case 3 ->
                 // ingredient_name과 trait에 값이 있는 경우
                 // 재료, 특성으로 검색
-                results = cocktailService.findCocktailsByIngredientAndTrait(ingredient_name, trait);
-                break;
-            case 4:
+                    cocktailService.findCocktailsByIngredientAndTrait(ingredient_name, trait);
+            case 4 ->
                 // cocktail_name만 값이 있는 경우
                 // 칵테일 이름으로 검색
-                results = cocktailService.findCocktailsByNameContaining(cocktail_name);
-                break;
-            case 5:
+                    cocktailService.findCocktailsByNameContaining(cocktail_name);
+            case 5 ->
                 // cocktail_name과 trait에 값이 있는 경우
                 // 칵테일 이름, 특성으로 검색
-                results = cocktailService.findCocktailsByNameContainingAndTrait(cocktail_name, trait);
-                break;
-            case 6:
+                    cocktailService.findCocktailsByNameContainingAndTrait(cocktail_name, trait);
+            case 6 ->
                 // cocktail_name과 ingredient_name에 값이 있는 경우
                 // 칵테일 이름, 재료로 검색
-                results = cocktailService.findCocktailsByNameContainingAndIngredient(cocktail_name, ingredient_name);
-                break;
-            case 7:
+                    cocktailService.findCocktailsByNameContainingAndIngredient(cocktail_name, ingredient_name);
+            case 7 ->
                 // 모든 값에 값이 있는 경우
                 // 혼합 검색
-                results = cocktailService.findCocktailsByMixedCriteria(cocktail_name, ingredient_name, trait);
-                break;
-            default:
-                results = new ArrayList<>();
-                break;
-        }
+                    cocktailService.findCocktailsByMixedCriteria(cocktail_name, ingredient_name, trait);
+            default -> new ArrayList<>();
+        };
 
         model.addAttribute("results", results);
         return "search";
