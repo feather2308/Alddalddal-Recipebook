@@ -17,6 +17,6 @@ public class SearchRestController {
 
     @GetMapping("/find")
     public List<String> getIngredients(@RequestParam("query") String name) {
-        return cocktailService.findByIngredientsNameContaining(name);
+        return cocktailService.findIngredientsNameByNameContaining(name);
     }
 }

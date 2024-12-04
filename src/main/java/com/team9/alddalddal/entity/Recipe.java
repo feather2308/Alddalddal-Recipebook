@@ -1,8 +1,6 @@
 package com.team9.alddalddal.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,9 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Recipe {
-    @Id
-    @Column(name = "cocktail_name")
-    private String name;
+    @EmbeddedId
+    private RecipeId id;
 
     @Column(name = "recipe_method")
     private String method;
@@ -20,4 +17,17 @@ public class Recipe {
     private String garnish;
     @Column(name = "recipe_url")
     private String url;
+
+    @ManyToOne
+    @JoinColumn(name = "cocktail_name", referencedColumnName = "cocktail_name", insertable = false, updatable = false)
+    private Cocktail cocktail;
+
+    public Recipe() {}
+    public Recipe(Cocktail cocktail, String method, String garnish, String url) {
+        this.cocktail = cocktail;
+        this.id = new RecipeId(cocktail.getName());
+        this.method = method;
+        this.garnish = garnish;
+        this.url = url;
+    }
 }

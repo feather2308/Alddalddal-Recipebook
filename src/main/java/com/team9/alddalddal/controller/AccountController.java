@@ -72,7 +72,7 @@ public class AccountController {
         String id = (String) session.getAttribute("user");
         Account account = accountService.getAccount(id);
 
-        List<Favorite> favorites = accountService.getFavoriteById(id);
+        List<Favorite> favorites = accountService.getFavoritesByAccount(account);
 
         List<Cocktail> cocktails = new ArrayList<>();
         for (Favorite favorite : favorites) {
@@ -135,5 +135,16 @@ public class AccountController {
         // 성공 메시지 설정
         model.addAttribute("success", "프로필이 성공적으로 수정되었습니다.");
         return "redirect:/mypage"; // 수정 후 마이페이지로 리다이렉트
+    }
+
+    @GetMapping("/resign")
+    public String resignGet(HttpSession session, Model model) {
+        String id = (String) session.getAttribute("user");
+        session.invalidate();
+
+        Account account = accountService.getAccount(id);
+        accountService.deleteAccount(account);
+
+        return "redirect:/";
     }
 }

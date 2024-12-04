@@ -3,8 +3,11 @@ package com.team9.alddalddal.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,4 +21,19 @@ public class Cocktail {
     private String image;
     @Column(name = "cocktail_lore")
     private String lore;
+
+    @OneToMany(mappedBy = "cocktail")
+    private List<Favorite> favoriteList;
+
+    @OneToMany(mappedBy = "cocktail")
+    private List<Comments> commentList;
+
+    @OneToMany(mappedBy = "cocktail")
+    private List<Cocktail_Tag> cocktailTagList;
+
+    @OneToMany(mappedBy = "cocktail")
+    private List<Recipe_Ingredient> recipeIngredientList;
+
+    @OneToMany(mappedBy = "cocktail")
+    private List<Recipe> recipeList;
 }
