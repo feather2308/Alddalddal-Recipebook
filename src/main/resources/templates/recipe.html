@@ -161,7 +161,7 @@
 
 <div class="content">
     <div class="left">
-        <img th:src="@{'/images/' + ${cocktail.image} + '.webp'}" alt="[[${cocktail.name}]] 이미지"/>
+        <img th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" alt="[[${cocktail.name}]] 이미지"/>
         <div><p>[[${cocktail.lore}]]</p></div>
         <div class="video-container">
             <p th:if="${recipe.url == '-' }">영상없음</p>
