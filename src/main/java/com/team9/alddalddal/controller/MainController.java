@@ -16,7 +16,7 @@ public class MainController {
     CocktailService cocktailService;
 
     @GetMapping("/")
-    public String main(HttpSession session, Model model) {
+    public String mainGet(HttpSession session, Model model) {
         List<Cocktail> cocktailList = cocktailService.getAllCocktails();
         model.addAttribute("cocktails", cocktailList);
 
