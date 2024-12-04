@@ -54,6 +54,21 @@ CREATE TABLE comments (
     CONSTRAINT fk_cocktail_name_comments FOREIGN KEY (cocktail_name) REFERENCES cocktail(cocktail_name)
 );
 
+CREATE SEQUENCE comments_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+CREATE OR REPLACE TRIGGER comments_trigger
+    BEFORE INSERT ON comments
+    FOR EACH ROW
+BEGIN
+    IF :NEW.comments_id IS NULL THEN
+        SELECT comments_seq.NEXTVAL INTO :NEW.comments_id FROM dual;
+    END IF;
+END;
+
 CREATE TABLE recipe (
     cocktail_name VARCHAR2(25) PRIMARY KEY,
     recipe_method VARCHAR2(500) NOT NULL,
