@@ -19,17 +19,21 @@ public class Comments {
     private Date time;
     @Column(name = "comments_content")
     private String content;
-    @Column(name = "cocktail_name")
-    private String name;
-    @Column(name = "account_id")
-    private String uid;
+
+    @ManyToOne
+    @JoinColumn(name = "account_id")
+    private Account account;
+
+    @ManyToOne
+    @JoinColumn(name = "cocktail_name")
+    private Cocktail cocktail;
 
     public Comments() {}
 
-    public Comments(Date time, String content, String name, String uid) {
+    public Comments(Date time, String content, Account account, Cocktail cocktail) {
         this.time = time;
         this.content = content;
-        this.name = name;
-        this.uid = uid;
+        this.account = account;
+        this.cocktail = cocktail;
     }
 }

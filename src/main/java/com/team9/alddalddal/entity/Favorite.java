@@ -1,7 +1,6 @@
 package com.team9.alddalddal.entity;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,11 +11,20 @@ public class Favorite {
     @EmbeddedId
     private FavoriteId id;
 
+    @MapsId("account_id")
+    @ManyToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "account_id", insertable = false, updatable = false)
+    private Account account;
+
+    @MapsId("cocktail_name")
+    @ManyToOne
+    @JoinColumn(name = "cocktail_name", referencedColumnName = "cocktail_name", insertable = false, updatable = false)
+    private Cocktail cocktail;
+
     public Favorite() {}
-    public Favorite(String id, String name) {
-        this.id = new FavoriteId(id, name);
-    }
-    public Favorite(FavoriteId id) {
-        this.id = id;
+    public Favorite(Account account, Cocktail cocktail) {
+        this.account = account;
+        this.cocktail = cocktail;
+        this.id = new FavoriteId(account.getId(), cocktail.getName());
     }
 }

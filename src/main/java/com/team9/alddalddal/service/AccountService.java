@@ -1,14 +1,13 @@
 package com.team9.alddalddal.service;
 
 import com.team9.alddalddal.entity.Account;
+import com.team9.alddalddal.entity.Cocktail;
 import com.team9.alddalddal.entity.Favorite;
-import com.team9.alddalddal.entity.FavoriteId;
 import com.team9.alddalddal.repository.AccountRepository;
 import com.team9.alddalddal.repository.FavoriteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,29 +51,29 @@ public class AccountService {
         accountRepository.save(account);
     }
 
-    public List<Favorite> getFavoriteById(String id) {
-        return favoriteRepository.findById_Id(id);
+    public List<Favorite> getFavoritesByAccount(Account account) {
+        return favoriteRepository.findByAccount(account);
     }
 
-    public List<Favorite> getFavoriteByName(String name) {
-        return favoriteRepository.findById_Name(name);
+    public List<Favorite> getFavoritesByCocktail(Cocktail cocktail) {
+        return favoriteRepository.findByCocktail(cocktail);
     }
 
-    public boolean isFavorite(String id, String name) {
-        Optional<Favorite> favorite = favoriteRepository.findById_IdAndId_Name(id, name);
+    public boolean isFavorite(Account account, Cocktail cocktail) {
+        Optional<Favorite> favorite = favoriteRepository.findByAccountAndCocktail(account, cocktail);
         return favorite.isPresent();
     }
 
-    public Optional<Favorite> getFavorite(String id, String name) {
-        return favoriteRepository.findById_IdAndId_Name(id, name);
+    public Optional<Favorite> getFavoriteByAccountAndCocktail(Account account, Cocktail cocktail) {
+        return favoriteRepository.findByAccountAndCocktail(account, cocktail);
     }
 
     public void addFavorite(Favorite favorite) {
         favoriteRepository.save(favorite);
     }
 
-    public void addFavorite(String id, String name) {
-        Favorite favorite = new Favorite(id, name);
+    public void addFavorite(Account account, Cocktail cocktail) {
+        Favorite favorite = new Favorite(account, cocktail);
         favoriteRepository.save(favorite);
     }
 
@@ -82,8 +81,12 @@ public class AccountService {
         favoriteRepository.delete(favorite);
     }
 
-    public void deleteFavorite(String id, String name) {
-        Favorite favorite = new Favorite(id, name);
+    public void deleteFavorite(Account account, Cocktail cocktail) {
+        Favorite favorite = new Favorite(account, cocktail);
         favoriteRepository.delete(favorite);
+    }
+
+    public void deleteAccount(Account account) {
+        accountRepository.delete(account);
     }
 }
