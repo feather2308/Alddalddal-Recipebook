@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +11,14 @@
 <body class="bg-black text-white">
 <!-- 헤더 -->
 <header class="bg-dark d-flex align-items-center" style="height: 150px;"> 
-    <div class="container" style="max-width: 100%; height: 80%; ">
+    <div class="container" style="max-width: 100%; height: 80%; position: relative;">
         <div class="banner-container" style="width: 100%; height:auto; margin: 0 auto;">
             <img src="/images/head_banner.png" alt="홈으로">
         </div>
+        <!-- 로그인 링크 추가 -->
+        <a href="/login" style="position: absolute; right: 20px; color: white; font-size: 18px; text-decoration: none; top: 50%; transform: translateY(-50%);">
+            로그인
+        </a>
     </div>
 </header>
 
@@ -53,6 +57,7 @@
     const pageSize = 8; // 한 번에 로드할 칵테일 개수
     let isLoading = false; // 중복 요청 방지
     let hasMoreData = true; // 추가 데이터가 있는지 여부
+    let isLoadingPlaceholderCreated = false; // "추가중!" 카드 생성 여부
 
     // 스크롤 이벤트 핸들러
     window.addEventListener("scroll", () => {
@@ -93,34 +98,56 @@
 
         if (cocktails.length === 0) {
             // 임시 데이터가 없을 경우 "추가중!" 텍스트와 임시 이미지를 추가
-            const card = document.createElement("div");
-            card.className = "col";
-            card.innerHTML = `
-                <div class="card bg-dark text-white">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="추가중!" />
-                    <div class="card-body">
-                        <h5 class="card-title">추가중!</h5>
-                        <p class="card-text">칵테일 정보가 아직 추가되지 않았습니다.</p>
+            if (!isLoadingPlaceholderCreated) {
+                const card = document.createElement("div");
+                card.className = "col-3"; // 카드 크기 설정 (1줄에 4개)
+                card.innerHTML = `
+                    <div class="card bg-dark text-white">
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="추가중!" />
+                        <div class="card-body">
+                            <h5 class="card-title">추가중!</h5>
+                            <p class="card-text">잠시만 기다려주세요.</p>
+                        </div>
                     </div>
-                </div>
-            `;
-            container.appendChild(card);
+                `;
+                container.appendChild(card);
+                isLoadingPlaceholderCreated = true; // "추가중!" 카드가 이미 생성되었음을 표시
+            }
         } else {
             cocktails.forEach(cocktail => {
                 const card = document.createElement("div");
-                card.className = "col";
+                card.className = "col-3"; // 카드 크기 설정 (1줄에 4개)
 
                 card.innerHTML = `
                     <div class="card bg-dark text-white">
-                        <img src="${cocktail.image || 'https://via.placeholder.com/150'}" class="card-img-top" alt="${cocktail.name || '추가중!'}" />
+                        <img th:src="@{'/images/cocktail/' + ${cocktail.image}}" 
+                            class="card-img-top" 
+                            alt="${cocktail.name}" />
                         <div class="card-body">
-                            <h5 class="card-title">${cocktail.name || '추가중!'}</h5>
-                            <p class="card-text">${cocktail.easylore || '칵테일 정보가 아직 추가되지 않았습니다.'}</p>
+                            <h5 class="card-title">${cocktail.name}</h5>
+                            <p class="card-text">${cocktail.easylore}</p>
                         </div>
                     </div>
                 `;
                 container.appendChild(card);
             });
+
+            // "추가중!" 카드가 생성되지 않았다면, 더 이상 존재하지 않는 경우에만 추가중! 카드 표시
+            if (!isLoadingPlaceholderCreated && !hasMoreData) {
+                const card = document.createElement("div");
+                card.className = "col-3"; // 카드 크기 설정 (1줄에 4개)
+                card.innerHTML = `
+                    <div class="card bg-dark text-white">
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="추가중!" />
+                        <div class="card-body">
+                            <h5 class="card-title">추가중!</h5>
+                            <p class="card-text">잠시만 기다려주세요.</p>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+                isLoadingPlaceholderCreated = true; // "추가중!" 카드가 이미 생성되었음을 표시
+            }
         }
     }
 
@@ -129,6 +156,3 @@
         loadMoreCocktails();
     });
 </script>
-
-</body>
-</html>
