@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/favorite")
-public class FavoriteController {
+public class FavoriteRestController {
     @Autowired
     private AccountService accountService;
 
