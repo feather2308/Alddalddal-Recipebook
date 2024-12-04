@@ -67,6 +67,8 @@ public class AccountController {
 
     @GetMapping("/mypage")
     public String mypageGet(HttpSession session, Model model) {
+        session.setAttribute("history", "mypage");
+
         String id = (String) session.getAttribute("user");
         Account account = accountService.getAccount(id);
 
