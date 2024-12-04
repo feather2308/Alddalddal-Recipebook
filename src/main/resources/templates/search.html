@@ -72,11 +72,11 @@
     <form action="/search" method="get">
         <div>
             <label for="cocktail_name">칵테일 이름:</label>
-            <input type="text" id="cocktail_name" name="cocktail_name" class="search-input" placeholder="칵테일 이름 입력">
+            <input type="text" id="cocktail_name" name="cocktail" class="search-input" placeholder="칵테일 이름 입력">
         </div>
         <div>
             <label for="ingredient_name">재료:</label>
-            <input type="text" id="ingredient_name" name="ingredient_name" autocomplete="off" oninput="searchIngredients()">
+            <input type="text" id="ingredient_name" name="ingredient" autocomplete="off" oninput="searchIngredients()">
             <div id="ingredient-list" style="display: none;">
                 <ul id="ingredient-results"></ul>
             </div>
@@ -96,7 +96,7 @@
         <ul>
             <li th:each="cocktail : ${results}" class="cocktail-item">
                 <a th:href="@{'/recipe?cocktail=' + ${cocktail.name}}">
-                    <img th:src="@{'/images/' + ${cocktail.image} + '.webp'}" alt="칵테일 이미지">
+                    <img th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" alt="칵테일 이미지">
                     <h3 th:text="${cocktail.name}">칵테일 이름</h3>
                 </a>
             </li>

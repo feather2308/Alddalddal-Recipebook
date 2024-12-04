@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.Optional;
 
 @Controller
 public class CocktailController {
@@ -37,6 +35,7 @@ public class CocktailController {
         }
 
         String user = (String) session.getAttribute("user");
+        Account account = accountService.getAccount(user);
         model.addAttribute("user", user);
 
         Page<Cocktail> cocktails = cocktailService.getPageCocktails(page);
@@ -44,7 +43,7 @@ public class CocktailController {
         if (user != null) {
             List<Boolean> favoriteFlags = new ArrayList<>();
             for (Cocktail cocktail : cocktails.getContent()) {
-                boolean isFavorite = accountService.isFavorite(user, cocktail.getName());
+                boolean isFavorite = accountService.isFavorite(account, cocktail);
                 favoriteFlags.add(isFavorite);
             }
             model.addAttribute("favoriteFlags", favoriteFlags);
@@ -58,58 +57,50 @@ public class CocktailController {
     }
 
     @GetMapping("/recipe")
-    public String recipeGet(@RequestParam String cocktail, HttpSession session, Model model) {
+    public String recipeGet(@RequestParam(name = "cocktail") String cocktail_name, HttpSession session, Model model) {
         String id = (String) session.getAttribute("user");
 
-        Cocktail cocktail1 = cocktailService.getCocktailByName(cocktail);
-        Recipe recipe = cocktailService.getRecipeByName(cocktail);
-        List<Recipe_Ingredient> ingredient = cocktailService.getRecipeIngredientByCocktailName(cocktail);
-        List<Tag> tags = cocktailService.findTagsByName(cocktail);
-        List<Comments> comments = commentsService.getListCommentsByName(cocktail);
+        Cocktail cocktail = cocktailService.getCocktailByName(cocktail_name);
+        Recipe recipe = cocktailService.getRecipeByCocktail(cocktail);
 
         if(id != null){
             model.addAttribute("id", id);
-            Optional<Favorite> favoriteFlag = accountService.getFavorite(id, cocktail);
-            if (favoriteFlag.isPresent()) {
-                model.addAttribute("favoriteFlag", true);
-            } else {
-                model.addAttribute("favoriteFlag", false);
-            }
+            Account account = accountService.getAccount(id);
+            model.addAttribute("favoriteFlag", accountService.isFavorite(account, cocktail));
         }
 
         String history = (String) session.getAttribute("history");
         model.addAttribute("history", history == null ? "" : history);
 
-        model.addAttribute("cocktail", cocktail1);
+        model.addAttribute("cocktail", cocktail);
         model.addAttribute("recipe", recipe);
-        model.addAttribute("ingredients", ingredient);
-        model.addAttribute("tags", tags);
-        model.addAttribute("comments", comments);
+        model.addAttribute("ingredients", cocktail.getRecipeIngredientList());
+        model.addAttribute("tags", cocktail.getCocktailTagList());
+        model.addAttribute("comments", cocktail.getCommentList());
 
         return "recipe";
     }
 
     @PostMapping("/recipe")
-    public String recipePost(@RequestParam String cocktail,
+    public String recipePost(@RequestParam(name = "cocktail") String cocktail_name,
                              @RequestParam String content,
                              HttpSession session, Model model){
+
         String id = (String) session.getAttribute("user");
 
-        Date time = new Date(System.currentTimeMillis());
-        System.out.println();
-        System.out.println(time);
-        System.out.println(content);
-        System.out.println(cocktail);
-        System.out.println(id);
-        System.out.println();
-        commentsService.createComments(time, content, cocktail, id);
+        Account account = accountService.getAccount(id);
+        Cocktail cocktail = cocktailService.getCocktailByName(cocktail_name);
 
-        return "redirect:/recipe?cocktail=" + cocktail;
+        Date time = new Date(System.currentTimeMillis());
+
+        commentsService.createComments(time, content, account, cocktail);
+
+        return "redirect:/recipe?cocktail=" + cocktail.getName();
     }
 
     @GetMapping("/ingredient")
     public String ingredientGet(Model model) {
-        List<Ingredient> ingredients = cocktailService.getListIngredients();
+        List<Ingredient> ingredients = cocktailService.getAllIngredients();
         model.addAttribute("ingredient", ingredients);
         return "ingredient";
     }

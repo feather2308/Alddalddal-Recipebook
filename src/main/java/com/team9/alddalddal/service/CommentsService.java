@@ -1,5 +1,7 @@
 package com.team9.alddalddal.service;
 
+import com.team9.alddalddal.entity.Account;
+import com.team9.alddalddal.entity.Cocktail;
 import com.team9.alddalddal.entity.Comments;
 import com.team9.alddalddal.repository.CommentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +15,13 @@ public class CommentsService {
     @Autowired
     private CommentsRepository commentsRepository;
 
-    public List<Comments> getListCommentsByName(String name) {
-        return commentsRepository.findByName(name);
+    public List<Comments> getListCommentsByCocktail(Cocktail cocktail) {
+        return commentsRepository.findByCocktail(cocktail);
     }
 
     public void createComments(Date time, String contents,
-                               String name, String uid) {
-        commentsRepository.save(new Comments(time, contents, name, uid));
+                               Account account, Cocktail cocktail) {
+        commentsRepository.save(new Comments(time, contents, account, cocktail));
     }
 
     public void deleteCommentsById(int id) {

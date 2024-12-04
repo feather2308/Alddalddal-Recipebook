@@ -1,8 +1,8 @@
 package com.team9.alddalddal.controller;
 
 import com.team9.alddalddal.entity.Cocktail;
-import com.team9.alddalddal.repository.Recipe_IngredientRepository;
 import com.team9.alddalddal.service.CocktailService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +19,12 @@ public class SearchController {
 
     @GetMapping("/search")
     public String search(
-            @RequestParam(value = "cocktail_name", required = false) String cocktail_name,
-            @RequestParam(value = "ingredient_name", required = false) String ingredient_name,
-            @RequestParam(value = "trait", required = false) String trait,
-            Model model) {
+            @RequestParam(value = "cocktail", required = false, defaultValue = "") String cocktail_name,
+            @RequestParam(value = "ingredient", required = false, defaultValue = "") String ingredient_name,
+            @RequestParam(value = "trait", required = false, defaultValue = "") String trait,
+            HttpSession session, Model model) {
+
+        session.setAttribute("history", "search?cocktail=" + cocktail_name + "&ingredient=" + ingredient_name + "&trait=" + trait);
 
         List<Cocktail> results;
 
@@ -39,8 +41,6 @@ public class SearchController {
             flag += 1;
         }
 
-        System.out.println(flag);
-
         // `switch` 문 작성
         results = switch (flag) {
             case 0 ->
@@ -49,11 +49,11 @@ public class SearchController {
             case 1 ->
                 // trait만 값이 있는 경우
                 // 특성으로 검색
-                    cocktailService.findCocktailsByTrait(trait);
+                    cocktailService.findCocktailsByTraitNameContaining(trait);
             case 2 ->
                 // ingredient_name만 값이 있는 경우
                 // 재료로 검색
-                    cocktailService.findCocktailsByIngredient(ingredient_name);
+                    cocktailService.findCocktailsByIngredientNameContaining(ingredient_name);
             case 3 ->
                 // ingredient_name과 trait에 값이 있는 경우
                 // 재료, 특성으로 검색
@@ -76,6 +76,9 @@ public class SearchController {
                     cocktailService.findCocktailsByMixedCriteria(cocktail_name, ingredient_name, trait);
             default -> new ArrayList<>();
         };
+
+        String history = (String) session.getAttribute("history");
+        model.addAttribute("history", history == null ? "" : history);
 
         model.addAttribute("results", results);
         return "search";
