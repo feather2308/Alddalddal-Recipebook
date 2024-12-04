@@ -126,7 +126,7 @@
                 <li th:each="cocktail : ${cocktails}">
                     <div class="cocktail-item">
                         <a th:href="@{'/recipe?cocktail=' + ${cocktail.name}}" style="text-decoration: none; color: inherit;">
-                            <img th:src="@{'/images/' + ${cocktail.image} + '.webp'}" th:alt="@{${cocktail.name} + ' Image'}" />
+                            <img th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" th:alt="@{${cocktail.name} + ' Image'}" />
                             <h3 th:text="${cocktail.name}">Cocktail Name</h3>
                         </a>
                         <!-- 별 추가 -->
