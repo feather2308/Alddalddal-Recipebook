@@ -6,21 +6,21 @@
     <title>칵테일 레시피</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-black text-white">
 <!-- 헤더 -->
 <header class="bg-dark d-flex align-items-center" style="height: 150px;"> 
     <div class="container" style="max-width: 100%; height: 80%; ">
         <div class="banner-container" style="width: 100%; height:auto; margin: 0 auto;">
-            <img src="/images/head_banner.png" alt="홈으로">
+            <img src="../static/images/head_banner.png" alt="홈으로">
         </div>
     </div>
 </header>
 
 <!-- 메인 콘텐츠 -->
 <main>
-    <section class="search-section text-center py-5" style="background: url('/images/main_search_background.png') center/cover no-repeat; height: 400px;">
+    <section class="search-section text-center py-5" style="background: url('../static/images/main_search_background.png') center/cover no-repeat; height: 400px;">
         <div class="container">
             <h1 class="display-5 text-white mb-4">칵테일을 검색하세요</h1>
             <div class="d-flex justify-content-center align-items-center mb-3">
@@ -29,7 +29,7 @@
                     <button class="btn btn-primary" onclick="searchCocktails()">검색</button>
                 </div>
                 <button class="btn btn-secondary ms-2" data-bs-toggle="modal" data-bs-target="#filterModal">
-                    <img src="/images/filter-icon.png" alt="필터" style="height: 20px; width: 20px;">
+                    <img src="../static/images/filter-icon.png" alt="필터" style="height: 20px; width: 20px;">
                 </button>
             </div>
         </div>
@@ -80,8 +80,6 @@
             currentPage++;
         } catch (error) {
             console.error(error);
-            // 오류 발생 시 임시 카드 생성
-            renderCocktailCards([]);
         } finally {
             isLoading = false;
         }
@@ -91,37 +89,21 @@
     function renderCocktailCards(cocktails) {
         const container = document.getElementById("cocktail-container");
 
-        if (cocktails.length === 0) {
-            // 임시 데이터가 없을 경우 "추가중!" 텍스트와 임시 이미지를 추가
+        cocktails.forEach(cocktail => {
             const card = document.createElement("div");
             card.className = "col";
+
             card.innerHTML = `
                 <div class="card bg-dark text-white">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="추가중!" />
+                    <img src="${cocktail.cocktail_image}" class="card-img-top" alt="${cocktail.cocktail_name}" />
                     <div class="card-body">
-                        <h5 class="card-title">추가중!</h5>
-                        <p class="card-text">칵테일 정보가 아직 추가되지 않았습니다.</p>
+                        <h5 class="card-title">${cocktail.cocktail_name}</h5>
+                        <p class="card-text">${cocktail.cocktail_easylore}</p>
                     </div>
                 </div>
             `;
             container.appendChild(card);
-        } else {
-            cocktails.forEach(cocktail => {
-                const card = document.createElement("div");
-                card.className = "col";
-
-                card.innerHTML = `
-                    <div class="card bg-dark text-white">
-                        <img src="${cocktail.image || 'https://via.placeholder.com/150'}" class="card-img-top" alt="${cocktail.name || '추가중!'}" />
-                        <div class="card-body">
-                            <h5 class="card-title">${cocktail.name || '추가중!'}</h5>
-                            <p class="card-text">${cocktail.easylore || '칵테일 정보가 아직 추가되지 않았습니다.'}</p>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
+        });
     }
 
     // 페이지 로드시 처음 몇 개의 칵테일 로드

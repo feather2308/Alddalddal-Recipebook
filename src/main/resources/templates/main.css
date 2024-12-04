@@ -1,0 +1,109 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    height: 100px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.home-icon {
+    height: 60px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 검색바 공간 */
+.search-section {
+    width: 100%;
+    background: url('search-background.jpg') center/cover no-repeat;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 20px;
+}
+
+.search-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.filters select {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* 추천 칵테일 공간 */
+.recommendation-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cocktail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.cocktail-card {
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+}
+
+.cocktail-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.cocktail-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.cocktail-card p {
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .search-content h1 {
+        font-size: 2rem;
+    }
+
+    .cocktail-card img {
+        height: 120px;
+    }
+}
