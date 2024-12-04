@@ -153,7 +153,7 @@
 </head>
 <body>
 <header>
-    <button onclick="goToPreviousPage()">뒤로가기</button>
+    <button th:onclick="@{'window.location.href=\'/'+${history}+'\''}">뒤로가기</button>
     <span>칵테일 레시피</span>
 </header>
 
@@ -166,6 +166,14 @@
         <div class="video-container">
             <p th:if="${recipe.url == '-' }">영상없음</p>
             <p th:if="${recipe.url != '-' }">유튜브 영상: <a th:href="${recipe.url}" target="_blank">여기서 보기</a></p>
+        </div>
+        <div class="cocktail-tag">
+            태그임니당 ㅎㅎ
+            <div th:each="tag : ${tags}">
+                <div th:if="${tag} != null">
+                    [[${tag.trait}]]
+                </div>
+            </div>
         </div>
         <span th:if="${favoriteFlag != null}">
             <span th:classappend="${favoriteFlag ? 'favorite-star active' : 'favorite-star inactive'}"
@@ -196,20 +204,19 @@
 
 <div class="comments-section">
     <h3>댓글</h3>
-    <textarea class="comment-box" placeholder="댓글을 남겨주세요..."></textarea>
-    <button class="comment-button">댓글 달기</button>
+    <form action="/recipe" method="POST">
+        <input type="hidden" name="cocktail" th:value="${cocktail.getName()}">
+        <input class="comment-box" name="content" placeholder="댓글을 남겨주세요..." required>
+        <button class="comment-button" type="submit">댓글 달기</button>
+    </form>
+    <div th:each="comment : ${comments}">
+        <div class="comment" th:if="${comment != null}">
+            내용히히: [[${comment.content}]] 타임스탬프: [[${comment.time}]] 작성자: [[${comment.uid}]]
+        </div>
+    </div>
 </div>
 
 <script>
-    function goToPreviousPage() {
-        const previousPage = document.referrer; // 이전 페이지 URL 가져오기
-        if (previousPage) {
-            window.location.href = previousPage; // 이전 페이지로 이동
-        } else {
-            alert('이전 페이지를 찾을 수 없습니다.');
-        }
-    }
-
     document.querySelectorAll('.favorite-star').forEach(function(star) {
         star.addEventListener('click', function() {
             const cocktailName = this.getAttribute('data-cocktail');
