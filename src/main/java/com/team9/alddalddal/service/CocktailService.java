@@ -40,7 +40,7 @@ public class CocktailService {
     }
 
     public List<Cocktail> findCocktailsByNameContaining(String cocktail_name){
-        return cocktailRepository.findByNameContaining(cocktail_name);
+        return cocktailRepository.findByNameContainingIgnoreCase(cocktail_name);
     }
 
     public List<String> findIngredientsNameByNameContaining(String ingredient_name) {
