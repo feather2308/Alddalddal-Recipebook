@@ -52,6 +52,18 @@ public class CocktailService {
         return ingredientsNames;
     }
 
+    public List<Cocktail> findCocktailsByIngredientNameContaining(Object object){
+        if (object instanceof String) {
+            return findCocktailsByIngredientNameContaining((String) object);
+        } else if (object instanceof List) {
+            @SuppressWarnings("unchecked")
+            List<String> list = (List<String>) object;
+            return findCocktailsByIngredientNameContaining(list);
+        } else {
+            return null;
+        }
+    }
+
     public List<Cocktail> findCocktailsByIngredientNameContaining(String ingredient_name){
         Set<Cocktail> cocktailSet = new HashSet<>();
         for (Ingredient ingredient : ingredientRepository.findByNameContaining(ingredient_name)) {
@@ -60,6 +72,35 @@ public class CocktailService {
             }
         }
         return new ArrayList<>(cocktailSet);
+    }
+
+    public List<Cocktail> findCocktailsByIngredientNameContaining(List<String> ingredient_names){
+        List<Cocktail> cocktails = cocktailRepository.findAll();
+        List<Cocktail> cocktails_;
+
+        for (String ingredient_name : ingredient_names) {
+            cocktails_ = new ArrayList<>();
+            for (Ingredient ingredient : ingredientRepository.findByNameContaining(ingredient_name)) {
+                for (Recipe_Ingredient recipeIngredient : recipe_ingredientRepository.findByIngredient(ingredient)) {
+                    cocktails_.add(recipeIngredient.getCocktail());
+                }
+            }
+            cocktails = findIntersection(cocktails, cocktails_);
+        }
+
+        return cocktails;
+    }
+
+    public List<Cocktail> findCocktailsByTraitNameContaining(Object object){
+        if (object instanceof String) {
+            return findCocktailsByTraitNameContaining((String) object);
+        } else if (object instanceof List) {
+            @SuppressWarnings("unchecked")
+            List<String> list = (List<String>) object;
+            return findCocktailsByTraitNameContaining(list);
+        } else {
+            return null;
+        }
     }
 
     public List<Cocktail> findCocktailsByTraitNameContaining(String trait){
@@ -72,19 +113,36 @@ public class CocktailService {
         return new ArrayList<>(cocktails);
     }
 
-    public List<Cocktail> findCocktailsByNameContainingAndIngredient(String cocktail_name, String ingredient_name){
+    public List<Cocktail> findCocktailsByTraitNameContaining(List<String> trait_names){
+        List<Cocktail> cocktails = cocktailRepository.findAll();
+        List<Cocktail> cocktails_;
+
+        for (String trait_name : trait_names) {
+            cocktails_ = new ArrayList<>();
+            for (Tag tag : tagRepository.findByTraitContaining(trait_name)) {
+                for (Cocktail_Tag cocktailTag : cocktail_tagRepository.findByTag(tag)) {
+                    cocktails_.add(cocktailTag.getCocktail());
+                }
+            }
+            cocktails = findIntersection(cocktails, cocktails_);
+        }
+
+        return cocktails;
+    }
+
+    public List<Cocktail> findCocktailsByNameContainingAndIngredient(String cocktail_name, Object ingredient_name){
         return findIntersection(findCocktailsByNameContaining(cocktail_name), findCocktailsByIngredientNameContaining(ingredient_name));
     }
 
-    public List<Cocktail> findCocktailsByNameContainingAndTrait(String cocktail_name, String trait){
+    public List<Cocktail> findCocktailsByNameContainingAndTrait(String cocktail_name, Object trait){
         return findIntersection(findCocktailsByNameContaining(cocktail_name), findCocktailsByTraitNameContaining(trait));
     }
 
-    public List<Cocktail> findCocktailsByIngredientAndTrait(String ingredient_name, String trait){
+    public List<Cocktail> findCocktailsByIngredientAndTrait(Object ingredient_name, Object trait){
         return findIntersection(findCocktailsByIngredientNameContaining(ingredient_name), findCocktailsByTraitNameContaining(trait));
     }
 
-    public List<Cocktail> findCocktailsByMixedCriteria(String cocktail_name, String ingredient_name, String trait){
+    public List<Cocktail> findCocktailsByMixedCriteria(String cocktail_name, Object ingredient_name, Object trait){
         return findIntersection(findCocktailsByNameContainingAndIngredient(cocktail_name, ingredient_name), findCocktailsByTraitNameContaining(trait));
     }
 
