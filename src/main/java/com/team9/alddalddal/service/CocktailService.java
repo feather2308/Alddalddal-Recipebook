@@ -89,18 +89,15 @@ public class CocktailService {
     }
 
     public Cocktail getCocktailByName(String name){
-        Optional<Cocktail> cocktail = cocktailRepository.findByName(name);
-        return cocktail.orElse(null);
+        return cocktailRepository.findByName(name).orElse(null);
     }
 
     public Recipe getRecipeByCocktail(Cocktail cocktail){
-        Optional<Recipe> recipe = recipeRepository.findByCocktail(cocktail);
-        return recipe.orElse(null);
+        return recipeRepository.findByCocktail(cocktail).orElse(null);
     }
 
     public Tag getTagById(int id){
-        Optional<Tag> tag = tagRepository.findById(id);
-        return tag.orElse(null);
+        return tagRepository.findById(id).orElse(null);
     }
 
     public List<Recipe_Ingredient> getRecipeIngredientByCocktail(Cocktail cocktail){

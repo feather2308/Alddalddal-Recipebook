@@ -64,6 +64,43 @@ public class AccountController {
         return "redirect:/";
     }
 
+    @GetMapping("/findId")
+    public String findIdGet(Model model) {
+        return "findId";
+    }
+
+    @PostMapping("/findId")
+    public String findIdPost(@RequestParam("email") String email,
+                             Model model) {
+        Account account = accountService.getAccountByEmail(email);
+        if (account == null) {
+            model.addAttribute("error", true);
+        } else {
+            model.addAttribute("account", account);
+        }
+
+        return "findId";
+    }
+
+    @GetMapping("/findPw")
+    public String findPwGet(Model model) {
+        return "findPw";
+    }
+
+    @PostMapping("/findPw")
+    public String findPwPost(@RequestParam("id") String id,
+                             @RequestParam("email") String email,
+                             Model model) {
+        Account account = accountService.getAccount(id);
+        if (account == null || !account.getEmail().equals(email)) {
+            model.addAttribute("error", true);
+        } else {
+            model.addAttribute("account", account);
+        }
+
+        return "findPw";
+    }
+
     @GetMapping("/mypage")
     public String mypageGet(HttpSession session, Model model) {
         session.setAttribute("history", "mypage");
