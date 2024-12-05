@@ -204,7 +204,7 @@
 
 <div class="comments-section">
     <h3>댓글</h3>
-    <form action="/recipe" method="POST">
+    <form action="/addComment" method="POST">
         <input type="hidden" name="cocktail" th:value="${cocktail.name}">
         <input class="comment-box" name="content" placeholder="댓글을 남겨주세요..." required>
         <button class="comment-button" type="submit">댓글 달기</button>
