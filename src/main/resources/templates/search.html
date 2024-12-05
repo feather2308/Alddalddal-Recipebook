@@ -76,14 +76,17 @@
         </div>
         <div>
             <label for="ingredient_name">재료:</label>
-            <input type="text" id="ingredient_name" name="ingredient" autocomplete="off" oninput="searchIngredients()">
+            <input type="text" id="ingredient_name" name="ingredient" autocomplete="off" placeholder="재료1, 재료2, ... 입력" oninput="searchIngredients()">
             <div id="ingredient-list" style="display: none;">
                 <ul id="ingredient-results"></ul>
             </div>
         </div>
         <div>
-            <label for="trait">특성:</label>
-            <input type="text" id="trait" name="trait" class="search-input" placeholder="특성 입력">
+            <label for="trait_name">특성:</label>
+            <input type="text" id="trait_name" name="trait" autocomplete="off" placeholder="특성1, 특성2, ... 입력" oninput="searchTraits()">
+            <div id="trait-list" style="display: none;">
+                <ul id="trait-results"></ul>
+            </div>
         </div>
         <button type="submit" class="search-button">검색</button>
     </form>
@@ -114,7 +117,7 @@
         const query = document.getElementById("ingredient_name").value;
 
         if (query.length >= 1) { // 최소 2글자 이상 입력 시에만 요청
-            fetch(`/getIngredients/find?query=${query}`)
+            fetch(`/find/getIngredients?query=${query}`)
                 .then(response => response.json())
                 .then(data => {
                     const resultList = document.getElementById("ingredient-results");
@@ -153,6 +156,52 @@
                 });
         } else {
             document.getElementById("ingredient-list").style.display = "none"; // 2글자 미만 입력 시 드롭다운 숨기기
+        }
+    }
+
+    function searchTraits() {
+        const query = document.getElementById("trait_name").value;
+
+        if (query.length >= 1) { // 최소 2글자 이상 입력 시에만 요청
+            fetch(`/find/getTraits?query=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultList = document.getElementById("trait-results");
+                    resultList.innerHTML = ''; // 이전 결과 지우기
+
+                    if (data.length > 0) {
+                        data.forEach(item => {
+                            const li = document.createElement("li");
+                            li.textContent = item;
+                            li.style.cursor = "pointer";  // 마우스 포인터 추가
+                            li.onclick = function() {
+                                // 현재 값에서 반점 기준으로 마지막 텍스트만 item으로 변경
+                                let currentValue = document.getElementById("trait_name").value;
+                                let parts = currentValue.split(","); // 반점으로 분리
+
+                                // 마지막 부분을 item으로 바꿈
+                                parts[parts.length - 1] = item;
+
+                                // 바뀐 값을 다시 ingredient_name에 설정
+                                document.getElementById("trait_name").value = parts.join(",").trim(); // 반점으로 합침
+
+                                // 드롭다운 숨기기
+                                document.getElementById("trait-list").style.display = "none";
+                            };
+                            resultList.appendChild(li);
+                        });
+
+                        // 결과가 있으면 드롭다운 보이기
+                        document.getElementById("trait-list").style.display = "block";
+                    } else {
+                        document.getElementById("trait-list").style.display = "none"; // 결과 없으면 숨기기
+                    }
+                })
+                .catch(error => {
+                    console.error("검색 오류:", error);
+                });
+        } else {
+            document.getElementById("trait-list").style.display = "none"; // 2글자 미만 입력 시 드롭다운 숨기기
         }
     }
 </script>

@@ -52,6 +52,15 @@ public class CocktailService {
         return ingredientsNames;
     }
 
+    public List<String> findTraitsNameByNameContaining(String trait_name) {
+        List<Tag> tags = tagRepository.findByTraitContaining(trait_name);
+        List<String> traitNames = new ArrayList<>();
+        for (Tag tag : tags) {
+            traitNames.add(tag.getTrait());
+        }
+        return traitNames;
+    }
+
     public List<Cocktail> findCocktailsByIngredientNameContaining(Object object){
         if (object instanceof String) {
             return findCocktailsByIngredientNameContaining((String) object);
