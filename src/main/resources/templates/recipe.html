@@ -168,11 +168,9 @@
             <p th:if="${recipe.url!= '-' }">유튜브 영상: <a th:href="${recipe.url}" target="_blank">여기서 보기</a></p>
         </div>
         <div class="cocktail-tag">
-            태그임니당 ㅎㅎ
-            <div th:each="tag : ${tags}">
-                <div th:if="${tag} != null">
-                    [[${tag.trait}]]
-                </div>
+            -태그-
+            <div th:if="${tags != null}" th:each="tag : ${tags}">
+                [[${tag.tag.trait}]]
             </div>
         </div>
         <span th:if="${favoriteFlag != null}">
