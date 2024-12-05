@@ -81,7 +81,7 @@ public class CocktailController {
         return "recipe";
     }
 
-    @PostMapping("/recipe")
+    @PostMapping("/addComment")
     public String recipePost(@RequestParam(name = "cocktail") String cocktail_name,
                              @RequestParam String content,
                              HttpSession session, Model model){
@@ -89,6 +89,9 @@ public class CocktailController {
         String id = (String) session.getAttribute("user");
 
         Account account = accountService.getAccount(id);
+        if (account == null){
+            return "redirect:/login";
+        }
         Cocktail cocktail = cocktailService.getCocktailByName(cocktail_name);
 
         Date time = new Date(System.currentTimeMillis());
