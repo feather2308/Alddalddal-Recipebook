@@ -25,6 +25,10 @@ public class CommentsService {
     }
 
     public void deleteCommentsById(int id) {
-        commentsRepository.deleteById(id);
+        commentsRepository.delete(commentsRepository.findById(id));
+    }
+
+    public Comments findById(int id) {
+        return commentsRepository.findById(id);
     }
 }

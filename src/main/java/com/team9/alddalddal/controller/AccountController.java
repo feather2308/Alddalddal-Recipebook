@@ -58,7 +58,6 @@ public class AccountController {
         }
     }
 
-
     @GetMapping("/logout")
     public String logoutGet(HttpSession session) {
         session.invalidate();

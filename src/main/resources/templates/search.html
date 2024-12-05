@@ -113,7 +113,7 @@
     function searchIngredients() {
         const query = document.getElementById("ingredient_name").value;
 
-        if (query.length >= 2) { // 최소 2글자 이상 입력 시에만 요청
+        if (query.length >= 1) { // 최소 2글자 이상 입력 시에만 요청
             fetch(`/getIngredients/find?query=${query}`)
                 .then(response => response.json())
                 .then(data => {

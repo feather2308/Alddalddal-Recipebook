@@ -98,6 +98,19 @@ public class CocktailController {
         return "redirect:/recipe?cocktail=" + cocktail.getName();
     }
 
+    @PostMapping("/deleteComment")
+    public String deleteCommnet(@RequestParam(name = "cocktail") String cocktail_name,
+                                @RequestParam int id,
+                                HttpSession session, Model model){
+        Account account = accountService.getAccount((String) session.getAttribute("user"));
+        Cocktail cocktail = cocktailService.getCocktailByName(cocktail_name);
+
+        if(commentsService.findById(id).getAccount() == account)
+            commentsService.deleteCommentsById(id);
+
+        return "redirect:/recipe?cocktail=" + cocktail.getName();
+    }
+
     @GetMapping("/ingredient")
     public String ingredientGet(Model model) {
         List<Ingredient> ingredients = cocktailService.getAllIngredients();

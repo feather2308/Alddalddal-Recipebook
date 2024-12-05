@@ -209,9 +209,16 @@
         <input class="comment-box" name="content" placeholder="댓글을 남겨주세요..." required>
         <button class="comment-button" type="submit">댓글 달기</button>
     </form>
-    <p th:if="${comments != null}" th:each="comment : ${comments}">
-        [[@{'내용히히: ' + ${comment.content}}]] [[@{'타임스탬프: ' + ${comment.time}}]] [[@{'작성자: ' + ${comment.getAccount().getNickname()}}]]
-    </p>
+    <div th:if="${comments != null}" th:each="comment : ${comments}">
+        내용히히: [[${comment.content}]]
+        타임스탬프: [[${comment.time}]]
+        작성자: [[${comment.getAccount().getNickname()}]]
+        <form action="/deleteComment" method="POST">
+            <input type="hidden" name="cocktail" th:value="${cocktail.name}">
+            <input type="hidden" name="id" th:value="${comment.id}">
+            <button type="submit">댓글 삭제</button>
+        </form>
+    </div>
 </div>
 
 <script>
