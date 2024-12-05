@@ -66,7 +66,7 @@ public class AccountController {
 
     @GetMapping("/findId")
     public String findIdGet(Model model) {
-        return "findId";
+        return "findid";
     }
 
     @PostMapping("/findId")
@@ -79,12 +79,12 @@ public class AccountController {
             model.addAttribute("account", account);
         }
 
-        return "findId";
+        return "findid";
     }
 
     @GetMapping("/findPw")
     public String findPwGet(Model model) {
-        return "findPw";
+        return "findpw";
     }
 
     @PostMapping("/findPw")
@@ -98,7 +98,7 @@ public class AccountController {
             model.addAttribute("account", account);
         }
 
-        return "findPw";
+        return "findpw";
     }
 
     @GetMapping("/mypage")

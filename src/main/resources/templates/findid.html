@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 찾기</title>
+</head>
+<style>
+    body {
+        background: radial-gradient(circle at top, #646464 10%, #000000 100%);
+        font-family: Arial, sans-serif;
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+    }
+
+    .column-container{
+        flex-direction: column;
+        width : 600px;
+        margin-top: -40px;
+    }
+
+    .find-id-form-container {
+        max-width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .find-id-form-banner img {
+        max-width: 50%;
+        margin: auto;
+        display: block;
+    }
+
+    .find-id-input-field {
+        display: flex;
+        align-items: center;
+        background-color: #140B0B;
+        margin-bottom: 20px;
+        padding: 5px;
+    }
+
+    .sr-only{
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+    }
+
+    .find-id-input {
+        background-color: #110B0B;
+        border-radius: 5px;
+        border: 10px solid #110B0B;
+        color: rgb(95, 95, 95);
+        width: 100%;
+        height: 40px;
+        font-size: 15px;
+        padding-left: 30px;
+    }
+
+    .find-id-icon {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+
+    .find-id-btn {
+        background-color: #797979;
+        color: white;
+        width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        border: none;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    .back-btn {
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .error-message {
+        color: red;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+</style>
+<body>
+
+<div class="container">
+    <div class="column-container">
+        <div class="find-id-form-banner">
+            <img src="/images/head_banner.png" alt="Logo" class="img-fluid">
+        </div>
+        <div class="find-id-form-container">
+
+            <form action="/findId" method="post">
+                <div class="find-id-input-field">
+                    <label for="email" class="sr-only">이메일</label>
+                    <img src="/images/email.png" alt="이메일 아이콘" class="find-id-icon">
+                    <input type="email" id="email" class="find-id-input" name="email" placeholder="이메일을 입력하세요" required>
+                </div>
+
+                <button type="submit" class="find-id-btn">아이디 찾기</button>
+                <button type="button" class="back-btn" onclick="window.location.href='/login'">로그인 페이지로 돌아가기</button>
+            </form>
+
+            <div class="error-message" th:if="${error}">
+                해당 이메일로 가입된 계정이 없습니다.
+            </div>
+
+            <div th:if="${account != null}">
+                <p>아이디: <span th:text="${account.id}"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
