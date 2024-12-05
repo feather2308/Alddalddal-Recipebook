@@ -4,80 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인 페이지</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-
-        .login-container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .input-field {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .login-button {
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .login-button:hover {
-            background-color: #0056b3;
-        }
-
-        .forgot-password {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
-<body>
-<div class="login-container">
-    <h2>로그인</h2>
-    <form action="/login" method="post">
-        <input type="text" class="input-field" name="id" placeholder="아이디" required>
-        <input type="password" class="input-field" name="password" placeholder="비밀번호" required>
-        <button type="submit" class="login-button">로그인</button>
-    </form>
+<style>
+    body {
+        background: radial-gradient(circle at top, #646464 10%, #000000 100%);
+        font-family: Arial, sans-serif;
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
 
-    <div>
-        <p th:if="${param.error}" style="color: red;">아이디 또는 비밀번호가 틀렸습니다.</p>
+    .container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+    }
+
+    .column-container{
+        flex-direction: column; /* 상하 배치를 위한 설정 */
+        width : 600px;
+        margin-top: -40px;
+    }
+
+    .sign-in-form-container {
+        max-width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .sign-in-form-banner img {
+        max-width: 50%;
+        margin: auto; /* 수평 중앙 정렬을 위한 margin 추가 */
+        display: block; /* 이미지를 블록 레벨 요소로 변경 */
+    }
+
+    .sign-in-input-field {
+        display: flex;
+        align-items: center;
+        background-color: #140B0B; /* 아이콘의 배경색 */
+        margin-bottom: 20px;
+        padding: 5px; /* padding 추가로 아이콘과 입력창 간의 간격 조절 */
+    }
+
+    .sr-only{
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+    }
+
+    .sign-in-input {
+        background-color: #110B0B;
+        border-radius: 5px;
+        border: 10px solid #110B0B;
+        color: rgb(95, 95, 95);
+        width: 100%;
+        height: 40px; /* 입력창 높이 변경 */
+        font-size: 15px;
+        padding-left: 30px; /* 아이콘과 입력 글자 간의 간격 */
+    }
+
+    .sign-in-icon {
+        width: auto; /* 아이콘 크기 조절 */
+        height: 100%; /* 아이콘 크기 조절 */
+        object-fit: cover;
+        margin-right: 10px; /* 아이콘과 입력창 간의 간격 */
+    }
+
+    .sign-in-btn {
+        background-color: #797979;
+        color: white;
+        width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        border: none;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    .sign-up-btn {
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .error-message {
+        color: red;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+</style>
+<body>
+
+<div class="container">
+    <div class="column-container">
+        <div class="sign-in-form-banner">
+            <img src="/images/head_banner.png" alt="Logo" class="img-fluid">
+        </div>
+        <div class="sign-in-form-container">
+
+            <form action="/login" method="post">
+                <div class="sign-in-input-field">
+                    <label for="id" class="sr-only"> 아이디 </label> <!-- 접근성 향상 -->
+                    <img src="/images/user.png" alt="아이디 아이콘" class="sign-in-icon">
+                    <input type="text" id="id" class="sign-in-input" name="id" placeholder="아이디" required>
+                </div>
+                <div class="sign-in-input-field">
+                    <label for="password" class="sr-only">비밀번호</label>
+                    <img src="/images/lock.png" alt="비밀번호 아이콘" class="sign-in-icon">
+                    <input type="password" id="password" class="sign-in-input" name="password" placeholder="비밀번호" required>
+
+                </div>
+                <button type="submit" class="sign-in-btn">로그인</button>
+                <button type="button" class="sign-up-btn">회원가입</button>
+            </form>
+
+            <div class="error-message" th:if="${param.error}">
+                아이디 또는 비밀번호가 틀렸습니다.
+            </div>
+        </div>
     </div>
 </div>
+
+<script>
+    console.log("현재 Document 경로:", window.location.pathname);
+</script>
+
 </body>
 </html>
