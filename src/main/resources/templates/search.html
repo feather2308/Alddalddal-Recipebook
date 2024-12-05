@@ -126,8 +126,18 @@
                             li.textContent = item;
                             li.style.cursor = "pointer";  // 마우스 포인터 추가
                             li.onclick = function() {
-                                document.getElementById("ingredient_name").value = item;
-                                document.getElementById("ingredient-list").style.display = "none"; // 드롭다운 숨기기
+                                // 현재 값에서 반점 기준으로 마지막 텍스트만 item으로 변경
+                                let currentValue = document.getElementById("ingredient_name").value;
+                                let parts = currentValue.split(","); // 반점으로 분리
+
+                                // 마지막 부분을 item으로 바꿈
+                                parts[parts.length - 1] = item;
+
+                                // 바뀐 값을 다시 ingredient_name에 설정
+                                document.getElementById("ingredient_name").value = parts.join(",").trim(); // 반점으로 합침
+
+                                // 드롭다운 숨기기
+                                document.getElementById("ingredient-list").style.display = "none";
                             };
                             resultList.appendChild(li);
                         });
