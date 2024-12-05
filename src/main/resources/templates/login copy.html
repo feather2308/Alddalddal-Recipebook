@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <style>
+        body {
+            background: radial-gradient(circle at top, #646464 10%, #000000 100%);
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .sign-in-form-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: rgba(0, 0, 0, 0);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .sign-in-form-container img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .sign-in-input-field {
+            display: flex;
+            align-items: center;
+            background-color: #140B0B; /* 아이콘의 배경색 */
+        }
+
+        .sign-in-input {
+            background-color: #110B0B;
+            border-radius: 5px;
+            border: 10px solid #110B0B;
+            color: rgb(95, 95, 95);
+            padding-left: 40px; /* 아이콘과 여백을 맞추기 위한 패딩 */
+            margin-bottom: 15px;
+            width: 100%;
+            height: 30px;
+            font-size: 15px;
+        }
+
+        .sign-in-input::placeholder {
+            color: #757575;
+        }
+
+        .sign-in-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .sign-in-btn {
+            background-color: #797979;
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            margin-top :15px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .sign-in-btn:hover {
+            background-color: #45a049;
+            border-color: #45a049;
+        }
+
+        .sign-up-btn {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .sign-up-btn:hover {
+            color: #ccc;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sign-in-form-container">
+        <div class="text-center mb-4">
+            <img src="A.png" alt="Logo" class="img-fluid">
+        </div>
+
+        <form action="/login" method="post">
+            <div class="sign-in-input-field mb-3 d-flex align-items-center">
+                <img src="id-icon.png" alt="아이디 아이콘" class="sign-in-icon">
+                <input type="text" class="sign-in-input" name="id" placeholder="아이디" required>
+            </div>
+            <div class="sign-in-input-field mb-3 d-flex align-items-center">
+                <img src="password-icon.png" alt="비밀번호 아이콘" class="sign-in-icon">
+                <input type="password" class="sign-in-input" name="password" placeholder="비밀번호" required>
+            </div>
+            <button type="submit" class="sign-in-btn">로그인</button>
+            <button type="button" class="sign-up-btn">회원가입</button>
+        </form>
+
+        <div class="error-message" th:if="${param.error}">
+            아이디 또는 비밀번호가 틀렸습니다.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
