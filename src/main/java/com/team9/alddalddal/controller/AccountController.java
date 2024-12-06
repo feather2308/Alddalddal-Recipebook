@@ -25,15 +25,26 @@ public class AccountController {
     private CocktailService cocktailService;
 
     @GetMapping("/signin")
-    public String signinGet() {
+    public String signinGet(HttpSession session, Model model) {
+        if(session.getAttribute("error") != null) {
+            model.addAttribute("error", session.getAttribute("error"));
+            session.removeAttribute("error");
+        }
         return "signin";
     }
 
     @PostMapping("/signin")
     public String signinPost(@RequestParam String id,   @RequestParam String password,
                              @RequestParam String name, @RequestParam String nickname,
-                             @RequestParam String email) {
-        accountService.add(id, password, name, nickname, email);
+                             @RequestParam String email,
+                             HttpSession session) {
+        String id_ = id.trim();
+
+        if(accountService.getAccount(id_) != null) {
+            session.setAttribute("error", "이미 존재하는 아이디입니다.");
+            return "redirect:/signin";
+        }
+        accountService.add(id_, password, name, nickname, email);
         return "redirect:/";
     }
 
