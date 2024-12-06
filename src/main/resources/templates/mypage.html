@@ -5,40 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지</title>
     <style>
+        body {
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            height:100%;
+            align-items: center;  /* 세로 중앙 정렬 */
+        }
+
+        .header{
+            height: 140px;
+            border-bottom: 1px solid #777777; /* 첫 번째 선 */
+            margin-bottom: 4px; /* 두 번째 선과의 간격 조정 */
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+            justify-content: center; /* 가운데 정렬 */
+            max-width: 100%; /* 부모의 너비를 100%로 설정 */
+            align-items: center;
+        }
+
+        .banner-container {
+            display: flex;
+            width: 90%;
+            height: 140px;
+            justify-content: space-between;  /* 왼쪽과 오른쪽 끝에 요소 배치 */
+            align-items: center;  /* 세로 중앙 정렬 */
+            z-index: 3; /* 다른 요소보다 뒤에 오도록 설정 */
+            max-width : 1800px;
+        }
+
+        .banner-container a{
+            height: 100%;
+            flex: 0 0 auto;
+        }
+
+        .navigation-bar{
+            font-size:20pt;
+            color:white;
+            text-decoration: underline;
+            margin-left:auto;
+        }
+
+        .banner-icon{
+            height:135%;
+            position: relative;
+            min-height: 40%;
+            margin: auto auto auto 20px;
+        }
+
         /* 스타일 예시 */
         .mypage-container {
             display: flex;
-            justify-content: space-between;
+            align-items: center;  /* 세로 중앙 정렬 */
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #000000;
+            flex-direction: column;
         }
 
-        .mypage-left, .mypage-right {
-            width: 45%;
+        .mypage-info{
+            display:flex;
+            flex-direction: column;
+            width: 60%;
+            color: white;
+        }
+
+        .mypage-info h2{
+            font-size: 40px;
+        }
+
+        .mypage-h2-line{
+            border-bottom: 1px solid #777777; /* 첫 번째 선 */
         }
 
         .user-info p {
-            margin: 10px 0;
-            font-size: 18px;
+            margin: 20px 0;
+            font-size: 25px;
         }
 
-        .btn-edit-profile {
+        .info-button-container{
+            display: flex;
+            justify-content: flex-end; /* 버튼을 우측 정렬 */
+            gap: 10px; /* 버튼 간격 설정 */
+            align-content: center;
+        }
+
+        .info-edit-btn {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
+            background-color: #45a049;
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
+            color: white;
         }
 
-        .btn-edit-profile:hover {
-            background-color: #45a049;
+        .info-edit-btn:hover {
+            background-color: lightblue;
         }
 
-        .btn-edit-profile:hover {
-            background-color: #c76060;
+        .info-resign-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            color: white;
+        }
+
+        .info-resign-btn:hover {
+            background-color: lightblue;
+        }
+
+        .mypage-like{
+            width : 75%;
+            color: white;
+        }
+
+        .mypage-like h3{
+            width : 75%;
+            color: white;
+            font-size : 40px;
         }
 
         .cocktail-list {
@@ -47,7 +140,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #fff;
-            height: 400px;  /* 고정 높이 */
+            height: 300px;  /* 고정 높이 */
             overflow-y: auto; /* 세로 스크롤 추가 */
         }
 
@@ -109,88 +202,105 @@
     </style>
 </head>
 <body>
-<div class="mypage-container">
-    <div class="mypage-left">
-        <h2>자신의 정보</h2>
-        <div class="user-info">
-            <p><strong>아이디:</strong> [[${account.id}]]</p>
-            <p><strong>이름:</strong> [[${account.name}]]</p>
-            <p><strong>닉네임:</strong> [[${account.nickname}]]</p>
-            <p><strong>이메일:</strong> [[${account.email}]]</p>
-        </div>
-        <!-- 정보 수정 버튼 -->
-        <a href="/edit-profile" class="btn-edit-profile">정보 수정</a>
-        <a href="#" class="btn-resign" onclick="confirmResign()">회원 탈퇴</a>
-    </div>
-
-    <div class="mypage-right">
-        <h3>칵테일 좋아요 목록</h3>
-        <div class="cocktail-list">
-            <!-- 칵테일 좋아요 목록을 동적으로 삽입 -->
-            <ul>
-                <li th:each="cocktail : ${cocktails}">
-                    <div class="cocktail-item">
-                        <a th:href="@{'/recipe?cocktail=' + ${cocktail.name}}" style="text-decoration: none; color: inherit;">
-                            <img th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" th:alt="@{${cocktail.name} + ' Image'}" />
-                            <h3 th:text="${cocktail.name}">Cocktail Name</h3>
-                        </a>
-                        <!-- 별 추가 -->
-                        <span class="star"
-                              th:classappend="'favorite-star checked'"
-                              th:text="'★'"
-                              th:data-id="${account.id}"
-                              th:data-cocktail="${cocktail.name}">
-                        </span>
-                    </div>
-                </li>
-            </ul>
+    <div class="header">
+        <div class="container">
+            <div class="banner-container">
+                <a href="/">
+                    <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
+                </a>
+                <!-- 로그인 링크 추가 -->
+                <div class = "navigation-bar">
+                    <a href="/login">로그인</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    function confirmResign() {
-        // 확인 창 띄우기
-        const result = confirm("회원 탈퇴를 하시겠습니까?");
+    <div class="mypage-container">
+        <div class="mypage-info">
+            <h2>자신의 정보</h2>
+            <div class="mypage-h2-line"></div>
+            <div class="user-info">
+                <p><strongW>아이디:&nbsp</strongW> [[${account.id}]]</p>
+                <p><strong>이름:&nbsp</strong> [[${account.name}]]</p>
+                <p><strong>닉네임:&nbsp</strong> [[${account.nickname}]]</p>
+                <p><strong>이메일:&nbsp</strong> [[${account.email}]]</p>
+            </div>
+            <div class="info-button-container">
+                <!-- 정보 수정 버튼 -->
+                <a href="/editprofile" class="info-edit-btn">정보 수정</a>
+                <a href="#" class="info-resign-btn" onclick="confirmResign()">회원 탈퇴</a>
+                </div>
+        </div>
 
-        if (result) {
-            // "예" 클릭 시 /resign으로 리다이렉트
-            window.location.href = "/resign";
-        } else {
-            // "아니오" 클릭 시 경고창 사라짐 (아무 일도 일어나지 않음)
-            return false;
+        <div class="mypage-like">
+            <h3>칵테일 좋아요 목록</h3>
+            <div class="cocktail-list">
+                <!-- 칵테일 좋아요 목록을 동적으로 삽입 -->
+                <ul>
+                    <li th:each="cocktail : ${cocktails}">
+                        <div class="cocktail-item">
+                            <a th:href="@{'/recipe?cocktail=' + ${cocktail.name}}" style="text-decoration: none; color: inherit;">
+                                <img th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" th:alt="@{${cocktail.name} + ' Image'}" />
+                                <h3 th:text="${cocktail.name}">Cocktail Name</h3>
+                            </a>
+                            <!-- 별 추가 -->
+                            <span class="star"
+                                  th:classappend="'favorite-star checked'"
+                                  th:text="'★'"
+                                  th:data-id="${account.id}"
+                                  th:data-cocktail="${cocktail.name}">
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function confirmResign() {
+            // 확인 창 띄우기
+            const result = confirm("회원 탈퇴를 하시겠습니까?");
+
+            if (result) {
+                // "예" 클릭 시 /resign으로 리다이렉트
+                window.location.href = "/resign";
+            } else {
+                // "아니오" 클릭 시 경고창 사라짐 (아무 일도 일어나지 않음)
+                return false;
+            }
         }
-    }
 
-    document.querySelectorAll('.favorite-star').forEach(function(star) {
-        star.addEventListener('click', function() {
-            const id = this.getAttribute('data-id');
-            const cocktailName = this.getAttribute('data-cocktail');
+        document.querySelectorAll('.favorite-star').forEach(function(star) {
+            star.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                const cocktailName = this.getAttribute('data-cocktail');
 
-            fetch('/favorite/toggle',{
-                method: 'POST',
-                body: JSON.stringify({ id: id, cocktailName: cocktailName }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then(response => {
-                    if (response.ok) {
-                        return response.json(); // 응답이 성공적일 경우 JSON 파싱
-                    } else {
-                        throw new Error('네트워크 오류 발생');
+                fetch('/favorite/toggle',{
+                    method: 'POST',
+                    body: JSON.stringify({ id: id, cocktailName: cocktailName }),
+                    headers: {
+                        'Content-Type': 'application/json'
                     }
                 })
-                .then(data => {
-                    // 응답에 따라 UI 업데이트 (별의 상태 변경)
-                    console.log('응답 데이터:', data);
-                    window.location.href = window.location.href; // 페이지 새로 고침
-                })
-                .catch(error => {
-                    console.error('에러 발생:', error);
-                });
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json(); // 응답이 성공적일 경우 JSON 파싱
+                        } else {
+                            throw new Error('네트워크 오류 발생');
+                        }
+                    })
+                    .then(data => {
+                        // 응답에 따라 UI 업데이트 (별의 상태 변경)
+                        console.log('응답 데이터:', data);
+                        window.location.href = window.location.href; // 페이지 새로 고침
+                    })
+                    .catch(error => {
+                        console.error('에러 발생:', error);
+                    });
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
