@@ -99,10 +99,15 @@ public class MainController {
                     new ArrayList<>();
         };
 
+        if (flag != 0) {
+            model.addAttribute("isSearch", true);
+            model.addAttribute("results", results);
+        } else {
+            model.addAttribute("isSearch", false);
+        }
+
         String history = (String) session.getAttribute("history");
         model.addAttribute("history", history == null ? "" : history);
-
-        model.addAttribute("results", results);
 
         String user = (String) session.getAttribute("user");
         model.addAttribute("isLoggedIn", false);
