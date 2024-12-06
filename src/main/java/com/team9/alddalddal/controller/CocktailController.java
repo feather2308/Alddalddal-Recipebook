@@ -59,7 +59,7 @@ public class CocktailController {
     @GetMapping("/recipe")
     public String recipeGet(@RequestParam(name = "cocktail") String cocktail_name, HttpSession session, Model model) {
         String id = (String) session.getAttribute("user");
-
+        
         Cocktail cocktail = cocktailService.getCocktailByName(cocktail_name);
         Recipe recipe = cocktailService.getRecipeByCocktail(cocktail);
 
@@ -84,7 +84,7 @@ public class CocktailController {
     @PostMapping("/addComment")
     public String recipePost(@RequestParam(name = "cocktail") String cocktail_name,
                              @RequestParam String content,
-                             HttpSession session, Model model){
+                             HttpSession session){
 
         String id = (String) session.getAttribute("user");
 
@@ -102,9 +102,9 @@ public class CocktailController {
     }
 
     @PostMapping("/deleteComment")
-    public String deleteCommnet(@RequestParam(name = "cocktail") String cocktail_name,
+    public String deleteComment(@RequestParam(name = "cocktail") String cocktail_name,
                                 @RequestParam int id,
-                                HttpSession session, Model model){
+                                HttpSession session){
         Account account = accountService.getAccount((String) session.getAttribute("user"));
         Cocktail cocktail = cocktailService.getCocktailByName(cocktail_name);
 

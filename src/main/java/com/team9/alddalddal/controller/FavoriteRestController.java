@@ -3,8 +3,6 @@ package com.team9.alddalddal.controller;
 import com.team9.alddalddal.FavoriteRequest;
 import com.team9.alddalddal.entity.Account;
 import com.team9.alddalddal.entity.Cocktail;
-import com.team9.alddalddal.entity.Favorite;
-import com.team9.alddalddal.entity.FavoriteId;
 import com.team9.alddalddal.service.AccountService;
 import com.team9.alddalddal.service.CocktailService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/favorite")

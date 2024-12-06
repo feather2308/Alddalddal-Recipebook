@@ -3,7 +3,6 @@ package com.team9.alddalddal.repository;
 import com.team9.alddalddal.entity.Cocktail;
 import com.team9.alddalddal.entity.Ingredient;
 import com.team9.alddalddal.entity.Recipe_Ingredient;
-import com.team9.alddalddal.entity.Recipe_IngredientId;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

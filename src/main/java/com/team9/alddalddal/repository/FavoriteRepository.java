@@ -3,7 +3,6 @@ package com.team9.alddalddal.repository;
 import com.team9.alddalddal.entity.Account;
 import com.team9.alddalddal.entity.Cocktail;
 import com.team9.alddalddal.entity.Favorite;
-import com.team9.alddalddal.entity.FavoriteId;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
