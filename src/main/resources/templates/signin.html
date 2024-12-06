@@ -85,7 +85,7 @@
         <input type="text" class="input-field" name="nickname" placeholder="닉네임" required>
         <input type="email" class="input-field" name="email" placeholder="이메일" required>
 
-        <div th:if="${error!=null}"  class = "error">${error}</div>
+        <div th:if="${error!=null}"  class = "error">[[${error}]]</div>
         <button type="submit" class="submit-button">회원가입</button>
     </form>
 
