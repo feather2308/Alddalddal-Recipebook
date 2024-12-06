@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
+    <title>알딸딸 레시피북 - 회원가입</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
         body {
             display:flex;
             justify-content: center;
             align-items: center;
             height:100vh;
             background: radial-gradient(circle at top, #646464 10%, #000000 100%);
-            font-family: Arial, sans-serif;
+            font-family: Noto Sans KR, Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
@@ -85,7 +87,7 @@
         <input type="text" class="input-field" name="nickname" placeholder="닉네임" required>
         <input type="email" class="input-field" name="email" placeholder="이메일" required>
 
-        <div th:if="${error!=null}"  class = "error">${error}</div>
+        <div th:if="${error!=null}"  class = "error">[[${error}]]</div>
         <button type="submit" class="submit-button">회원가입</button>
     </form>
 
