@@ -113,7 +113,7 @@ VALUES ('Clover Club',
         'https://www.youtube.com/watch?v=oo9R082EgGs');
 
 INSERT INTO recipe (cocktail_name, recipe_method, recipe_garnish, recipe_url)
-VALUES ('Corpse Reviver #2',
+VALUES ('Corpse Reviver No.2',
         '1. 모든 재료를 셰이커에 넣고 얼음과 함께 잘 흔든 후,\n2. 차가운 칵테일 글라스에 걸러서 따릅니다.',
         '오렌지 제스트',
         'https://www.youtube.com/watch?v=DnckejSfjvk');
