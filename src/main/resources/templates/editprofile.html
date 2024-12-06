@@ -5,27 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>프로필 수정</title>
     <style>
-        form {
-            width: 300px;
+        body {
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            height:100%;
+            align-items: center;  /* 세로 중앙 정렬 */
+            justify-content: center;
+        }
+
+        .header{
+            height: 100px;
+            border-bottom: 1px solid #777777; /* 첫 번째 선 */
+            margin-bottom: 4px; /* 두 번째 선과의 간격 조정 */
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
             margin: 0 auto;
+            justify-content: center; /* 가운데 정렬 */
+            max-width: 100%; /* 부모의 너비를 100%로 설정 */
+            align-items: center;
+        }
+
+        .banner-container {
+            display: flex;
+            width: 90%;
+            height: 100px;
+            justify-content: space-between;  /* 왼쪽과 오른쪽 끝에 요소 배치 */
+            align-items: center;  /* 세로 중앙 정렬 */
+            z-index: 3; /* 다른 요소보다 뒤에 오도록 설정 */
+            max-width : 1800px;
+        }
+
+        .banner-container a{
+            height: 100%;
+            flex: 0 0 auto;
+        }
+
+        .navigation-bar{
+            font-size:16pt;
+            color:white;
+            text-decoration: none;
+            margin-left:auto;
+        }
+
+        .banner-icon{
+            height:170%;
+            position: relative;
+            min-height: 40%;
+            margin: auto auto auto 20px;
+        }
+
+        .editprofile-container {
+            display: flex;
+            align-items: center;  /* 세로 중앙 정렬 */
             padding: 20px;
-            border: 1px solid #ccc;
+            background-color: #000000;
+            flex-direction: column;
+            color:white;
+        }
+
+        form {
+            font-size: 15px;
+            padding: 20px;
             border-radius: 5px;
-            background-color: #f9f9f9;
+            width: 55%;
+        }
+
+        .editprofile-h1-line{
+            border-bottom: 1px solid #777777; /* 첫 번째 선 */
+            margin-bottom : 20px;
+        }
+
+        .input-field {
+            display: flex;
+            justify-content: flex-end; /* .input-field 자체를 오른쪽 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            margin-bottom: 15px; /* 각 필드 사이의 간격 */
         }
 
         label {
-            display: block;
-            margin: 10px 0 5px;
             font-weight: bold;
+            text-align: right; /* label 오른쪽 정렬 */
+            margin-right: 30px;
+            width: 25%; /* label 너비 설정 */
         }
 
-        input[type="text"], input[type="email"], input[type="password"], button {
-            width: 100%;
+        input[type="text"], input[type="email"], input[type="password"] {
             padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
+            width: 100%; /* input 너비 설정 */
+            background-color: white;
+            border: 1px solid white;
             border-radius: 5px;
+            font-size: 15px;
         }
 
         button {
@@ -33,6 +107,12 @@
             color: white;
             border: none;
             cursor: pointer;
+            margin-left: auto; /* 버튼을 오른쪽으로 정렬 */
+            margin-right: 0;
+            display: block; /* 버튼을 블록 요소로 만들어 margin을 적용 */
+            width:100px;
+            height: 40px;
+            border-radius: 5px;
         }
 
         button:hover {
@@ -41,23 +121,42 @@
     </style>
 </head>
 <body>
-<h2 style="text-align: center;">프로필 수정</h2>
+<div class="header">
+    <div class="container">
+        <div class="banner-container">
+            <a href="/">
+                <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
+            </a>
+            <!-- 로그인 링크 추가 -->
+            <div class = "navigation-bar">
+                <div onclick="window.location.href='/login'">로그인</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="editprofile-container">
 <form action="/edit-profile" method="post">
-    <label for="name">이름</label>
-    <input type="text" id="name" name="name" th:value="${account.name}" required>
-
-    <label for="nickname">닉네임</label>
-    <input type="text" id="nickname" name="nickname" th:value="${account.nickname}" required>
-
-    <label for="email">이메일</label>
-    <input type="email" id="email" name="email" th:value="${account.email}" required>
-
-    <label for="currentPassword">현재 비밀번호</label>
-    <input type="password" id="currentPassword" name="currentPassword" required>
-
-    <label for="newPassword">새 비밀번호</label>
-    <input type="password" id="newPassword" name="newPassword">
-
+    <h1>프로필 수정</h1>
+    <div class = "editprofile-h1-line"></div>
+    <div class="input-field">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" th:value="${account.name}" required>
+    </div>
+    <div class="input-field">
+        <label for="nickname">닉네임</label>
+        <input type="text" id="nickname" name="nickname" th:value="${account.nickname}" required>
+    </div>
+    <div class="input-field">
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email" th:value="${account.email}" required>
+    </div><div class="input-field">
+        <label for="currentPassword">현재 비밀번호</label>
+        <input type="password" id="currentPassword" name="currentPassword" required>
+    </div>
+    <div class="input-field">
+        <label for="newPassword">새 비밀번호</label>
+        <input type="password" id="newPassword" name="newPassword">
+    </div>
     <!-- 에러 메시지 표시 -->
     <div th:if="${error}" style="color: red; font-weight: bold; margin-bottom: 10px;">
         <p th:text="${error}"></p>
@@ -65,5 +164,6 @@
 
     <button type="submit">수정하기</button>
 </form>
+</div>
 </body>
 </html>
