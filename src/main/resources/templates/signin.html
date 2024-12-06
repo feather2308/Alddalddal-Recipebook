@@ -6,22 +6,22 @@
     <title>회원가입</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            margin: 0;
-            padding: 0;
             display:flex;
             justify-content: center;
             align-items: center;
             height:100vh;
+            background: radial-gradient(circle at top, #646464 10%, #000000 100%);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
-            background-color: gray;
+            color: #efeded;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size:24px;
             width:400px;
+
         }
 
         .container h2 {
@@ -31,29 +31,44 @@
 
         .input-field {
             width: 100%;
+            height: 60px; /* 입력창 높이 변경 */
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid darkgray;             border-radius: 4px;
+            background-color: #110B0B;
+            border: 10px solid #110B0B;
+            border-radius: 4px;
             box-sizing: border-box;
+            font-size:15px;
+            color: #efeded;
         }
 
         .submit-button {
             width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
+            margin: 10px 0;
+            padding: 15px;
+            background-color: #797979;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size:17px;
         }
 
         .submit-button:hover {
-            background-color: #45a049;
+            background-color: #252525;
         }
 
         .form-footer {
+            color: #efeded;
             text-align: center;
-            margin-top: 20px;
+            margin: 10px 0;
+            font-size:15px;
+        }
+
+        .error{
+            text-align: center;
+            color:red;
+            font-size:19px;
         }
     </style>
 </head>
@@ -70,6 +85,7 @@
         <input type="text" class="input-field" name="nickname" placeholder="닉네임" required>
         <input type="email" class="input-field" name="email" placeholder="이메일" required>
 
+        <div th:if="${error!=null}"  class = "error">${error}</div>
         <button type="submit" class="submit-button">회원가입</button>
     </form>
 
