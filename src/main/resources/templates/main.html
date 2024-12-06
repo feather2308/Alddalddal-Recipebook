@@ -15,7 +15,7 @@
         height:100%;
     }
 
-    .top-line{
+    .header{
         height: 140px;
         border-bottom: 1px solid #777777; /* 첫 번째 선 */
         margin-bottom: 4px; /* 두 번째 선과의 간격 조정 */
@@ -26,18 +26,35 @@
         flex-direction: column;
         width: 100%;
         margin: 0 auto;
+        justify-content: center; /* 가운데 정렬 */
+        max-width: 100%; /* 부모의 너비를 100%로 설정 */
+        align-items: center;
     }
 
     .banner-container {
         display: flex;
-        width: 100%;
+        width: 90%;
         height: 140px;
         justify-content: space-between;  /* 왼쪽과 오른쪽 끝에 요소 배치 */
         align-items: center;  /* 세로 중앙 정렬 */
+        z-index: 3; /* 다른 요소보다 뒤에 오도록 설정 */
+        max-width : 1800px;
+    }
+
+    .banner-container a{
+        height: 100%;
+        flex: 0 0 auto;
+    }
+
+    .navigation-bar{
+        font-size:20pt;
+        color:white;
+        text-decoration: underline;
+        margin-left:auto;
     }
 
     .banner-icon{
-        height:140%;
+        height:135%;
         position: relative;
         min-height: 40%;
         margin: auto auto auto 20px;
@@ -47,20 +64,50 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px;
+        width: 100%;
+        height: 100%;
     }
 
-    /* 검색바 공간 */
     .search-section {
-        width: 100%;
-        background: url('/images/search_background.png');
-        background-size: cover;
+        position: relative; /* 자식 요소의 상대 배치를 위해 position 추가 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
-        margin-bottom: 20px;
+        width: 100%;
+        height: 100%; /* 섹션의 높이를 부모에 맞게 설정 */
+        min-height: 400px; /* 최소 높이 설정 */
+    }
+
+    .search-background {
+        position: absolute; /* 부모를 기준으로 절대 배치 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        z-index: 1; /* 다른 요소보다 뒤에 오도록 설정 */
+    }
+
+    .search-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 400px;
+        background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정색 */
+        z-index: 2; /* 배경 위에 오도록 설정 */
+    }
+
+    .search-container {
+        position: relative; /* 부모 요소 기준 배치 */
+        z-index: 3; /* 투명도 네모 위에 오도록 설정 */
         display: flex;
         flex-direction: column;
-        justify-content: center; /* 내용 중앙 정렬 */
-        height: 650px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%; /* 부모 요소의 넓이를 기준으로 설정 */
     }
 
     .search-content h1 {
@@ -70,7 +117,7 @@
 
     /* 제목 스타일 */
     .search-heading {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
         font-weight: 300;
         color: white;
         margin-bottom: 1.5rem;
@@ -92,6 +139,11 @@
         margin-top: 10px;
     }
 
+    form {
+        width: 80%; /* 폼의 너비를 화면의 80%로 설정 */
+        max-width: 600px; /* 최대 너비 설정 */
+        margin: 0 auto; /* 가운데 정렬 */
+    }
 
     .search-input {
         width: 90%;
@@ -113,6 +165,47 @@
         border: none #007bff;
     }
 
+    .main-container{
+        display:flex;
+        max-width : 1800px;
+        width: 80%; /* 화면 크기에 맞게 100% 너비 설정 */
+    }
+
+    .search-results {
+        margin-top: 20px;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.1); /* 반투명 배경 */
+        color: white;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .search-results ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .search-results li {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        width: 320px;
+    }
+
+    /* 검색 결과 이미지 크기 조정 */
+    .search-results img {
+        max-width: 300px; /* 가로 최대 크기 */
+        height: auto; /* 이미지 비율 유지 */
+        display: block; /* 이미지가 중앙에 오도록 설정 */
+        margin: 0 auto 10px; /* 상하 여백 */
+    }
+
     /* 반응형 */
     @media (max-width: 768px) {
         .search-content h1 {
@@ -126,95 +219,88 @@
 </style>
 
 <body>
-<div class="top-line">
-    <div class="container">
-        <div class="banner-container">
-            <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
-            <!-- 로그인 링크 추가 -->
-            <div class="banner-blank"></div>
-            <a href="/login">로그인</a>
+    <div class="header">
+        <div class="container">
+            <div class="banner-container">
+                <a href="/">
+                    <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
+                </a>
+                <!-- 로그인 링크 추가 -->
+                <div class = "navigation-bar">
+                    <a href="/login">로그인</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="search-section">
+            <div class="search-background">
+                <img src="/images/search_background.png" class="search-background" alt="검색 뒷배경">
+            </div>
+            <!-- 반투명 검정색 네모 -->
+            <div class="search-overlay"></div>
+            <!-- 검색 컨테이너 -->
+            <div class="search-container">
+                <h1 class="search-heading">칵테일을 검색하세요</h1>
+                <div>
+                    <label>
+                        <input type="checkbox" id="searchFilter1" onclick="toggleSearchBar(1)"> 칵테일 이름
+                    </label>
+                    <label>
+                        <input type="checkbox" id="searchFilter2" onclick="toggleSearchBar(2)"> 재료
+                    </label>
+                    <label>
+                        <input type="checkbox" id="searchFilter3" onclick="toggleSearchBar(3)"> 특성
+                    </label>
+                </div>
+                <form action="/" method="get">
+                    <div class="search-bar-container">
+                        <!-- 칵테일 이름 검색바 -->
+                        <div id="searchBar1" class="input-group" style="display:none;">
+                            <label for="cocktail_name" class="search-label"></label>
+                            <input type="text" class="search-input" id="cocktail_name" name="cocktail" placeholder="칵테일 이름을 입력하세요">
+                        </div>
+                        <!-- 재료 검색바 -->
+                        <div id="searchBar2" class="input-group" style="display:none;">
+                            <label for="ingredient_name" class="search-label"></label>
+                            <input type="text" class="search-input" id="ingredient_name" autocomplete="off" name="ingredient" placeholder="재료를 입력하세요" oninput="searchIngredients()">
+                        </div>
+                        <!-- 특성 검색바 -->
+                        <div id="searchBar3" class="input-group" style="display:none;">
+                            <label for="trait_name" class="search-label"></label>
+                            <input type="text" class="search-input" id="trait_name" autocomplete="off" name="trait" placeholder="특성을 입력하세요" oninput="searchTraits()">
+                        </div>
+                    </div>
+                    <button type="submit" class="search-button">검색</button>
+                </form>
+            </div>
+        </section>
+        <div class="main-container">
+            <div class="search-results">
+                <h2>검색 결과</h2>
+                <div>
+                    <!-- 결과 리스트 -->
+                    <ul>
+                        <li th:each="cocktail : ${results}" class="cocktail-item">
+                            <a th:href="@{'/recipe?cocktail=' + ${cocktail.name}}">
+                                <img th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" alt="칵테일 이미지">
+                                <h3 th:text="${cocktail.name}">칵테일 이름</h3>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- 검색 결과가 없을 경우 메시지 -->
+                    <div th:if="${#lists.isEmpty(results)}">
+                        <p>죄송합니다. 일치하는 항목을 찾을 수 없습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 추천 칵테일 추가 예정 -->
         </div>
 
-        <main>
-            <section class="search-section">
-                <div class="search-container">
-                    <h1 class="search-heading">칵테일을 검색하세요</h1>
-
-                    <!-- 체크박스 필터 -->
-                    <div>
-                        <label>
-                            <input type="checkbox" id="searchFilter1" onclick="toggleSearchBar(1)"> 칵테일 이름
-                        </label>
-                        <label>
-                            <input type="checkbox" id="searchFilter2" onclick="toggleSearchBar(2)"> 재료
-                        </label>
-                        <label>
-                            <input type="checkbox" id="searchFilter3" onclick="toggleSearchBar(3)"> 특성
-                        </label>
-                    </div>
-
-                    <form action="/" method="get">
-                        <!-- 검색 바 -->
-                        <div class="search-bar-container">
-                            <div>
-                                <!-- 칵테일 이름 검색바 -->
-                                <div id="searchBar1" class="input-group" style="display:none;">
-                                    <label for="cocktail_name" class="search-label"></label>
-                                    <input type="text" class="search-input" id="cocktail_name" name="cocktail" placeholder="칵테일 이름을 입력하세요">
-                                </div>
-                            </div>
-                            <div>
-                                <!-- 재료 검색바 -->
-                                <div id="searchBar2" class="input-group" style="display:none;">
-                                    <label for="ingredient_name" class="search-label"></label>
-                                    <input type="text" class="search-input" id="ingredient_name" autocomplete="off" name="ingredient" placeholder="재료를 입력하세요" oninput="searchIngredients()">
-                                </div>
-                                <!-- 재료 리스트 -->
-                                <div id="ingredient-list" style="display: none;">
-                                    <ul id="ingredient-results"></ul>
-                                </div>
-                            </div>
-                            <div>
-                                <!-- 특성 검색바 -->
-                                <div id="searchBar3" class="input-group" style="display:none;">
-                                    <label for="trait_name" class="search-label"></label>
-                                    <input type="text" class="search-input" id="trait_name" autocomplete="off" name="trait" placeholder="특성을 입력하세요" oninput="searchTraits()">
-                                </div>
-                                <!-- 특성 리스트 -->
-                                <div id="trait-list" style="display: none;">
-                                    <ul id="trait-results"></ul>
-                                </div>
-                            </div>
-                        </div>
-                        <button type = "submit"  class = "search-button">검색</button>
-                    </form>
-                </div>
-
-                <div class="search-results">
-                    <h2>검색 결과</h2>
-                    <div>
-                        <!-- 결과 리스트 -->
-                        <ul>
-                            <li th:each="cocktail : ${results}" class="cocktail-item">
-                                <a th:href="@{'/recipe?cocktail=' + ${cocktail.name}}">
-                                    <img th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" alt="칵테일 이미지">
-                                    <h3 th:text="${cocktail.name}">칵테일 이름</h3>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <!-- 검색 결과가 없을 경우 메시지 -->
-                        <div th:if="${#lists.isEmpty(results)}">
-                            <p>검색 결과가 없습니다.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-
-        </main>
-    </div>
-</div>
+    </main>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
@@ -322,6 +408,7 @@
             document.getElementById("trait-list").style.display = "none"; // 2글자 미만 입력 시 드롭다운 숨기기
         }
     }
+
 </script>
 </body>
 </html>
