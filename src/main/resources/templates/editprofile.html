@@ -16,6 +16,7 @@
             justify-content: center;
         }
 
+
         .header{
             height: 100px;
             border-bottom: 1px solid #777777; /* 첫 번째 선 */
@@ -52,6 +53,22 @@
             color:white;
             text-decoration: none;
             margin-left:auto;
+            margin-top:20px;
+            justify-content: space-between; /* 항목들이 좌우로 배치됨 */
+            display: flex;  /* flexbox로 항목 배치 */
+            width : 100%;
+
+        }
+
+        .navigation-bar .left{
+            margin-left:20px;
+            gap:30px;
+            display: flex;
+            flex-direction: row;  /* 좌우로 나열되게 설정 */
+        }
+
+        .navigation-bar .right{
+            display: flex;
         }
 
         .banner-icon{
@@ -137,7 +154,18 @@
             <a href="/">
                 <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
             </a>
-            <!-- 로그인 링크 제거 -->
+            <div class="navigation-bar">
+                <div class ="left">
+                    <div onclick="window.location.href='/cocktail'">칵테일 목록</div>
+                    <div onclick="window.location.href='/ingredient'">재료 목록</div>
+                </div>
+                <div class="right" th:if="${!isLoggedIn}">
+                    <div onclick="window.location.href='/login'">로그인</div>
+                </div>
+                <div class = "right" th:if="${isLoggedIn}">
+                    <div onclick="window.location.href='/mypage'">마이페이지</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
