@@ -19,6 +19,8 @@ public class Cocktail {
 
     @Column(name = "cocktail_image")
     private String image;
+    @Column(name = "cocktail_easylore")
+    private String easylore;
     @Column(name = "cocktail_lore")
     private String lore;
 

@@ -228,6 +228,21 @@
             margin-bottom: 20px;
         }
 
+        .result-cocktail-name {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 3px;
+        }
+
+        .result-cocktail-easylore {
+            color: orange;
+            font-size: 14px;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
         /* 반응형 */
         @media (max-width: 768px) {
             .search-content h1 {
@@ -312,6 +327,7 @@
                         <li th:each="cocktail : ${results}" class="cocktail-item" th:data-cocktail="${cocktail.name}" th:onclick="|window.location.href='/recipe?cocktail=' + encodeURIComponent(this.getAttribute('data-cocktail'))|">
                             <div class="result-cocktail">
                                 <img class="result-cocktail-image" th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" alt="칵테일 이미지">
+                                <div class="result-cocktail-easylore" th:text="${cocktail.easylore}">칵테일 이지 로어</div>
                                 <div class="result-cocktail-name" th:text="${cocktail.name}">칵테일 이름</div>
                             </div>
                         </li>
