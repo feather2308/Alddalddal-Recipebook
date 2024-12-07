@@ -52,6 +52,22 @@
             color:white;
             text-decoration: none;
             margin-left:auto;
+            margin-top:20px;
+            justify-content: space-between; /* 항목들이 좌우로 배치됨 */
+            display: flex;  /* flexbox로 항목 배치 */
+            width : 100%;
+
+        }
+
+        .navigation-bar .left{
+            margin-left:20px;
+            gap:30px;
+            display: flex;
+            flex-direction: row;  /* 좌우로 나열되게 설정 */
+        }
+
+        .navigation-bar .right{
+            display: flex;
         }
 
         .banner-icon{
@@ -139,6 +155,13 @@
             height: 100px;
         }
 
+        .check-field{
+            display: flex;              /* 자식 요소들을 수평으로 배치 */
+            justify-content: space-between; /* 좌우로 공간을 고르게 배분 */
+            align-items: center;        /* 세로 방향으로 중앙 정렬 */
+            gap:10px;
+        }
+
         /* 검색 바 컨테이너 */
         .search-bar-container {
             display: flex;
@@ -146,28 +169,25 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 1.5rem;
+
         }
 
         /* 입력창과 버튼 */
         .input-group {
-            display: flex;
-            width: 85%;
-            margin-top: 10px;
+            width: 100%;
         }
 
         form {
-            width: 80%; /* 폼의 너비를 화면의 80%로 설정 */
             max-width: 600px; /* 최대 너비 설정 */
             margin: 0 auto; /* 가운데 정렬 */
         }
 
         .search-input {
-            width: 95%;
+            width: 100%;
             padding: 0.375rem 0.75rem;
             font-size: 1rem;
             font-weight: 400;
             border: 1px solid #ced4da;
-            border-radius: 0.375rem;
         }
 
         .search-button {
@@ -281,12 +301,17 @@
             <a href="/">
                 <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
             </a>
-            <!-- 로그인 링크 추가 -->
-            <div class="navigation-bar" th:if="${!isLoggedIn}">
-                <div onclick="window.location.href='/login'">로그인</div>
-            </div>
-            <div class = "navigation-bar" th:if="${isLoggedIn}">
-                <div onclick="window.location.href='/mypage'">마이페이지</div>
+            <div class="navigation-bar">
+                <div class ="left">
+                    <div onclick="window.location.href='/cocktail'">칵테일 목록</div>
+                    <div onclick="window.location.href='/ingredient'">재료 목록</div>
+                </div>
+                <div class="right" th:if="${!isLoggedIn}">
+                    <div onclick="window.location.href='/login'">로그인</div>
+                </div>
+                <div class = "right" th:if="${isLoggedIn}">
+                    <div onclick="window.location.href='/mypage'">마이페이지</div>
+                </div>
             </div>
         </div>
     </div>
@@ -303,20 +328,20 @@
         <div class="search">
             <div class="search-container">
                 <div class="search-heading">칵테일을 검색하세요</div>
-                <div>
-                    <div>
-                        <input type="checkbox" id="searchFilter1" onclick="toggleSearchBar(1)">
-                        <label for="searchFilter1" class="search-checkbox-text">칵테일 이름</label>
+                    <div class = "check-field">
+                        <div>
+                            <input type="checkbox" id="searchFilter1" onclick="toggleSearchBar(1)">
+                            <label for="searchFilter1" class="search-checkbox-text">칵테일 이름</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="searchFilter2" onclick="toggleSearchBar(2)">
+                            <label for="searchFilter2" class="search-checkbox-text">재료</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="searchFilter3" onclick="toggleSearchBar(3)">
+                            <label for="searchFilter3" class="search-checkbox-text">특성</label>
+                        </div>
                     </div>
-                    <div>
-                        <input type="checkbox" id="searchFilter2" onclick="toggleSearchBar(2)">
-                        <label for="searchFilter2" class="search-checkbox-text">재료</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="searchFilter3" onclick="toggleSearchBar(3)">
-                        <label for="searchFilter3" class="search-checkbox-text">특성</label>
-                    </div>
-                </div>
             </div>
             <div class="search-container-input">
                 <form action="/" method="get">
