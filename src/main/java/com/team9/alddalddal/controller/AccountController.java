@@ -56,7 +56,7 @@ public class AccountController {
     @PostMapping("/login")
     public String loginPost(@RequestParam("id") String id,
                             @RequestParam("password") String password,
-                            HttpSession session, RedirectAttributes redirectAttributes) {
+                            HttpSession session, Model model) {
         // 로그인 처리 로직을 추가합니다. 예시로 아이디와 비밀번호 검증.
         if (accountService.authenticate(id, password)) {
             // 로그인 성공 시 메인 페이지로 리디렉션
@@ -64,8 +64,8 @@ public class AccountController {
             return "redirect:/";
         } else {
             // 로그인 실패 시 오류 메시지와 함께 로그인 페이지로 다시 이동
-            redirectAttributes.addAttribute("error", true);
-            return "redirect:/login"; // login.html로 다시 포워딩
+            model.addAttribute("error", true);
+            return "login"; // login.html로 다시 포워딩
         }
     }
 
@@ -75,12 +75,12 @@ public class AccountController {
         return "redirect:/";
     }
 
-    @GetMapping("/findId")
+    @GetMapping("/findid")
     public String findIdGet(Model model) {
         return "findid";
     }
 
-    @PostMapping("/findId")
+    @PostMapping("/findid")
     public String findIdPost(@RequestParam("email") String email,
                              Model model) {
         Account account = accountService.getAccountByEmail(email);
@@ -93,12 +93,12 @@ public class AccountController {
         return "findid";
     }
 
-    @GetMapping("/findPw")
+    @GetMapping("/findpw")
     public String findPwGet(Model model) {
         return "findpw";
     }
 
-    @PostMapping("/findPw")
+    @PostMapping("/findpw")
     public String findPwPost(@RequestParam("id") String id,
                              @RequestParam("email") String email,
                              Model model) {
