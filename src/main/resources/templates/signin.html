@@ -45,6 +45,29 @@
             color: #efeded;
         }
 
+        .sign-in-input-field {
+            display: flex;
+            align-items: center;
+            background-color: #140B0B; /* 아이콘의 배경색 */
+            margin-bottom: 20px;
+            padding: 5px; /* padding 추가로 아이콘과 입력창 간의 간격 조절 */
+        }
+
+        .sr-only{
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        .sign-in-input {
+            background-color: #110B0B;
+            border-radius: 5px;
+            border: 10px solid #110B0B;
+            color: rgb(95, 95, 95);
+            width: 100%;
+            height: 40px; /* 입력창 높이 변경 */
+            font-size: 15px;
+        }
+
         .submit-button {
             width: 100%;
             margin: 10px 0;
@@ -82,11 +105,35 @@
 
     <!-- 회원가입 폼 -->
     <form action="/signin" method="post">
-        <input type="text" class="input-field" name="id" placeholder="아이디" required>
-        <input type="password" class="input-field" name="password" placeholder="비밀번호" required>
-        <input type="text" class="input-field" name="name" placeholder="이름" required>
-        <input type="text" class="input-field" name="nickname" placeholder="닉네임" required>
-        <input type="email" class="input-field" name="email" placeholder="이메일" required>
+        <div class="sign-in-input-field">
+            <label for="id" class="sr-only">아이디</label>
+            <img src="/images/user.png" alt="아이디 아이콘" class="sign-in-icon">
+            <input type="text" id="id" class="sign-in-input" name="id" placeholder="아이디" required>
+        </div>
+
+        <div class="sign-in-input-field">
+            <label for="password" class="sr-only">비밀번호</label>
+            <img src="/images/lock.png" alt="비밀번호 아이콘" class="sign-in-icon">
+            <input type="text" id="password" class="sign-in-input" name="password" placeholder="비밀번호" required>
+        </div>
+
+        <div class="sign-in-input-field">
+            <label for="name" class="sr-only">이름</label>
+            <img src="/images/name.png" alt="이름 아이콘" class="sign-in-icon">
+            <input type="text" id="name" class="sign-in-input" name="name" placeholder="이름" required>
+        </div>
+
+        <div class="sign-in-input-field">
+            <label for="nickname" class="sr-only">닉네임</label>
+            <img src="/images/nickname.png" alt="닉네임 아이콘" class="sign-in-icon">
+            <input type="text" id="nickname" class="sign-in-input" name="nickname" placeholder="닉네임" required>
+        </div>
+
+        <div class="sign-in-input-field">
+            <label for="email" class="sr-only">이메일</label>
+            <img src="/images/email.png" alt="이메일 아이콘" class="sign-in-icon">
+            <input type="email" id="email" class="sign-in-input" name="email" placeholder="이메일" required>
+        </div>
 
         <div th:if="${error!=null}"  class = "error">[[${error}]]</div>
         <button type="submit" class="submit-button">회원가입</button>
@@ -96,6 +143,5 @@
         <p>이미 계정이 있으신가요? <a href="/login">로그인</a></p>
     </div>
 </div>
-
 </body>
 </html>
