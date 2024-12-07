@@ -277,7 +277,7 @@
                     <div class = "right-content">
                         <div class="section">
                             <h3>설명</h3>
-                            <div><p>[[${cocktail.lore}]]</p></div>
+                            <p th:utext="${#strings.replace(cocktail.lore, '\n', '<br/>')}"></p>
                         </div>
                         <div class="section">
                             <h3>재료</h3>
