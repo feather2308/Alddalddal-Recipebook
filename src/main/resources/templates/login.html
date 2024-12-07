@@ -67,12 +67,28 @@
             padding-left: 30px; /* 아이콘과 입력 글자 간의 간격 */
         }
 
-        .sign-in-icon {
+        .find-field{
+            text-align: right;
+        }
+
+        .find-id-btn {
             width: auto; /* 아이콘 크기 조절 */
             height: 100%; /* 아이콘 크기 조절 */
             object-fit: cover;
-            margin-right: 10px; /* 아이콘과 입력창 간의 간격 */
+            background-color: transparent;
+            border: none;
+            color: white;
         }
+
+        .find-pw-btn {
+            width: auto; /* 아이콘 크기 조절 */
+            height: 100%; /* 아이콘 크기 조절 */
+            object-fit: cover;
+            background-color: transparent;
+            border: none;
+            color: white;
+        }
+
 
         .sign-in-btn {
             background-color: #797979;
@@ -128,12 +144,18 @@
                     <img src="/images/user.png" alt="아이디 아이콘" class="sign-in-icon">
                     <input type="text" id="id" class="sign-in-input" name="id" placeholder="아이디" required>
                 </div>
+
                 <div class="sign-in-input-field">
                     <label for="password" class="sr-only">비밀번호</label>
                     <img src="/images/lock.png" alt="비밀번호 아이콘" class="sign-in-icon">
                     <input type="password" id="password" class="sign-in-input" name="password" placeholder="비밀번호" required>
-
                 </div>
+
+                <div class="find-field">
+                    <button type="find-id" class="find-id-btn" onclick="location.href='/findid'">ID 찾기</button>
+                    <button type="find-pw" class="find-pw-btn" onclick="location.href='/findpw'">PW 찾기</button>
+                </div>
+
                 <button type="submit" class="sign-in-btn">로그인</button>
                 <button type="button" class="sign-up-btn" onclick="location.href='/signin'">회원가입</button>
             </form>
