@@ -37,7 +37,7 @@ VALUES ('Chartreuse Swizzle', 'chartreuse-swizzle', 'Chartreuse Swizzle은 차�
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Clover Club', 'clover-club', 'Clover Club은 진, 라즈베리, 레몬 주스, 계란 흰자를 혼합한 부드럽고 상큼한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
-VALUES ('Corpse Reviver No.2', 'corpse-reviver-2', 'Corpse Reviver #2는 진, 코냑, 리큐르, 레몬 주스를 혼합한 클래식한 칵테일입니다.');
+VALUES ('Corpse Reviver #2', 'corpse-reviver-2', 'Corpse Reviver #2는 진, 코냑, 리큐르, 레몬 주스를 혼합한 클래식한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
 VALUES ('Cosmopolitan', 'cosmopolitan', 'Cosmopolitan은 보드카, 크랜베리 주스, 라임 주스를 혼합한 상쾌하고 스타일리시한 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_lore)
