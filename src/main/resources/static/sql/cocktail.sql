@@ -1,18 +1,18 @@
-INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_easylore)
-VALUES ('Alexander', 'alexander', '부드럽고 고급스러움', 'Alexander는 브랜디를 베이스로 한 달콤한 칵테일로, 1915년에 처음 등장했습니다. \n 레시피는 코냑, 크렘 드 카카오 브라운, 크림을 기본 재료로 사용하며, 넛멕을 뿌려 마무리합니다. \n 원래 진을 베이스로 했으나, 1922년 런던의 결혼식에서 브랜디를 사용하면서 현재의 레시피로 자리잡았습니다. \n ''알렉산더''라는 이름은 바텐더 트로이 알렉산더에서 유래되었으며, 이 칵테일은 1970년대 TV쇼 등을 통해 유명해졌습니다.');
-INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_easylore)
-VALUES ('Americano', 'americano', '커피 아닙니다. \n', 'Americano는 캄파리와 스위트 베르무트를 1:1 비율로 섞고, 탄산수를 추가한 칵테일입니다. \n 이 칵테일은 이탈리아 밀라노-토리노에서 유래했으며, 원래는 씁쓸한 맛의 캄파리와 스위트 베르무트를 섞어 마셨습니다. \n 그러나 미국인들이 더 부드럽게 즐기기 위해 탄산수를 추가하면서 현재의 형태가 되었습니다. \n 아메리카노는 네그로니의 발전형으로, 네그로니는 아메리카노에서 탄산수를 빼고 진을 추가한 칵테일입니다.');
-INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_easylore)
-VALUES ('Angel Face', 'angel-face','로맨틱한'. , 'Angel Face는 진, 애프리콧 브랜디, 칼바도스를 동일 비율로 섞은 클래식 칵테일입니다. \n 이 칵테일은 1930년 해리 크래독의 사보이 칵테일 북에 처음 등장했으며, 원래는 프랑스에서 만들어졌다고 알려져 있습니다. \n IBA 공식 레시피와 스터 레시피가 있으며, 스터 방식으로 만들 때는 깊은 맛을 낼 수 있습니다. \n 가니쉬로 오렌지 필이나 사과 웨지를 추가하기도 합니다.');
-INSERT INTO cocktail (cocktail_name, cocktail_image, cocktail_easylore, cocktail_easylore)
+INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
+VALUES ('Alexander', 'alexander', '부드럽고 고급스러움', 'Alexander는 브랜디를 베이스로 한 달콤한 칵테일로, 1915년에 처음 등장했습니다. \n  원래 진을 베이스로 했으나, 1922년 런던의 결혼식에서 브랜디를 사용하면서 현재의 레시피로 자리잡았습니다. \n ''알렉산더''라는 이름은 바텐더 트로이 알렉산더에서 유래되었으며, 이 칵테일은 1970년대 TV쇼 등을 통해 유명해졌습니다.');
+INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
+VALUES ('Americano', 'americano', '커피 아닙니다.', 'Americano는 캄파리와 스위트 베르무트를 1:1 비율로 섞고, 탄산수를 추가한 칵테일입니다. \n 이 칵테일은 이탈리아 밀라노-토리노에서 유래했으며, 원래는 씁쓸한 맛의 캄파리와 스위트 베르무트를 섞어 마셨습니다. \n 그러나 미국인들이 더 부드럽게 즐기기 위해 탄산수를 추가하면서 현재의 형태가 되었습니다. \n 아메리카노는 네그로니의 발전형으로, 네그로니는 아메리카노에서 탄산수를 빼고 진을 추가한 칵테일입니다.');
+INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
+VALUES ('Angel Face', 'angel-face','로맨틱한', 'Angel Face는 진, 애프리콧 브랜디, 칼바도스를 동일 비율로 섞은 클래식 칵테일입니다. \n 이 칵테일은 1930년 해리 크래독의 사보이 칵테일 북에 처음 등장했으며, 원래는 프랑스에서 만들어졌다고 알려져 있습니다. \n IBA 공식 레시피와 스터 레시피가 있으며, 스터 방식으로 만들 때는 깊은 맛을 낼 수 있습니다. \n 가니쉬로 오렌지 필이나 사과 웨지를 추가하기도 합니다.');
+INSERT INTO cocktail (cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Aviation', 'aviation', '색이 청량한','Aviation은 20세기 초반에 개발된 진 베이스의 클래식 칵테일로, 크렘 드 바이올렛의 보라색이 희석되며 하늘색을 띄기 때문에 이름이 유래되었습니다. \n 1917년, 뉴욕 윌릭 호텔의 바텐더 휴고 엔슬린에 의해 처음 만들어졌고, 그의 저서 《혼합주 레시피들》에 기록되었습니다. \n 이후 1930년대에 발간된 《사보이 칵테일 북》에서는 크렘 드 바이올렛이 빠진 레시피가 소개되었으나, 2020년 IBA 개정판에서는 원래의 레시피로 복원되었습니다.');
-INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_easylore)
+INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Bee''s Knees', 'bees-knees', '달콤한 꿀의 조화','Bee''s Knees는 진, 꿀, 레몬 주스를 기본으로 만든 클래식 칵테일입니다. \n 1920년대 프랑스 파리 리츠 호텔의 바텐더 프랭크 마이어가 창조한 것으로 전해지며, 꿀이 주요 재료로 사용된 점이 특징입니다. \n 이름은 금주법 시대에 ''최고''를 뜻하는 표현에서 유래했습니다. \n IBA 공식 레시피에서는 오렌지 주스가 추가되어 레몬과 오렌지의 상큼함과 꿀의 단맛이 잘 어우러집니다.');
-INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_easylore)
+INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Bellini', 'bellini', '화가의 이름을 따온','벨리니(Bellini)는 1948년 이탈리아 베네치아의 해리스 바에서 주세페 치프리아니가 만든 칵테일로, 이름은 이탈리아의 르네상스 화가 조반니 벨리니에서 유래되었습니다. \n 이 칵테일은 프로세코(스파클링 와인)와 복숭아 퓌레가 결합된 음료로, 상큼하고 탄산이 어우러져 신선한 맛을 냅니다. \n IBA 공식 칵테일로 등록되어 있으며, 주로 샴페인 플루트 잔에 제공됩니다.');
-INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_easylore)
+INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Between the Sheets', 'between-the-sheets', '은유적인 의미인','Between the Sheets는 브랜디와 럼을 베이스로 하는 클래식 칵테일입니다. \n 1930년대 파리에서 해리 맥켈혼이 처음 선보였으며, 사이드카의 변형 레시피입니다. \n 이름은 성적인 의미를 담고 있으며, IBA 공식 칵테일로 등록되어 있습니다. \n 레시피는 화이트 럼, 코냑, 트리플 섹, 신선한 레몬즙을 셰이커에 넣고 흔든 후 차갑게 식힌 칵테일 글라스에 따른 후 제공됩니다.');
-INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_easylore)
+INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Black Russian', 'black-russian', '도수가 제법 높은','Black Russian은 보드카와 깔루아를 주재료로 한 칵테일로, 주로 알콜 도수가 높고 강렬한 맛이 특징입니다. \n 기본적으로 얼음을 넣은 온더락 글라스에 보드카와 깔루아를 섞어 저어 마십니다. \n IBA 공식 레시피는 보드카 50ml와 커피 리큐르(깔루아) 20ml를 사용하는 방식입니다. \n 변형으로는 화이트 러시안(우유나 크림 추가), 마인드 이레이저(탄산수 추가), 브레이브 불(데킬라로 대체) 등이 있습니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Bloody Mary', 'bloody-mary', '토마토 수프같은', 'Bloody Mary는 통 아침이나 오후 초에 즐겨 마시는 칵테일로, 보드카와 토마토 주스, 그리고 다양한 향신료와 양념이 들어갑니다. \n 주요 재료로는 Worcestershire 소스, 타바스코 소스, 레몬 주스, 셀러리 소금, 후추 등이 있으며, 셀러리나 레몬 조각, 올리브 등으로 장식됩니다. \n 이 칵테일은 비알콜 버전으로, 종종 숙취 해소 음료로 알려져 있습니다.');
@@ -37,7 +37,7 @@ VALUES ('Chartreuse Swizzle', 'chartreuse-swizzle', '더운 여름 저녁에 즐
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Clover Club', 'clover-club', '비범하고, 맛있고, 강한','Clover Club은 1890년대 미국 필라델피아의 벨루브 스탠포드 호텔에서 남성 사교 모임을 위해 탄생한 클래식 칵테일입니다. \n 이 칵테일은 주로 진, 라즈베리 시럽, 레몬즙, 달걀 흰자 등을 사용해 만들어지며, 분홍색을 띄는 것이 특징입니다. \n 클로버 클럽은 1910년대 초반에 큰 인기를 끌었지만, 1930년대에 급격히 인기가 떨어졌습니다. \n 이후 2000년대에 클래식 칵테일의 부활 운동 덕분에 다시 주목을 받았고, 2020년에는 IBA 공식 칵테일로 등록되었습니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
-VALUES ('Corpse Reviver No.2', 'corpse-reviver-2', '콥스. 세컨드.','Corpse Reviver #2는 진을 베이스로 한 클래식 칵테일로, 많은 바리에이션 중 가장 인지도가 높은 버전입니다. \n 이 칵테일은 1871년대에 기록된 저서 <The Gentleman’s Table Guide>에서 처음 등장했으며, 1930년 영국의 바텐더 해리 크레독이 저서 <사보이 칵테일 북>에서 ''No.2''라는 번호와 함께 공식적으로 소개되며 대중적으로 인기를 끌었습니다.');
+VALUES ('Corpse Reviver #2', 'corpse-reviver-2', '콥스. 세컨드.','Corpse Reviver #2는 진을 베이스로 한 클래식 칵테일로, 많은 바리에이션 중 가장 인지도가 높은 버전입니다. \n 이 칵테일은 1871년대에 기록된 저서 <The Gentleman’s Table Guide>에서 처음 등장했으며, 1930년 영국의 바텐더 해리 크레독이 저서 <사보이 칵테일 북>에서 ''No.2''라는 번호와 함께 공식적으로 소개되며 대중적으로 인기를 끌었습니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Cosmopolitan', 'cosmopolitan', '이쁘지만 독한','Cosmopolitan은 보1980년대 후반부터 인기를 끌었던 칵테일로, 마티니 스타일의 술입니다. \n 다양한 기원설이 있지만, 가장 널리 알려진 이야기 중 하나는 1989년에 셰릴 쿡이 처음 만들었다는 것입니다. \n 이 칵테일은 보드카, 크랜베리 주스, 라임 주스, 트리플 섹을 주재료로 하며,  일반적으로 코스모폴리탄은 도수는 약 15도에서 20도로 비교적 강한 칵테일에 속하지만, 과일 주스와 섞여 있어 맛이 부드럽고 마시기 쉽습니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
@@ -51,15 +51,15 @@ VALUES ('Don''s Special Daiquiri', '트로피컬한 섬의 맛','dons-special-da
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Dry Martini', 'dry-martini', ' 칵테일의 왕','Dry Martini는 진과 드라이 베르무트를 혼합한 클래식한 칵테일입니다. \n 다양한 비율로 준비할 수 있으며, 대표적인 레시피는 6:1 (진:베르무트)입니다. \n 이외에도 스위트 마티니, 보드카 마티니, 더티 마티니 등 다양한 변형이 존재합니다. \n 마티니는 차갑게 식힌 마티니 글라스에 제공되며, 보통 레몬 필이나 올리브로 장식합니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
-VALUES ('Espresso Martini', 'espresso-martini', '커피 아닙니다 2'.'Espresso Martini는 1980년대 영국 바텐더 딕 브레드셀이 만든 칵테일로, 보드카, 커피 리큐르, 에스프레소가 주재료입니다. \n 커피의 진한 맛과 보드카의 깔끔함이 어우러지며, 에스프레소의 크레마가 만들어내는 거품이 특징입니다. \n 주로 밤에 디저트로 즐기는 인기 칵테일입니다.');
+VALUES ('Espresso Martini', 'espresso-martini', '커피 아닙니다 2', 'Espresso Martini는 1980년대 영국 바텐더 딕 브레드셀이 만든 칵테일로, 보드카, 커피 리큐르, 에스프레소가 주재료입니다. \n 커피의 진한 맛과 보드카의 깔끔함이 어우러지며, 에스프레소의 크레마가 만들어내는 거품이 특징입니다. \n 주로 밤에 디저트로 즐기는 인기 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Fernandito', 'fernandito', '코카콜라와도 협업한','Fernandito는 페르넷 브랑카와 콜라를 혼합한 칵테일로, 2020년 IBA 공식 레시피로 지정되었습니다. \n 1980년대 아르헨티나 코르도바에서 유래한 이 칵테일은 아르헨티나에서 매우 인기 있으며, 그 덕분에 페르넷 브랑카의 대부분이 칵테일 형태로 소비됩니다. \n 페르난디토는 페르넷 브랑카와 콜라를 얼음과 함께 섞어 만든 간단한 음료로, 아르헨티나에서 많이 마시는 대표적인 칵테일입니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('French 75', 'french-75', '다이아몬드 그 자체','French 75는 1915년에 프랑스 파리에서 처음 선보인 칵테일로, ''다이아몬드 피즈''라는 별칭도 있습니다. \n 이 칵테일의 이름은 제1차 세계 대전 중 프랑스군의 주력 대포에서 유래했으며, 진, 신선한 레몬즙, 설탕 시럽과 샴페인을 혼합하여 만든다. 프렌치 75는 독특한 탄산감과 상큼함을 지닌 칵테일로, 특히 기념일이나 축하할 때 인기가 많습니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
-VALUES ('French Connection', 'french-connection', '영화 이름에서 따온'.'French Connection은 1971년 동명의 영화에서 영감을 받아 명명된 칵테일로, 프랑스 주류인 코냑과 이탈리아의 아마레토 리큐르를 주요 재료로 사용합니다. \n 이 칵테일은 주로 올드 패션드 글라스에서 얼음과 함께 서빙되며, 주재료를 가볍게 섞어 즐깁니다. \n 프렌치 커넥션은 코냑의 풍미와 아마레토의 달콤함이 잘 어우러져 고급스러운 맛을 제공합니다.');
+VALUES ('French Connection', 'french-connection', '영화 이름에서 따온', 'French Connection은 1971년 동명의 영화에서 영감을 받아 명명된 칵테일로, 프랑스 주류인 코냑과 이탈리아의 아마레토 리큐르를 주요 재료로 사용합니다. \n 이 칵테일은 주로 올드 패션드 글라스에서 얼음과 함께 서빙되며, 주재료를 가볍게 섞어 즐깁니다. \n 프렌치 커넥션은 코냑의 풍미와 아마레토의 달콤함이 잘 어우러져 고급스러운 맛을 제공합니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
-VALUES ('French Martini', 'french-martini', '영화 이름에서 따온''French Martini는 보드카를 베이스로 사용하며, 블랙 라즈베리 리큐르(샴보드)와 파인애플 주스를 함께 섞은 칵테일입니다. \n 1980년대 뉴욕의 키스 맥날리 바에서 개발되었고, ''마티니''라는 이름이 붙었지만 진이나 베르무트는 들어가지 않습니다. \n IBA 공식 칵테일로 등록되어 있으며, 셰이커에 재료를 넣고 흔든 후, 차가운 칵테일 글라스에 걸러서 담고 레몬 필로 가니쉬합니다.');
+VALUES ('French Martini', 'french-martini', '영화 이름에서 따온', 'French Martini는 보드카를 베이스로 사용하며, 블랙 라즈베리 리큐르(샴보드)와 파인애플 주스를 함께 섞은 칵테일입니다. \n 1980년대 뉴욕의 키스 맥날리 바에서 개발되었고, ''마티니''라는 이름이 붙었지만 진이나 베르무트는 들어가지 않습니다. \n IBA 공식 칵테일로 등록되어 있으며, 셰이커에 재료를 넣고 흔든 후, 차가운 칵테일 글라스에 걸러서 담고 레몬 필로 가니쉬합니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Garibaldi', 'garibaldi', '달콤하고도 우아한','Garibaldi는 이탈리아의 전통적인 칵테일로, 캄파리와 신선한 오렌지 주스 두 가지 재료로만 만들어집니다. \n 이 칵테일은 주세페 가리발디라는 이탈리아의 역사적인 인물에서 이름을 따왔습니다. \n 오렌지와 캄파리의 빨간 색이 가리발디의 추종자들이 입었던 빨간 셔츠를 나타냅니다. \n 맛의 균형을 맞추기 위해 오렌지 주스를 많이 사용하는 것이 일반적이며, 오렌지 주스는 공기가 섞여 부드럽게 만들어야 캄파리의 쓴맛을 완화시킬 수 있습니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)

@@ -17,7 +17,7 @@ CREATE TABLE cocktail (
     cocktail_name VARCHAR2(25) PRIMARY KEY,
     cocktail_image VARCHAR2(50),
     cocktail_easylore VARCHAR2(50),
-    cocktail_lore VARCHAR2(500)
+    cocktail_lore VARCHAR2(700)
 );
 
 CREATE TABLE cocktail_tag (
