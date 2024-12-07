@@ -114,20 +114,20 @@
         </div>
         <div class="find-id-form-container">
 
-            <form action="/findId" method="post">
+            <form action="/findid" method="post">
                 <div class="find-id-input-field">
                     <label for="email" class="sr-only">이메일</label>
                     <img src="/images/email.png" alt="이메일 아이콘" class="find-id-icon">
                     <input type="email" id="email" class="find-id-input" name="email" placeholder="이메일을 입력하세요" required>
                 </div>
 
+                <div class="error-message" th:if="${error}">
+                    해당 이메일로 가입된 계정이 없습니다.
+                </div>
+
                 <button type="submit" class="find-id-btn">아이디 찾기</button>
                 <button type="button" class="back-btn" onclick="window.location.href='/login'">로그인 페이지로 돌아가기</button>
             </form>
-
-            <div class="error-message" th:if="${error}">
-                해당 이메일로 가입된 계정이 없습니다.
-            </div>
 
             <div th:if="${account != null}">
                 <p>아이디: <span th:text="${account.id}"></span></p>

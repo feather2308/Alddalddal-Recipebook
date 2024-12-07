@@ -156,13 +156,15 @@
                     <button type="find-pw" class="find-pw-btn" onclick="location.href='/findpw'">PW 찾기</button>
                 </div>
 
+                <div class="error-message" th:if="${error}">
+                    아이디 또는 비밀번호가 틀렸습니다.
+                </div>
+
                 <button type="submit" class="sign-in-btn">로그인</button>
                 <button type="button" class="sign-up-btn" onclick="location.href='/signin'">회원가입</button>
             </form>
 
-            <div class="error-message" th:if="${param.error}">
-                아이디 또는 비밀번호가 틀렸습니다.
-            </div>
+
         </div>
     </div>
 </div>
