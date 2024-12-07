@@ -27,22 +27,19 @@ public class CocktailController {
     private CommentsService commentsService;
 
     @GetMapping("/cocktail")
-    public String cocktail(@RequestParam(defaultValue = "1") int page, HttpSession session, Model model) {
-        if (page != 1){
-            session.setAttribute("history", "cocktail");
-        } else {
-            session.setAttribute("history", "cocktail?page=" + page);
-        }
+    public String cocktail(HttpSession session, Model model) {
+        session.setAttribute("history", "cocktail");
+
 
         String user = (String) session.getAttribute("user");
         Account account = accountService.getAccount(user);
         model.addAttribute("user", user);
 
-        Page<Cocktail> cocktails = cocktailService.getPageCocktails(page);
+        List<Cocktail> cocktails = cocktailService.getAllCocktails();
 
         if (user != null) {
             List<Boolean> favoriteFlags = new ArrayList<>();
-            for (Cocktail cocktail : cocktails.getContent()) {
+            for (Cocktail cocktail : cocktails) {
                 boolean isFavorite = accountService.isFavorite(account, cocktail);
                 favoriteFlags.add(isFavorite);
             }
@@ -50,8 +47,6 @@ public class CocktailController {
         }
 
         model.addAttribute("cocktails", cocktails);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("totalPages", cocktails.getTotalPages());
 
         model.addAttribute("isLoggedIn", false);
         if (user != null) {

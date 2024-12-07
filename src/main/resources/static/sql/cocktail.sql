@@ -9,7 +9,7 @@ VALUES ('Aviation', 'aviation', '색이 청량한','Aviation은 20세기 초반�
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Bee''s Knees', 'bees-knees', '달콤한 꿀의 조화','Bee''s Knees는 진, 꿀, 레몬 주스를 기본으로 만든 클래식 칵테일입니다. \n 1920년대 프랑스 파리 리츠 호텔의 바텐더 프랭크 마이어가 창조한 것으로 전해지며, 꿀이 주요 재료로 사용된 점이 특징입니다. \n 이름은 금주법 시대에 ''최고''를 뜻하는 표현에서 유래했습니다. \n IBA 공식 레시피에서는 오렌지 주스가 추가되어 레몬과 오렌지의 상큼함과 꿀의 단맛이 잘 어우러집니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
-VALUES ('Bellini', 'bellini', '화가의 이름을 따온','벨리니(Bellini)는 1948년 이탈리아 베네치아의 해리스 바에서 주세페 치프리아니가 만든 칵테일로, 이름은 이탈리아의 르네상스 화가 조반니 벨리니에서 유래되었습니다. \n 이 칵테일은 프로세코(스파클링 와인)와 복숭아 퓌레가 결합된 음료로, 상큼하고 탄산이 어우러져 신선한 맛을 냅니다. \n IBA 공식 칵테일로 등록되어 있으며, 주로 샴페인 플루트 잔에 제공됩니다.');
+VALUES ('Bellini', 'bellini', '화가의 이름을 따온','Bellini는 1948년 이탈리아 베네치아의 해리스 바에서 주세페 치프리아니가 만든 칵테일로, 이름은 이탈리아의 르네상스 화가 조반니 벨리니에서 유래되었습니다. \n 이 칵테일은 프로세코(스파클링 와인)와 복숭아 퓌레가 결합된 음료로, 상큼하고 탄산이 어우러져 신선한 맛을 냅니다. \n IBA 공식 칵테일로 등록되어 있으며, 주로 샴페인 플루트 잔에 제공됩니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Between the Sheets', 'between-the-sheets', '은유적인 의미인','Between the Sheets는 브랜디와 럼을 베이스로 하는 클래식 칵테일입니다. \n 1930년대 파리에서 해리 맥켈혼이 처음 선보였으며, 사이드카의 변형 레시피입니다. \n 이름은 성적인 의미를 담고 있으며, IBA 공식 칵테일로 등록되어 있습니다. \n 레시피는 화이트 럼, 코냑, 트리플 섹, 신선한 레몬즙을 셰이커에 넣고 흔든 후 차갑게 식힌 칵테일 글라스에 따른 후 제공됩니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
@@ -47,7 +47,7 @@ VALUES ('Daiquiri', 'daiquiri', '쿠바의 광산 마을','Daiquiri는 쿠바에
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Dark ''N'' Stormy', 'dark-n-stormy', '다크-럼-탄산','Dark ''N'' Stormy는 럼 베이스의 칵테일로, 간단한 듀엣 칵테일입니다. \n 이 칵테일의 이름은 다크 럼의 색상과 진저비어의 탄산을 형상화하여 붙여졌습니다. \n 버뮤다의 고슬링스 엑스포트에서 자사의 럼을 홍보하기 위해 개발하였고, 현재는 버뮤다의 상징적인 칵테일로 알려져 있습니다. \n IBA 공식 칵테일 중 "다가오는 시대의 혼합주"로 분류됩니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
-VALUES ('Don''s Special Daiquiri', '트로피컬한 섬의 맛','dons-special-daiquiri', 'Don''s Special Daiquiri는 열대의 매력을 느낄 수 있는 이국적인 칵테일로, 깊고 풍부한 맛을 자랑합니다. \n 이 칵테일은 두 가지 종류의 럼(다크 럼과 화이트 럼)을 결합하여, 각각의 특성이 어우러지는 맛을 만듭니다. \n 다크 럼은 깊은 풍미와 풍부한 색감을 주며, 화이트 럼은 부드러움과 함께 칵테일의 밸런스를 맞추는 역할을 합니다.');
+VALUES ('Don''s Special Daiquiri', 'dons-special-daiquiri', '트로피컬한 섬의 맛','Don''s Special Daiquiri는 열대의 매력을 느낄 수 있는 이국적인 칵테일로, 깊고 풍부한 맛을 자랑합니다. \n 이 칵테일은 두 가지 종류의 럼(다크 럼과 화이트 럼)을 결합하여, 각각의 특성이 어우러지는 맛을 만듭니다. \n 다크 럼은 깊은 풍미와 풍부한 색감을 주며, 화이트 럼은 부드러움과 함께 칵테일의 밸런스를 맞추는 역할을 합니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
 VALUES ('Dry Martini', 'dry-martini', ' 칵테일의 왕','Dry Martini는 진과 드라이 베르무트를 혼합한 클래식한 칵테일입니다. \n 다양한 비율로 준비할 수 있으며, 대표적인 레시피는 6:1 (진:베르무트)입니다. \n 이외에도 스위트 마티니, 보드카 마티니, 더티 마티니 등 다양한 변형이 존재합니다. \n 마티니는 차갑게 식힌 마티니 글라스에 제공되며, 보통 레몬 필이나 올리브로 장식합니다.');
 INSERT INTO cocktail(cocktail_name, cocktail_image, cocktail_easylore, cocktail_lore)
