@@ -133,6 +133,12 @@ public class AccountController {
         model.addAttribute("cocktails", cocktails);
         model.addAttribute("account", account);
 
+        String user = (String) session.getAttribute("user");
+        model.addAttribute("isLoggedIn", false);
+        if (user != null) {
+            model.addAttribute("isLoggedIn", true);
+        }
+
         return "mypage";
     }
 
@@ -142,6 +148,12 @@ public class AccountController {
         Account account = accountService.getAccount(id);
 
         model.addAttribute("account", account);
+
+        String user = (String) session.getAttribute("user");
+        model.addAttribute("isLoggedIn", false);
+        if (user != null) {
+            model.addAttribute("isLoggedIn", true);
+        }
 
         return "editprofile";
     }

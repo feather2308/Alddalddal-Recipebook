@@ -53,6 +53,11 @@ public class CocktailController {
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", cocktails.getTotalPages());
 
+        model.addAttribute("isLoggedIn", false);
+        if (user != null) {
+            model.addAttribute("isLoggedIn", true);
+        }
+
         return "cocktail";
     }
 
@@ -77,6 +82,13 @@ public class CocktailController {
         model.addAttribute("ingredients", cocktail.getRecipeIngredientList());
         model.addAttribute("tags", cocktail.getCocktailTagList());
         model.addAttribute("comments", cocktail.getCommentList());
+        model.addAttribute("account", accountService.getAccount(id));
+
+        String user = (String) session.getAttribute("user");
+        model.addAttribute("isLoggedIn", false);
+        if (user != null) {
+            model.addAttribute("isLoggedIn", true);
+        }
 
         return "recipe";
     }
@@ -115,9 +127,16 @@ public class CocktailController {
     }
 
     @GetMapping("/ingredient")
-    public String ingredientGet(Model model) {
+    public String ingredientGet(HttpSession session, Model model) {
         List<Ingredient> ingredients = cocktailService.getAllIngredients();
         model.addAttribute("ingredient", ingredients);
+
+        String user = (String) session.getAttribute("user");
+        model.addAttribute("isLoggedIn", false);
+        if (user != null) {
+            model.addAttribute("isLoggedIn", true);
+        }
+
         return "ingredient";
     }
 }

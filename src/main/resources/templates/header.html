@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<style>
+    .header{
+        height: 100px;
+        border-bottom: 1px solid #777777; /* 첫 번째 선 */
+        margin-bottom: 4px; /* 두 번째 선과의 간격 조정 */
+    }
+
+    .header-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+        justify-content: center; /* 가운데 정렬 */
+        max-width: 100%; /* 부모의 너비를 100%로 설정 */
+        align-items: center;
+    }
+
+    .banner-container {
+        display: flex;
+        width: 90%;
+        height: 100px;
+        justify-content: space-between;  /* 왼쪽과 오른쪽 끝에 요소 배치 */
+        align-items: center;  /* 세로 중앙 정렬 */
+        z-index: 3; /* 다른 요소보다 뒤에 오도록 설정 */
+        max-width : 1800px;
+    }
+
+    .banner-container a{
+        height: 100%;
+        flex: 0 0 auto;
+    }
+
+    .navigation-bar{
+        font-size: clamp(0rem, 2.5vw, 1.5rem);
+        color:white;
+        text-decoration: none;
+        padding: 20px 20px 20px clamp(0px, 3vw, 40px);
+        margin-top:20px;
+        justify-content: space-between; /* 항목들이 좌우로 배치됨 */
+        display: flex;  /* flexbox로 항목 배치 */
+        width : 100%;
+    }
+
+    .navigation-bar .left{
+        display: flex;
+        flex-direction: row;  /* 좌우로 나열되게 설정 */
+        gap:clamp(1px, 1vw, 30px);
+        cursor: pointer;
+    }
+
+    .navigation-bar .right{
+        display: flex;
+        gap:30px;
+        flex-direction: row;  /* 좌우로 나열되게 설정 */
+        margin-right:80px;
+        cursor: pointer;
+    }
+
+    .banner-icon{
+        height:170%;
+        position: relative;
+        min-height: 40%;
+        margin: auto;
+    }
+</style>
+
+<div class="header">
+    <div class="header-container">
+        <div class="banner-container">
+            <a href="/">
+                <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
+            </a>
+            <div class="navigation-bar">
+                <div class="left">
+                    <div onclick="window.location.href='/cocktail'">칵테일 목록</div>
+                    <div onclick="window.location.href='/ingredient'">재료 목록</div>
+                </div>
+                <div class="right" th:if="${!isLoggedIn}">
+                    <div onclick="window.location.href='/login'">로그인</div>
+                </div>
+                <div class="right" th:if="${isLoggedIn}">
+                    <div onclick="window.location.href='/mypage'">마이페이지</div>
+                    <div onclick="window.location.href='/logout'">로그아웃</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>
