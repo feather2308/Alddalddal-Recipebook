@@ -10,7 +10,7 @@
 
         body {
             font-family: Noto Sans KR, Arial, sans-serif;
-            background-color: #f8f8f8;
+            background-color: #000000;
             margin: 0;
             padding: 0;
             height: 100vh; /* 창 높이에 맞춤 */
@@ -19,33 +19,92 @@
             overflow: hidden; /* HTML 자체의 스크롤 제거 */
         }
 
-        header {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header button {
-            background-color: #fff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            color: #007BFF;
-        }
-        header button:hover {
-            background-color: #0056b3;
-            color: white;
+        .header{
+            height: 100px;
+            border-bottom: 1px solid #777777; /* 첫 번째 선 */
+            margin-bottom: 4px; /* 두 번째 선과의 간격 조정 */
         }
 
-        /* 컨테이너 영역 */
-        .container {
-            flex: 1; /* 상단과 하단을 제외한 영역 차지 */
+        .header-container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+            justify-content: center; /* 가운데 정렬 */
+            max-width: 100%; /* 부모의 너비를 100%로 설정 */
+            align-items: center;
+        }
+
+        .banner-container {
+            display: flex;
+            width: 90%;
+            height: 100px;
+            justify-content: space-between;  /* 왼쪽과 오른쪽 끝에 요소 배치 */
+            align-items: center;  /* 세로 중앙 정렬 */
+            z-index: 3; /* 다른 요소보다 뒤에 오도록 설정 */
+            max-width : 1800px;
+        }
+
+        .banner-container a{
+            height: 100%;
+            flex: 0 0 auto;
+        }
+
+        .navigation-bar{
+            font-size:16pt;
+            color:white;
+            text-decoration: none;
+            margin-left:auto;
+            margin-top:20px;
+            justify-content: space-between; /* 항목들이 좌우로 배치됨 */
+            display: flex;  /* flexbox로 항목 배치 */
+            width : 100%;
+
+        }
+
+        .navigation-bar .left{
+            margin-left:40px;
+            gap:30px;
+            display: flex;
+            flex-direction: row;  /* 좌우로 나열되게 설정 */
+        }
+
+        .navigation-bar .right{
+            display: flex;
+            gap:30px;
+            flex-direction: row;  /* 좌우로 나열되게 설정 */
+            margin-right:80px;
+        }
+
+        .banner-icon{
+            height:170%;
+            position: relative;
+            min-height: 40%;
+            margin: auto auto auto 20px;
+        }
+
+        .recipe-background {
+            width: 100%;
+            height: 100px; /* 원하는 높이로 설정 */
+            overflow: hidden;
+            filter: blur(4px);
+        }
+
+        .recipe-background img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* 이미지가 컨테이너 크기를 덮도록 설정 */
+            object-position: top; /* 이미지의 윗부분을 기준으로 맞춤 */
+        }
+
+
+        /* context-container 영역 */
+        .context-container {
             overflow-y: auto; /* 스크롤 가능 */
             padding: 20px;
+            width:100%;
+            align-items: center;
+            justify-content: center; /* 가로 중앙 정렬 */
         }
 
         /* 칵테일 목록 */
@@ -53,6 +112,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
+            width:1800px;
+            margin: 0 auto; /* 가로 중앙 정렬 */
         }
 
         .cocktail-item {
@@ -175,32 +236,52 @@
 </head>
 
 <body>
-<header>
-    <button onclick="window.location.href='/'">메인으로</button>
-    <span>칵테일 목록</span>
-</header>
-<!-- 스크롤 가능한 컨텐츠 영역 -->
-<div class="container">
-    <div class="cocktail-list">
-        <!-- 칵테일 목록 출력 -->
-        <div th:each="cocktail, iterStat : ${cocktails.content}" class="cocktail-item">
-            <a th:href="@{'/recipe?cocktail=' + ${cocktail.name}}" style="text-decoration: none; color: inherit;">
-                <img th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" th:alt="@{${cocktail.name} + ' Image'}" />
-                <h3 th:text="${cocktail.name}">Cocktail Name</h3>
-            </a>
-
-            <!-- 즐겨찾기 별 표시 및 토글 기능 추가 -->
-            <span th:if="${favoriteFlags != null}">
-                <span th:classappend="${favoriteFlags[iterStat.index] ? 'favorite-star active' : 'favorite-star inactive'}"
-                      th:id="'star_' + ${cocktail.name}"
-                      th:data-cocktail="${cocktail.name}"
-                      th:data-id="${user}">
-                      ★
-                </span>
-            </span>
+    <div class="header">
+        <div class="header-container">
+            <div class="banner-container">
+                <a href="/">
+                    <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
+                </a>
+                <div class="navigation-bar">
+                    <div class ="left">
+                        <div onclick="window.location.href='/cocktail'">칵테일 목록</div>
+                        <div onclick="window.location.href='/ingredient'">재료 목록</div>
+                    </div>
+                    <div class = "right" th:if="${isLoggedIn}">
+                        <div onclick="window.location.href='/mypage'">마이페이지</div>
+                        <div onclick="window.location.href='/logout'">로그아웃</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="recipe-background">
+        <img src="/images/search_background.png" class="recipe-background" alt="검색 뒷배경">
+    </div>
+
+        <!-- 스크롤 가능한 컨텐츠 영역 -->
+        <div class="context-container">
+            <div class="cocktail-list">
+                <!-- 칵테일 목록 출력 -->
+                <div th:each="cocktail, iterStat : ${cocktails.content}" class="cocktail-item">
+                    <a th:href="@{'/recipe?cocktail=' + ${cocktail.name}}" style="text-decoration: none; color: inherit;">
+                        <img th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" th:alt="@{${cocktail.name} + ' Image'}" />
+                        <h3 th:text="${cocktail.name}">Cocktail Name</h3>
+                    </a>
+
+                    <!-- 즐겨찾기 별 표시 및 토글 기능 추가 -->
+                    <span th:if="${favoriteFlags != null}">
+                        <span th:classappend="${favoriteFlags[iterStat.index] ? 'favorite-star active' : 'favorite-star inactive'}"
+                              th:id="'star_' + ${cocktail.name}"
+                              th:data-cocktail="${cocktail.name}"
+                              th:data-id="${user}">
+                              ★
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
 
 <!-- 고정된 페이지네이션 footer -->
 <div class="footer">

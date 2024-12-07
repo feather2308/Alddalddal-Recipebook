@@ -22,7 +22,7 @@
             margin-bottom: 4px; /* 두 번째 선과의 간격 조정 */
         }
 
-        .container{
+        .header-container{
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -60,14 +60,17 @@
         }
 
         .navigation-bar .left{
-            margin-left:20px;
-            gap:30px;
             display: flex;
             flex-direction: row;  /* 좌우로 나열되게 설정 */
+            margin-left:40px;
+            gap:30px;
         }
 
         .navigation-bar .right{
             display: flex;
+            gap:30px;
+            flex-direction: row;  /* 좌우로 나열되게 설정 */
+            margin-right:80px;
         }
 
         .banner-icon{
@@ -202,6 +205,14 @@
 
         .main-container{
             display:flex;
+            flex-direction: column; /* 세로 방향으로 정렬 */
+            justify-content: center; /* 세로 방향으로 가운데 정렬 */
+            width: 100%; /* 화면 크기에 맞게 100% 너비 설정 */
+            align-items: center;
+        }
+
+        .search-result-container{
+            display:flex;
             max-width : 1800px;
             width: 80%; /* 화면 크기에 맞게 100% 너비 설정 */
         }
@@ -280,6 +291,15 @@
             margin-bottom: 20px;
         }
 
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+            width:100%;
+        }
+
         /* 반응형 */
         @media (max-width: 768px) {
             .search-content h1 {
@@ -295,7 +315,7 @@
 
 <body>
 <div class="header">
-    <div class="container">
+    <div class="header-container">
         <div class="banner-container">
             <a href="/">
                 <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
@@ -310,6 +330,7 @@
                 </div>
                 <div class = "right" th:if="${isLoggedIn}">
                     <div onclick="window.location.href='/mypage'">마이페이지</div>
+                    <div onclick="window.location.href='/logout'">로그아웃</div>
                 </div>
             </div>
         </div>
@@ -375,29 +396,31 @@
         </div>
     </div>
     <div class="main-container">
-        <div class="search-results" th:if="${isSearch}">
-            <div class="search-results-text">검색 결과</div>
-            <div>
-                <!-- 결과 리스트 -->
-                <ul>
-                    <li th:each="cocktail : ${results}" class="cocktail-item" th:onclick="|window.location.href='@{'/recipe?cocktail=' + ${cocktail.name}}'|">
-                        <div class="result-cocktail">
-                            <img class="result-cocktail-image" th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" alt="칵테일 이미지">
-                            <div class="result-cocktail-name" th:text="${cocktail.name}">칵테일 이름</div>
-                        </div>
-                    </li>
-                </ul>
+        <div class="search-result-container">
+            <div class="search-results" th:if="${isSearch}">
+                <div class="search-results-text">검색 결과</div>
+                <div>
+                    <!-- 결과 리스트 -->
+                    <ul>
+                        <li th:each="cocktail : ${results}" class="cocktail-item" th:data-cocktail="${cocktail.name}" th:onclick="|window.location.href='/recipe?cocktail=' + encodeURIComponent(this.getAttribute('data-cocktail'))|">
+                            <div class="result-cocktail">
+                                <img class="result-cocktail-image" th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" alt="칵테일 이미지">
+                                <div class="result-cocktail-name" th:text="${cocktail.name}">칵테일 이름</div>
+                            </div>
+                        </li>
+                    </ul>
 
-                <!-- 검색 결과가 없을 경우 메시지 -->
-                <div th:if="${#lists.isEmpty(results)}">
-                    <p>죄송합니다. 일치하는 항목을 찾을 수 없습니다.</p>
+                    <!-- 검색 결과가 없을 경우 메시지 -->
+                    <div th:if="${#lists.isEmpty(results)}">
+                        <p>죄송합니다. 일치하는 항목을 찾을 수 없습니다.</p>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- 추천 칵테일 추가 예정 -->
     </div>
-
+    <div class="footer">
+        <p>&copy; 2024 Cocktail Recipe. All Rights Reserved.</p>
+    </div>
 </main>
 
 <!-- Bootstrap JS -->

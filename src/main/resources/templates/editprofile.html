@@ -16,14 +16,13 @@
             justify-content: center;
         }
 
-
         .header{
             height: 100px;
             border-bottom: 1px solid #777777; /* 첫 번째 선 */
             margin-bottom: 4px; /* 두 번째 선과의 간격 조정 */
         }
 
-        .container{
+        .header-container{
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -61,7 +60,7 @@
         }
 
         .navigation-bar .left{
-            margin-left:20px;
+            margin-left:40px;
             gap:30px;
             display: flex;
             flex-direction: row;  /* 좌우로 나열되게 설정 */
@@ -69,6 +68,9 @@
 
         .navigation-bar .right{
             display: flex;
+            gap:30px;
+            flex-direction: row;  /* 좌우로 나열되게 설정 */
+            margin-right:80px;
         }
 
         .banner-icon{
@@ -144,12 +146,20 @@
         button:hover {
             background-color: #45a049;
         }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
 <body>
 <div class="header">
-    <div class="container">
+    <div class="header-container">
         <div class="banner-container">
             <a href="/">
                 <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
@@ -159,11 +169,10 @@
                     <div onclick="window.location.href='/cocktail'">칵테일 목록</div>
                     <div onclick="window.location.href='/ingredient'">재료 목록</div>
                 </div>
-                <div class="right" th:if="${!isLoggedIn}">
-                    <div onclick="window.location.href='/login'">로그인</div>
-                </div>
+                <!-- 로그인 링크 추가 -->
                 <div class = "right" th:if="${isLoggedIn}">
                     <div onclick="window.location.href='/mypage'">마이페이지</div>
+                    <div onclick="window.location.href='/logout'">로그아웃</div>
                 </div>
             </div>
         </div>
@@ -199,6 +208,9 @@
 
     <button type="submit">수정하기</button>
 </form>
+</div>
+<div class="footer">
+    <p>&copy; 2024 Cocktail Recipe. All Rights Reserved.</p>
 </div>
 </body>
 </html>

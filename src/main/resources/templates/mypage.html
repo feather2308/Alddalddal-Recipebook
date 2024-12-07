@@ -23,7 +23,7 @@
             margin-bottom: 4px; /* 두 번째 선과의 간격 조정 */
         }
 
-        .container{
+        .header-container{
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -61,7 +61,7 @@
         }
 
         .navigation-bar .left{
-            margin-left:20px;
+            margin-left:40px;
             gap:30px;
             display: flex;
             flex-direction: row;  /* 좌우로 나열되게 설정 */
@@ -69,6 +69,9 @@
 
         .navigation-bar .right{
             display: flex;
+            gap:30px;
+            flex-direction: row;  /* 좌우로 나열되게 설정 */
+            margin-right:80px;
         }
 
         .banner-icon{
@@ -77,6 +80,21 @@
             min-height: 40%;
             margin: auto auto auto 20px;
         }
+
+        .recipe-background {
+            width: 100%;
+            height: 100px; /* 원하는 높이로 설정 */
+            overflow: hidden;
+            filter: blur(4px);
+        }
+
+        .recipe-background img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* 이미지가 컨테이너 크기를 덮도록 설정 */
+            object-position: top; /* 이미지의 윗부분을 기준으로 맞춤 */
+        }
+
 
         /* 스타일 예시 */
         .mypage-container {
@@ -90,15 +108,16 @@
         .mypage-info{
             display:flex;
             flex-direction: column;
-            width: 50%;
+            width: 55%;
             color: white;
-            margin-top: 30px;
+            margin-top: 10px;
         }
 
         .mypage-title-text{
             font-size: 35px;
             font-weight: bold;
             margin-bottom: 20px;
+            margin-left:10px;
         }
 
         .mypage-h2-line{
@@ -115,6 +134,7 @@
             justify-content: flex-end; /* 버튼을 우측 정렬 */
             gap: 10px; /* 버튼 간격 설정 */
             align-content: center;
+            margin-right:10px;
         }
 
         .info-edit-btn {
@@ -148,7 +168,7 @@
         }
 
         .mypage-like {
-            width: 75%;
+            width: 55%;
             color: white;
             margin-top: 30px;
         }
@@ -280,31 +300,41 @@
             color: gray;
         }
 
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="banner-container">
-                <a href="/">
-                    <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
-                </a>
-                <div class="navigation-bar">
-                    <div class ="left">
-                        <div onclick="window.location.href='/cocktail'">칵테일 목록</div>
-                        <div onclick="window.location.href='/ingredient'">재료 목록</div>
-                    </div>
-                    <div class="right" th:if="${!isLoggedIn}">
-                        <div onclick="window.location.href='/login'">로그인</div>
-                    </div>
-                    <div class = "right" th:if="${isLoggedIn}">
-                        <div onclick="window.location.href='/mypage'">마이페이지</div>
-                    </div>
+<div class="header">
+    <div class="header-container">
+        <div class="banner-container">
+            <a href="/">
+                <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
+            </a>
+            <div class="navigation-bar">
+                <div class ="left">
+                    <div onclick="window.location.href='/cocktail'">칵테일 목록</div>
+                    <div onclick="window.location.href='/ingredient'">재료 목록</div>
+                </div>
+                <!-- 로그인 링크 추가 -->
+                <div class = "right">
+                    <div onclick="window.location.href='/mypage'">마이페이지</div>
+                    <div onclick="window.location.href='/logout'">로그아웃</div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="recipe-background">
+    <img src="/images/search_background.png" class="recipe-background" alt="검색 뒷배경">
+</div>
 
     <div class="mypage-container">
         <div class="mypage-info">
@@ -354,6 +384,10 @@
                 <button class="carousel-btn right" onclick="slide(1)">&#9654;</button>
             </div>
         </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Cocktail Recipe. All Rights Reserved.</p>
     </div>
 
     <script>
