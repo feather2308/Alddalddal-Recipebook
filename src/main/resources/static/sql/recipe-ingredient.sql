@@ -182,17 +182,17 @@ VALUES ('Clover Club', '레몬 주스', '15ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
 VALUES ('Clover Club', '달걀 흰자', '몇 방울');
 
--- Corpse Reviver 2
+-- Corpse Reviver #2
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Corpse Reviver No.2', '진', '30ml');
+VALUES ('Corpse Reviver #2', '진', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Corpse Reviver No.2', '코앵트로', '30ml');
+VALUES ('Corpse Reviver #2', '코앵트로', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Corpse Reviver No.2', '릴레 블랑', '30ml');
+VALUES ('Corpse Reviver #2', '릴레 블랑', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Corpse Reviver No.2', '레몬 주스', '30ml');
+VALUES ('Corpse Reviver #2', '레몬 주스', '30ml');
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
-VALUES ('Corpse Reviver No.2', '압생트', '1대시');
+VALUES ('Corpse Reviver #2', '압생트', '1대시');
 
 -- Cosmopolitan
 INSERT INTO recipe_ingredient (COCKTAIL_NAME, INGREDIENT_NAME, RECIPE_INGREDIENT_AMOUNT)
