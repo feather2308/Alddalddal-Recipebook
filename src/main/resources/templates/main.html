@@ -60,14 +60,17 @@
         }
 
         .navigation-bar .left{
-            margin-left:40px;
-            gap:30px;
             display: flex;
             flex-direction: row;  /* 좌우로 나열되게 설정 */
+            margin-left:40px;
+            gap:30px;
         }
 
         .navigation-bar .right{
             display: flex;
+            gap:30px;
+            flex-direction: row;  /* 좌우로 나열되게 설정 */
+            margin-right:80px;
         }
 
         .banner-icon{
@@ -328,6 +331,7 @@
                 </div>
                 <div class = "right" th:if="${isLoggedIn}">
                     <div onclick="window.location.href='/mypage'">마이페이지</div>
+                    <div onclick="window.location.href='/logout'">로그아웃</div>
                 </div>
             </div>
         </div>

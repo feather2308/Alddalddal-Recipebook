@@ -68,6 +68,9 @@
 
         .navigation-bar .right{
             display: flex;
+            gap:30px;
+            flex-direction: row;  /* 좌우로 나열되게 설정 */
+            margin-right:80px;
         }
 
         .banner-icon{
@@ -167,8 +170,9 @@
                     <div onclick="window.location.href='/ingredient'">재료 목록</div>
                 </div>
                 <!-- 로그인 링크 추가 -->
-                <div class = "right">
+                <div class = "right" th:if="${isLoggedIn}">
                     <div onclick="window.location.href='/mypage'">마이페이지</div>
+                    <div onclick="window.location.href='/logout'">로그아웃</div>
                 </div>
             </div>
         </div>
