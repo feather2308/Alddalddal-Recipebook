@@ -8,54 +8,107 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
-        body {
-            font-family: Noto Sans KR, Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 20px;
+        .header{
+            height: 100px;
+            border-bottom: 1px solid #777777; /* 첫 번째 선 */
+            margin-bottom: 4px; /* 두 번째 선과의 간격 조정 */
         }
-        header {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
+
+        .container{
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+            justify-content: center; /* 가운데 정렬 */
+            max-width: 100%; /* 부모의 너비를 100%로 설정 */
             align-items: center;
         }
-        header button {
-            background-color: #fff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            color: #007BFF;
+
+        .banner-container {
+            display: flex;
+            width: 90%;
+            height: 100px;
+            justify-content: space-between;  /* 왼쪽과 오른쪽 끝에 요소 배치 */
+            align-items: center;  /* 세로 중앙 정렬 */
+            z-index: 3; /* 다른 요소보다 뒤에 오도록 설정 */
+            max-width : 1800px;
         }
-        header button:hover {
-            background-color: #0056b3;
-            color: white;
+
+        .banner-container a{
+            height: 100%;
+            flex: 0 0 auto;
         }
+
+        .navigation-bar{
+            font-size:16pt;
+            color:white;
+            text-decoration: none;
+            margin-left:auto;
+        }
+
+        .banner-icon{
+            height:170%;
+            position: relative;
+            min-height: 40%;
+            margin: auto auto auto 20px;
+        }
+
+
+        body {
+            font-family: Noto Sans KR, Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+        }
+
+        .box{
+            display: flex; /* Flexbox를 사용하여 세로로 정렬 */
+            flex-direction: column; /* 세로로 쌓이게 설정 */
+            justify-content: center; /* 세로로 중앙 정렬 */
+            align-items: center; /* 가로로 중앙 정렬 */
+            width: 100%;
+        }
+
+        .recipe-background {
+            width: 100%;
+            height: 100px; /* 원하는 높이로 설정 */
+            overflow: hidden;
+            filter: blur(4px);
+        }
+
+        .recipe-background img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* 이미지가 컨테이너 크기를 덮도록 설정 */
+            object-position: top; /* 이미지의 윗부분을 기준으로 맞춤 */
+        }
+
         h2 {
             margin-top: 20px;
-            font-size: 24px;
-            color: #333;
+            font-size: 40px;
+            color: white;
             text-align: center;
         }
         .content {
+
+        }
+
+        .content-left-right{
             display: flex;
             justify-content: space-between;
+            align-items: center;:
             width: 100%;
             max-width: 1200px;
             margin-top: 20px;
             gap: 20px;
         }
+
         .left {
             width: 40%;
             text-align: center;
+            max-width: 400px; /* 고정된 크기 */
         }
         .left img {
             width: 100%;
-            max-width: 400px; /* 고정된 크기 */
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -64,24 +117,37 @@
             width: 55%;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            align-items: flex-start; /* 위쪽 정렬 */
+            height: 100vh;
         }
+
         .section {
-            background-color: #ffffff;
             border-radius: 10px;
-            padding: 20px;
+            padding: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .section h3 {
-            font-size: 20px;
-            color: #007BFF;
+            font-size: 25px;
+            color: red;
             margin-bottom: 10px;
         }
         .section p {
             font-size: 16px;
-            color: #555;
+            color: white;
             line-height: 1.5;
         }
+        .cocktail-tag{
+            width : 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .cocktail-img-bottom {
+            display: flex;
+            align-items: center; /* 세로 중앙 정렬 */
+            margin-bottom: 15px; /* 각 필드 사이의 간격 */
+            justify-content: center; /* 가로 중앙 정렬 */
+        }
+
         .video-container {
             margin-top: 20px;
             display: flex;
@@ -102,125 +168,157 @@
         .comments-section {
             margin-top: 40px;
             padding: 20px;
-            background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
         .comments-section h3 {
             margin-bottom: 10px;
             font-size: 22px;
+            color: white;
+        }
+
+        .comment-box-content{
+            display: flex;  /* Flexbox로 수평 정렬 */
+            justify-content: space-between;  /* 좌우로 공간을 균등하게 배치 */
+            align-items: center;  /* 세로 중앙 정렬 */
+            width: 100%;  /* 부모 요소의 너비를 100%로 설정 */
+            border: 1px solid gray;
+            border-radius: 5px;
+
         }
         .comment-box {
             width: 100%;
-            height: 100px;
-            padding: 10px;
+            height: 70px;
             font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            margin-bottom: 10px;
+            background-color: rgb(0,0,0,0%);
+            color:white;
+            border: none;  /* 테두리 제거 */
         }
         .comment-button {
-            background-color: #007BFF;
+            background-color: #797979;
             color: white;
-            padding: 10px 20px;
+            width:15%;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            height:70px;
         }
         .comment-button:hover {
             background-color: #0056b3;
         }
 
-        /* 즐겨찾기 별 위치 */
         .favorite-star {
-            position: absolute;
             top: 10px;
-            right: 10px;
-            font-size: 20px;
+            font-size: 24px;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            z-index: 2; /* 이미지와 비디오 위에 표시 */
         }
 
-        .favorite-star:hover {
-            transform: scale(1.2);
+        .left {
+            width: 40%;
+            text-align: center;
         }
 
-        .favorite-star.active {
-            color: gold; /* 노란별 */
-        }
-
-        .favorite-star.inactive {
-            color: gray; /* 빈별 */
+        .left img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 
 <body>
-<header>
-    <button th:onclick="@{'window.location.href=\'/'+${history}+'\''}">뒤로가기</button>
-    <span>칵테일 레시피</span>
-</header>
 
-<h2>칵테일: [[${cocktail.name}]]</h2>
-
-<div class="content">
-    <div class="left">
-        <img th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" alt="[[${cocktail.name}]] 이미지"/>
-        <div><p>[[${cocktail.lore}]]</p></div>
-        <div class="video-container">
-            <p th:if="${recipe.url == '-' }">영상없음</p>
-            <p th:if="${recipe.url!= '-' }">유튜브 영상: <a th:href="${recipe.url}" target="_blank">여기서 보기</a></p>
-        </div>
-        <div class="cocktail-tag">
-            -태그-
-            <div th:if="${tags != null}" th:each="tag : ${tags}">
-                [[${tag.tag.trait}]]
-            </div>
-        </div>
-        <span th:if="${favoriteFlag != null}">
-            <span th:classappend="${favoriteFlag ? 'favorite-star active' : 'favorite-star inactive'}"
-                  th:data-cocktail="${cocktail.name}"
-                  th:data-id="${id}">
-                ★
-            </span>
-        </span>
-    </div>
-
-    <div class="right">
-        <div class="section">
-            <h3>재료</h3>
-            <p th:each="ingredient : ${ingredients}">
-                [[${ingredient.id.iname}]] [[${ingredient.amount}]]
-            </p>
-        </div>
-        <div class="section">
-            <h3>가니시</h3>
-            <p>[[${recipe.garnish}]]</p>
-        </div>
-        <div class="section">
-            <h3>방법</h3>
-            <p th:utext="${#strings.replace(recipe.method, '\n', '<br/>')}"></p>
+<div class="header">
+    <div class="container">
+        <div class="banner-container">
+            <a href="/">
+                <img src="/images/head_banner.png" class="banner-icon" alt="홈으로">
+            </a>
+            <!-- 로그인 링크 추가 -->
         </div>
     </div>
 </div>
 
-<div class="comments-section">
-    <h3>댓글</h3>
-    <form action="/addComment" method="POST">
-        <input type="hidden" name="cocktail" th:value="${cocktail.name}">
-        <input class="comment-box" name="content" placeholder="댓글을 남겨주세요..." required>
-        <button class="comment-button" type="submit">댓글 달기</button>
-    </form>
-    <div th:if="${comments != null}" th:each="comment : ${comments}">
-        내용히히: [[${comment.content}]]
-        타임스탬프: [[${comment.time}]]
-        작성자: [[${comment.getAccount().getNickname()}]]
-        <form action="/deleteComment" method="POST">
-            <input type="hidden" name="cocktail" th:value="${cocktail.name}">
-            <input type="hidden" name="id" th:value="${comment.id}">
-            <button type="submit">댓글 삭제</button>
-        </form>
+<div class="recipe-background">
+    <img src="/images/search_background.png" class="recipe-background" alt="검색 뒷배경">
+</div>
+
+<div class = "box">
+    <h2>[[${cocktail.name}]]</h2>
+
+    <div class="content">
+        <div class="content-left-right">
+            <div class="left">
+                <img th:src="@{'/images/cocktail/' + ${cocktail.image} + '.webp'}" alt="[[${cocktail.name}]] 이미지"/>
+                <div class="cocktail-tag">
+                태그 : &nbsp
+                <div th:if="${tags != null}" th:each="tag : ${tags}">
+                    [[${tag.tag.trait}]]
+                </div>
+            </div>
+                <div class="cocktail-img-bottom">
+                    <div class = favorite-star>
+                    <span th:if="${favoriteFlag != null}">
+                        <span th:classappend="${favoriteFlag ? 'favorite-star active' : 'favorite-star inactive'}"
+                              th:data-cocktail="${cocktail.name}"
+                              th:data-id="${id}">
+                            ★
+                        </span>
+                    </span>
+                    </div>
+                    <div class="video-container">
+                        <p th:if="${recipe.url == '-' }">영상없음</p>
+                        <p th:if="${recipe.url!= '-' }">유튜브 영상: <a th:href="${recipe.url}" target="_blank">여기서 보기</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class = "right-content">
+                    <div class="section">
+                        <h3>설명</h3>
+                        <div><p>[[${cocktail.lore}]]</p></div>
+                    </div>
+                    <div class="section">
+                        <h3>재료</h3>
+                        <p th:each="ingredient : ${ingredients}">
+                            [[${ingredient.id.iname}]] [[${ingredient.amount}]]
+                        </p>
+                    </div>
+                    <div class="section">
+                        <h3>가니시</h3>
+                        <p>[[${recipe.garnish}]]</p>
+                    </div>
+                    <div class="section">
+                        <h3>방법</h3>
+                        <p th:utext="${#strings.replace(recipe.method, '\n', '<br/>')}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comments-section">
+            <h3>댓글</h3>
+            <form action="/addComment" method="POST">
+                <input type="hidden" name="cocktail" th:value="${cocktail.name}">
+                <div class = "comment-box-content">
+                    <input class="comment-box" name="content" placeholder="댓글을 남겨주세요..." required>
+                    <button class="comment-button" type="submit">댓글 달기</button>
+                </div>
+            </form>
+            <div th:if="${comments != null}" th:each="comment : ${comments}">
+                내용히히: [[${comment.content}]]
+                타임스탬프: [[${comment.time}]]
+                작성자: [[${comment.getAccount().getNickname()}]]
+                <form action="/deleteComment" method="POST">
+                    <input type="hidden" name="cocktail" th:value="${cocktail.name}">
+                    <input type="hidden" name="id" th:value="${comment.id}">
+                    <button type="submit">댓글 삭제</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
